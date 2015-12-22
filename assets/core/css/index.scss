@@ -36,10 +36,25 @@ body {
 				font-weight: bolder;
 			}
 
-			p.tag-line {
+			p.tag-line, p.media-links {
 				padding: 0;
 				margin: 10px 0 0;
 				font-size: 1.6em;
+			}
+
+			p.media-links {
+				color: $textVeryMutedColour;
+
+				a {
+					display: inline-block;
+					margin: 0 10px;
+					color: inherit;
+					text-decoration: none;
+				}
+
+				a:hover {
+					color: $highlightColour;
+				}
 			}
 		}
 	}
