@@ -5,30 +5,43 @@ $headerSpacing: 40px;
 body {
 	text-align: center;
 
-	p.photo {
+	div.card {
+		display: inline-block;
+		height: 200px;
 		padding: 0;
-		margin: $headerSpacing 0 0;
+		margin: $headerSpacing auto 0;
 
 		img {
 			width: 200px;
 			height: 200px;
+			display: block;
+			float: left;
 			border: 8px solid #ffffff;
 			border-radius: 50%;
 			box-shadow: 0 0 10px #bbbbbb;
 		}
-	}
 
-	h1 {
-		padding: 0;
-		margin: $headerSpacing 0 0;
-		font-size: 4em;
-		font-weight: bolder;
-	}
+		div.text-wrapper {
+			height: 200px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			float: left;
+			margin-left: 50px;
 
-	p.tag-line {
-		padding: 0;
-		margin: 10px 0 0;
-		font-size: 1.6em;
+			h1 {
+				padding: 0;
+				margin: 0;
+				font-size: 4em;
+				font-weight: bolder;
+			}
+
+			p.tag-line {
+				padding: 0;
+				margin: 10px 0 0;
+				font-size: 1.6em;
+			}
+		}
 	}
 
 	div.hr {
