@@ -1,0 +1,40 @@
+// colours
+
+$textColour: #333333;
+$textMutedColour: transparentize($textColour, 0.5);
+$highlightColour: #ff9900;
+
+// fonts
+
+$fontFamily: 'Lato';
+
+// global styles
+
+h1, h2, h3, h4, h5, h6, p, li, input, label, span {
+	font-family: $fontFamily, sans-serif !important;
+	font-weight: lighter;
+	color: $textColour;
+}
+
+body {
+	background-color: #f9f9f9;
+}
+
+div.hr {
+	height: 1px;
+	background-color: #e9e9e9;
+	width: 80%;
+	margin: 0 10%;
+
+	hr {
+		display: none;
+	}
+}
+
+.text-muted {
+	color: $textMutedColour !important;
+}
+
+.text-highlight {
+	color: $highlightColour !important;
+}
