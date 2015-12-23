@@ -1,25 +1,27 @@
+- cP = (_ && _.currentPage) || '';
+
 ul.navigation
-	li.active
+	li(class = cP == 'info' ? 'active' : '')
 		a(href = '/info')
 			i.fa.fa-map-signs
 			span Info &amp; Skills
 
-	li
-		a(href = '/info')
+	li(class = cP == 'projects' ? 'active' : '')
+		a(href = '/projects')
 			i.fa.fa-code
 			span Projects
 
-	li
-		a(href = '/info')
+	li(class = cP == 'positions' ? 'active' : '')
+		a(href = '/positions')
 			i.fa.fa-briefcase
 			span Positions
 
-	li
-		a(href = '/info')
+	li(class = cP == 'references' ? 'active' : '')
+		a(href = '/references')
 			i.fa.fa-comment-o
 			span References
 
-	li
-		a(href = '/info')
+	li(class = cP == 'contact' ? 'active' : '')
+		a(href = '/contact')
 			i.fa.fa-envelope-o
 			span Contact

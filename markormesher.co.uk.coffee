@@ -50,6 +50,10 @@ app.use(flash())
 routes = {
 	'': rfr('./controllers/core')
 	'info': rfr('./controllers/info')
+	'projects': rfr('./controllers/projects')
+	'positions': rfr('./controllers/positions')
+	'references': rfr('./controllers/references')
+	'contact': rfr('./controllers/contact')
 };
 
 for stem, file of routes

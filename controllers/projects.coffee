@@ -11,10 +11,10 @@ express = require('express')
 router = express.Router()
 
 router.get('/', (req, res) ->
-	res.render('info/index', {
+	res.render('projects/index', {
 		_: {
-			currentPage: 'info'
-			pageTitle: 'Info & Skills'
+			currentPage: 'projects'
+			pageTitle: 'My Projects'
 		}
 	});
 )
