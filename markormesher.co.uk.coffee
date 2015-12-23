@@ -49,6 +49,7 @@ app.use(flash())
 # pull routes from routes folder
 routes = {
 	'': rfr('./controllers/core')
+	'info': rfr('./controllers/info')
 };
 
 for stem, file of routes

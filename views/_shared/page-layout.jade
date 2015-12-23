@@ -5,5 +5,16 @@ block head
 	block page-head
 
 block body
-	// TODO
-	block page-body
+	div.container
+		div.header
+			h1 Info &amp; Skills
+			span
+				| &nbsp;&nbsp;
+				em //
+				| &nbsp;&nbsp;
+				a(href = '/') Mark Ormesher
+
+		include ../_shared/navigation
+
+		div.content
+			block page-body

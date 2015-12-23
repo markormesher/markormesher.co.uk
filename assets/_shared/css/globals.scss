@@ -1,13 +1,18 @@
 // colours
 
 $textColour: #333333;
-$textMutedColour: transparentize($textColour, 0.5);
-$textVeryMutedColour: transparentize($textColour, 0.7);
+$mutedColour: transparentize($textColour, 0.5);
+$veryMutedColour: transparentize($textColour, 0.7);
 $highlightColour: #ff9900;
+$lineColour: #e0e0e0;
 
 // fonts
 
 $fontFamily: 'Lato';
+
+// other
+
+$boxShadow: 0 0 20px #bbbbbb;
 
 // global styles
 
@@ -23,7 +28,7 @@ body {
 
 div.hr {
 	height: 1px;
-	background-color: #e0e0e0;
+	background-color: $lineColour;
 	width: 80%;
 	margin: 0 10%;
 
@@ -33,7 +38,7 @@ div.hr {
 }
 
 .text-muted {
-	color: $textMutedColour !important;
+	color: $mutedColour !important;
 }
 
 .text-highlight {
