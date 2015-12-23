@@ -14,7 +14,7 @@ router.get('/', (req, res) ->
 	res.render('projects/index', {
 		_: {
 			currentPage: 'projects'
-			pageTitle: 'My Projects'
+			pageTitle: 'Projects'
 		}
 	});
 )
