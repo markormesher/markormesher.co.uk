@@ -38,6 +38,7 @@ div.header {
 }
 
 ul.navigation {
+	margin: 0;
 	padding: 8px 0;
 	border-bottom: 1px solid $lineColour;
 	text-align: center;
@@ -74,5 +75,33 @@ ul.navigation {
 				color: $highlightColour;
 			}
 		}
+	}
+}
+
+div.content {
+	margin: 0;
+	padding: 10px 0 0;
+
+	p {
+		margin: 0 0 12px;
+		font-size: 1.3em;
+		line-height: 150%;
+	}
+
+	p.intro {
+		font-size: 1.5em;
+	}
+
+	h2, h3 {
+		margin: 28px 0 12px;
+	}
+
+	h2 {
+		font-size: 2.5em;
+		border-bottom: 1px solid $lineColour;
+	}
+
+	h3 {
+		font-size: 1.8em;
 	}
 }
