@@ -108,12 +108,12 @@ div.content {
 
 	h2, h3 {
 		margin: 20px 0 12px;
-		clear: both;
 	}
 
 	h2 {
 		font-size: 2.5em;
 		border-bottom: 1px solid $lineColour;
+		clear: both;
 	}
 
 	h3 {
@@ -135,5 +135,9 @@ div.content {
 	img.bordered {
 		border: 5px solid #ffffff;
 		box-shadow: $boxShadow;
+	}
+
+	div.hr.end {
+		margin-bottom: 100px;
 	}
 }
