@@ -1,9 +1,12 @@
 $(document).ready(() ->
 
 	# masonry layout
-	$('.project-grid').masonry({
-		itemSelector: '.project-item'
-		columnWidth: '.project-item'
-	});
+	grid = $('.project-grid')
+	grid.imagesLoaded(() ->
+		grid.masonry({
+			itemSelector: '.project-item'
+			columnWidth: '.project-item'
+		})
+	);
 
 );
