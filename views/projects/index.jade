@@ -1,7 +1,7 @@
 extends ../_shared/page-layout
 
-mixin project(title, subtitle, imageFolder)
-	div.project-item: div
+mixin project(title, subtitle, id, imageFolder)
+	div.project-item(id = id): div
 		if imageFolder != null
 			img.project-thumbnail(src = imageFolder + '/thumb.png', title = title)
 		p.title= title
@@ -16,35 +16,68 @@ block page-body
 
 	div.project-grid
 
-		+project('Unitu Android App', ['Android', 'Project Management'], '/projects/images/unitu-android-app')
+		+project(
+		'Unitu Android App',
+		['Android', 'Project Management'],
+		'unitu-android-app',
+		'/projects/images/unitu-android-app')
 			p The Unitu Android app mirrors the functionality on the Unitu website, giving users access to the software wherever they are. I am responsible for #[strong planning and executing development] on the app, as well as #[strong testing] and #[strong deployment]. Since its launch it has helped to improve Unitu's student engagement, and has served as an excellent platform for me to develop my Android development skills.
 			p: a.icon-link(href = '#')
 				i.fa.fa-book
 				| &nbsp;
 				span Read the Case Study
 
-		+project('Unitu Analytics Suite', ['Data Presentation', 'PHP', 'jQuery', 'ElasticSearch'])
+		+project(
+		'Unitu Analytics',
+		['Data Presentation', 'PHP', 'jQuery', 'ElasticSearch'],
+		'unitu-analytics')
 			p Test content
 
-		+project('Nuclibook', ['Java', 'Spark Framework', 'Project Management', 'University Project'])
+		+project(
+		'Unitu Website & API',
+		['C# .NET', 'MVC5'],
+		'unitu-website-api')
 			p Test content
 
-		+project('Allianz Petplan Performance Dashboard', ['jQuery', 'CoffeeScript'])
+		+project(
+		'Nuclibook',
+		['Java', 'Spark Framework', 'Project Management', 'University Project'],
+		'nuclibook')
 			p Test content
 
-		+project('Allianz Petplan "Your Voice"', ['Print Design', 'Communications', 'Managing Upwards'])
+		+project(
+		'KCL Tech Android Lectures',
+		['Android', 'Teaching'],
+		'kcl-tech-android-lectures')
 			p Test content
 
-		+project('KCL Tech Android Lectures', ['Android', 'Teaching'])
+		+project(
+		'T.I.T.A.N.I.C.',
+		['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'CoffeeScript', 'SCSS', 'Jade', 'GitLab'],
+		'titanic')
 			p Test content
 
-		+project('NoisyTweets', ['Python', 'Flask Server', 'Twitter'])
+		+project(
+		'Allianz Petplan Performance Dashboard',
+		['jQuery', 'CoffeeScript'],
+		'allianz-petplan-performance-dashboard')
 			p Test content
 
-		+project('MLHorrors', ['Android', 'GCM', 'Ruby'])
+		+project(
+		'Allianz Petplan "Your Voice"',
+		['Print Design', 'Communications', 'Managing Upwards'],
+		'allianz-petplan-your-voice')
 			p Test content
 
-		+project('T.I.T.A.N.I.C.', ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'CoffeeScript', 'SCSS', 'Jade', 'GitLab'])
+		+project(
+		'NoisyTweets',
+		['Python', 'Flask Server', 'Twitter'],
+		'noisy-tweets')
+			p Test content
+
+		+project(
+		'MLHorrors', ['Android', 'GCM', 'Ruby'],
+		'mlhorrors')
 			p Test content
 
 	br(clear = 'both')
