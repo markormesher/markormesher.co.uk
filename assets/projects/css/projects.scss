@@ -1,0 +1,25 @@
+@import '../../_shared/css/globals';
+
+.project-item {
+	width: 50%;
+
+	div {
+		margin: 8px;
+		padding: 8px;
+		border: 1px solid $lineColour;
+		border-radius: 4px;
+
+		p.title {
+			font-size: 1.4em;
+			font-weight: normal;
+			margin-bottom: 0;
+		}
+
+		p.subtitle {
+			font-size: 1em;
+			font-weight: normal;
+			color: $mutedColour;
+			margin-bottom: 2px;
+		}
+	}
+}

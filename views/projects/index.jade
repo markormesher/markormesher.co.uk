@@ -1,6 +1,51 @@
 extends ../_shared/page-layout
 
-block page-body
-	p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac pretium eros, et eleifend velit. Pellentesque tincidunt laoreet nulla, nec dignissim nulla luctus finibus. Ut neque nisi, condimentum a leo a, molestie egestas odio. Suspendisse non mauris lacus. Aliquam viverra lectus non dui ultricies commodo. Sed pretium est sed urna rutrum pharetra. Praesent ut sem efficitur, gravida erat vel, imperdiet magna. Ut ac dolor risus.
+mixin project(title, subtitle, imageFolder)
+	div.project-item: div
+		if imageFolder != null
+			img.inline-left(src = imageFolder + '/thumb.png', title = title)
+		p.title= title
+		if subtitle != null
+			p.subtitle!= subtitle.join('<span class="text-very-muted"> // </span>')
+		block
+		br(clear = 'both')
 
-	p Pellentesque efficitur metus quis libero bibendum imperdiet. Praesent vehicula ante tellus, ut vehicula risus pharetra a. Aenean fermentum consectetur quam sed sagittis. Vivamus accumsan mattis mi, in hendrerit magna placerat non. Integer sed facilisis lacus. Nam malesuada ligula in tellus volutpat, vitae viverra arcu faucibus. Nam nec nisl auctor odio tincidunt volutpat quis commodo massa. Donec porta bibendum nisl a luctus. Sed eu lacinia neque, in pulvinar nisi. Nullam bibendum massa id sollicitudin eleifend.
+block page-head
+	link(rel = 'stylesheet', href = '/projects/css/projects.css')
+
+block page-body
+
+	div.project-grid
+
+		+project('Unitu Android App', ['Android', 'Project Management'], '/projects/images/unitu-android-app')
+			p Test content
+
+		+project('Unitu Analytics Suite', ['Data Presentation', 'PHP', 'jQuery', 'ElasticSearch'])
+			p Test content
+
+		+project('Nuclibook', ['Java', 'Spark Framework', 'Project Management', 'University Project'])
+			p Test content
+
+		+project('Allianz Petplan Performance Dashboard', ['jQuery', 'CoffeeScript'])
+			p Test content
+
+		+project('Allianz Petplan "Your Voice"', ['Print Design', 'Communications', 'Managing Upwards'])
+			p Test content
+
+		+project('KCL Tech Android Lectures', ['Android', 'Teaching'])
+			p Test content
+
+		+project('NoisyTweets', ['Python', 'Flask Server', 'Twitter'])
+			p Test content
+
+		+project('MLHorrors', ['Android', 'GCM', 'Ruby'])
+			p Test content
+
+		+project('T.I.T.A.N.I.C.', ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'CoffeeScript', 'SCSS', 'Jade', 'GitLab'])
+			p Test content
+
+	br(clear = 'both')
+
+block scripts
+	script(src = '/_vendor/js/masonry.packaged.min.js')
+	script(src = '/projects/js/layout.js')
