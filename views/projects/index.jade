@@ -3,7 +3,7 @@ extends ../_shared/page-layout
 mixin project(title, subtitle, imageFolder)
 	div.project-item: div
 		if imageFolder != null
-			img.inline-left(src = imageFolder + '/thumb.png', title = title)
+			img.project-thumbnail(src = imageFolder + '/thumb.png', title = title)
 		p.title= title
 		if subtitle != null
 			p.subtitle!= subtitle.join('<span class="text-very-muted"> // </span>')

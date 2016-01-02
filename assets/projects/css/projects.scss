@@ -25,5 +25,12 @@
 		p:last-of-type {
 			margin-bottom: 0;
 		}
+
+		img.project-thumbnail {
+			float: left;
+			padding-right: 8px;
+			margin-right: 10px;
+			border-right: 1px solid $lineColour;
+		}
 	}
 }
