@@ -1,3 +1,7 @@
+# prevent browser-default scrolling to anchors
+if (window.location.hash) then scroll(0,0)
+setTimeout((() -> scroll(0,0)), 1);
+
 $(document).ready(() ->
 
 	# external links
@@ -7,10 +11,14 @@ $(document).ready(() ->
 	)
 
 	# smooth scrolling to anchors
+	if(window.location.hash)
+		target = $(window.location.hash)
+		if (target.length) then $('html, body').animate({scrollTop: target.offset().top}, 500, 'swing');
+
 	$('a[href^=#]:not([href=#])').click(() ->
 		hash = this.href.split('#')[1]
 		target = $('[id=' + hash + ']')
-		if (target.length) then $('html,body').animate({scrollTop: target.offset().top}, 350)
+		if (target.length) then $('html, body').animate({scrollTop: target.offset().top}, 500, 'swing')
 	)
 
 	return
