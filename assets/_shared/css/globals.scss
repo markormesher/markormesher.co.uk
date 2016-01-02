@@ -1,6 +1,7 @@
 // colours
 
 $textColour: #333333;
+$darkerTextColour: #000000;
 $mutedColour: transparentize($textColour, 0.5);
 $veryMutedColour: transparentize($textColour, 0.7);
 $highlightColour: #ff9900;
@@ -24,6 +25,11 @@ h1, h2, h3, h4, h5, h6, p, li, input, label, span {
 
 body {
 	background-color: #fbfbfb;
+}
+
+em {
+	font-style: italic;
+	color: $darkerTextColour !important;
 }
 
 div.hr {
