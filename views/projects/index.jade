@@ -8,7 +8,6 @@ mixin project(title, subtitle, imageFolder)
 		if subtitle != null
 			p.subtitle!= subtitle.join('<span class="text-very-muted"> // </span>')
 		block
-		br(clear = 'both')
 
 block page-head
 	link(rel = 'stylesheet', href = '/projects/css/projects.css')
@@ -18,7 +17,11 @@ block page-body
 	div.project-grid
 
 		+project('Unitu Android App', ['Android', 'Project Management'], '/projects/images/unitu-android-app')
-			p Test content
+			p The Unitu Android app mirrors the functionality on the Unitu website, giving users access to the software wherever they are. I am responsible for #[strong planning and executing development] on the app, as well as #[strong testing] and #[strong deployment]. Since its launch it has helped to improve Unitu's student engagement, and has served as an excellent platform for me to develop my Android development skills.
+			p: a.icon-link(href = '#')
+				i.fa.fa-book
+				| &nbsp;
+				span Read the Case Study
 
 		+project('Unitu Analytics Suite', ['Data Presentation', 'PHP', 'jQuery', 'ElasticSearch'])
 			p Test content

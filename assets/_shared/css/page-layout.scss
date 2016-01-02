@@ -106,6 +106,22 @@ div.content {
 		border-bottom-color: $highlightColour;
 	}
 
+	a.icon-link {
+		border-bottom: none;
+
+		i.fa {
+			color: $mutedColour;
+		}
+
+		span {
+			border-bottom: 1px solid $lineColour;
+		}
+
+		span:hover {
+			border-bottom-color: $highlightColour;
+		}
+	}
+
 	h2, h3 {
 		margin: 20px 0 12px;
 	}
