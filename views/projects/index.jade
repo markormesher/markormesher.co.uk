@@ -1,10 +1,10 @@
 extends ../_shared/page-layout
 
 mixin project(title, subtitle, id, imageFolder)
-	div.floating-grid-item(id = id): div
+	div.floating-grid-item(id = id): div.inner
 		if imageFolder != null
 			img.left-thumbnail(src = imageFolder + '/thumb.png', title = title)
-		p.title= title
+		h3= title
 		if subtitle != null
 			p.subtitle!= subtitle.join('<span class="text-very-muted"> // </span>')
 		block
@@ -21,89 +21,146 @@ block page-body
 		['Android', 'Project Management'],
 		'unitu-android-app',
 		'/projects/images/unitu-android-app')
+
 			p The #[em Unitu Android app] mirrors the functionality of the Unitu website, giving users access to the software wherever they are. I am responsible for #[strong planning and executing development] of the app, as well as #[strong testing] and #[strong deployment]. Since its launch it has helped to improve Unitu's student engagement, and has served as an excellent platform for me to develop my Android programming skills.
+
+			div.hr.with-margin: hr
+
+			// todo: unitu android app case study
 			p: a.icon-link(href = '#')
 				i.fa.fa-book.text-highlight
 				span Read the Case Study
-				// todo: unitu android app case study
+
+			p: a.icon-link(href = '/positions#unitu')
+				i.fa.fa-briefcase.text-highlight
+				span My Position at Unitu
+
 
 		+project(
 		'Unitu Analytics',
 		['PHP', 'jQuery', 'ElasticSearch', 'Data Presentation'],
 		'unitu-analytics',
 		'/projects/images/unitu-analytics')
+
 			p Providing data to both the #[strong team] and #[strong customers], the #[em Unitu analytics suite] has proved to be an effective tool and a powerful selling point. As well as collecting data across the product, it also automates reporting tasks that used to consume a lot of person-hours. I am responsible for the #[strong planning and development] of the suite and I share some of the #[strong testing] duties.
+
+			div.hr.with-margin: hr
+
+			// todo: unitu analytics case study
 			p: a.icon-link(href = '#')
 				i.fa.fa-book.text-highlight
 				span Read the Case Study
-				// todo: unitu analytics case study
+
+			p: a.icon-link(href = '/positions#unitu')
+				i.fa.fa-briefcase.text-highlight
+				span My Position at Unitu
+
 
 		+project(
 		'Titanic',
 		['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'CoffeeScript', 'SCSS', 'Jade', 'Bash', 'GitLab'],
 		'titanic',
 		'/projects/images/titanic')
+
 			p Why try #[strong something new] when you can try #[strong everything new]? #[em Titanic] is a hobby project that I started at a hackathon in 2015 to teach myself some new technologies. It's a web-based tool to #[strong synchronise host-name aliases and Bash shortcuts] between all of my Linux devices and servers.
+
 			p It is built almost entirely with #[strong new-to-me languages and tools], at the time of writing. I used this project to experiment with Node.js, Express.js, MongoDB, etc. - I even set up a GitLab instance instead of using GitHub! This project is still being actively developed.
+
+			div.hr.with-margin: hr
+
+			// todo: titanic case study
 			p: a.icon-link(href = '#')
 				i.fa.fa-book.text-highlight
 				span Read the Case Study
-				// todo: titanic case study
+
 
 		+project(
 		'Nuclibook',
 		['Java', 'Spark Framework', 'Bootstrap', 'Project Management'],
 		'nuclibook',
 		'/projects/images/nuclibook')
+
 			p #[em Nuclibook] is comprehensive booking system for #[strong nuclear medicine diagnostic studies and therapies]; it meets the requirements of #[strong NHS hospitals] in general, and the #[strong Chelsea and Westminster Hospital] in particular. The system manages staff availability, stock orders, patient bookings, equipment and asset tracking, accountability logs, and more.
+
 			p Built by a team of eight developers, I served as #[strong Project Leader] and was one the main code contributors.
+
+			div.hr.with-margin: hr
+
 			p: a.icon-link(href = 'https://github.com/musalbas/Nuclibook', rel = 'external')
 				i.fa.fa-github.text-highlight
 				span View the Public Repository (dormant)
 
+
 		+project(
 		'Unitu Website & API',
 		['C# .NET', 'MVC5'],
-		'unitu-website-api',
+		'unitu-web-api',
 		'/projects/images/unitu-web-api')
+
 			p I started working on the #[em Unitu website & API] in mid-2015, learning #[strong C# .NET] and the #[strong MVC5 framework] along the way. It started out as a minor facet of my work at Unitu, but my contributions have increased with time. One such contribution is an entirely #[strong new, bespoke notification system] that manages preferences, stacking, emails and push notifications.
+
+			div.hr.with-margin: hr
+
+			p: a.icon-link(href = '/positions#unitu')
+				i.fa.fa-briefcase.text-highlight
+				span My Position at Unitu
+
 
 		+project(
 		'KCL Tech Android Lectures',
 		['Android', 'Teaching'],
 		'kcl-tech-android-lectures',
 		'/projects/images/kcl-tech-android-lectures')
+
 			p Running for 8 weeks, I wrote and delivered this course to #[strong teach Android development] to KCL students with no prior knowledge of mobile development, as part of the KCL Tech Society's #[strong Build X] lecture series. The course was a great success: many participants were able to build a fully-functioning (albeit basic) to-do list app during the course.
+
+			div.hr.with-margin: hr
+
 			p: a.icon-link(href = 'https://github.com/markormesher/KCLTechAndroidCourse', rel = 'external')
 				i.fa.fa-github.text-highlight
 				span See the Course Materials
 
+
+		// todo: allianz petplan your voice image
 		+project(
 		'Allianz Petplan "Your Voice"',
 		['Print Design', 'Communications', 'Managing Upwards'],
 		'allianz-petplan-your-voice')
-			p #[em Your Voice] was a campaign within the #[strong service department at Allianz Petplan], intended to collect employee opinions and ideas on a range of key topics. My involvement included #[strong branding design], communication planning, deployment, promotion and presentation of results on a weekly basis.
-			p Some of the project outcomes resulted in me #[strong managing upwards] and assigning tasks to my superiors, and through the project we were able to produce #[strong tangible results] for employees.
-			// todo: allianz petplan your voice image
 
+			p #[em Your Voice] was a campaign within the #[strong service department at Allianz Petplan], intended to collect employee opinions and ideas on a range of key topics. My involvement included #[strong branding design], communication planning, deployment, promotion and presentation of results on a weekly basis.
+
+			p Some of the project outcomes resulted in me #[strong managing upwards] and assigning tasks to my superiors, and through the project we were able to produce #[strong tangible results] for employees.
+
+
+		// todo: allianz petplan live image
 		+project(
 		'Allianz Petplan "Petplan Live!"',
 		['jQuery', 'CoffeeScript'],
 		'allianz-petplan-performance-dashboard')
+
 			p #[em Petplan Live!] was a performance dashboard built for the #[strong Allianz Petplan service department] during my internship there in 2015. It provides an attractive display of important #[strong performance metrics], helping to drive employee engagement and awareness.
+
 			p Displayed on three TV screens in the office, it is possibly one of the #[em hackiest] (yet enjoyable) solutions I have ever developed. The project was constrained to #[strong HTML/CSS/JS], and no external connections could be created, but I was still able to build an #[strong attractive product] that could be managed by all supervisors from any machine.
+
+			div.hr.with-margin: hr
+
+			// todo: allianz petplan live case study
 			p: a.icon-link(href = '#')
 				i.fa.fa-book.text-highlight
 				span Read the Case Study
-				// todo: allianz petplan live image
+
 
 		+project(
 		'MLHorrors', ['Android', 'GCM', 'Ruby'],
 		'mlhorrors',
 		'/projects/images/mlhorrors')
+
 			p #[em MLHorrors] is a supplement app for #[strong Werewolf] (a popular hackathon mini-game), built by three friends and I during a #[strong hackathon in 2015]. It augments gameplay with sound effects, graphics, automated randomisation and other features.
+
 			p The narrator creates a new game on their #[strong Android] device, which can be joined by any number of players. Powered by #[strong Google Cloud Messaging], this pseudo-client/server arrangement gives the narrator total control and creates an immersive experience for players.
+
 			p This project won the #[strong Crowd Favourite Prize], which included tickets to #[strong Global Hack in Seoul].
+
 
 	br(clear = 'both')
 

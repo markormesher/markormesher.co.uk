@@ -3,15 +3,16 @@
 .floating-grid-item {
 	width: 50%;
 
-	div {
+	.inner {
 		margin: 8px;
 		padding: 8px;
 		border: 1px solid $lineColour;
 		border-radius: 5px;
 
-		p.title {
+		h3 {
 			font-size: 1.4em;
 			font-weight: normal;
+			margin-top: 0;
 			margin-bottom: 0;
 		}
 
@@ -23,7 +24,7 @@
 		}
 
 		p:last-of-type {
-			margin-bottom: 0;
+			margin-bottom: 1px;
 		}
 
 		img.left-thumbnail {

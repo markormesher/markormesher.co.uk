@@ -43,6 +43,10 @@ div.hr {
 	}
 }
 
+div.hr.with-margin {
+	margin-bottom: 12px;
+}
+
 .text-muted {
 	color: $mutedColour !important;
 }

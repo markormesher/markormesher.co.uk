@@ -1,6 +1,52 @@
 extends ../_shared/page-layout
 
-block page-body
-	p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac pretium eros, et eleifend velit. Pellentesque tincidunt laoreet nulla, nec dignissim nulla luctus finibus. Ut neque nisi, condimentum a leo a, molestie egestas odio. Suspendisse non mauris lacus. Aliquam viverra lectus non dui ultricies commodo. Sed pretium est sed urna rutrum pharetra. Praesent ut sem efficitur, gravida erat vel, imperdiet magna. Ut ac dolor risus.
+mixin position(title, subtitle, id, imageName)
+	div.floating-grid-item(id = id): div.inner
+		if imageName != null
+			img.left-thumbnail(src = '/positions/images/' + imageName, title = title)
+		h3!= title.replace('@', '<span class="text-muted">@</span>')
+		if subtitle != null
+			p.subtitle!= subtitle
+		block
 
-	p Pellentesque efficitur metus quis libero bibendum imperdiet. Praesent vehicula ante tellus, ut vehicula risus pharetra a. Aenean fermentum consectetur quam sed sagittis. Vivamus accumsan mattis mi, in hendrerit magna placerat non. Integer sed facilisis lacus. Nam malesuada ligula in tellus volutpat, vitae viverra arcu faucibus. Nam nec nisl auctor odio tincidunt volutpat quis commodo massa. Donec porta bibendum nisl a luctus. Sed eu lacinia neque, in pulvinar nisi. Nullam bibendum massa id sollicitudin eleifend.
+block page-head
+	link(rel = 'stylesheet', href = '/_shared/css/floating-grid-layout.css')
+
+block page-body
+
+	div.floating-grid
+
+		+position(
+		'Software Engineer @ Unitu',
+		'June 2014 - present',
+		'unitu',
+		'unitu-logo.png')
+
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rutrum ut enim ac cursus. Cras feugiat, odio ut gravida dictum, nisi diam pulvinar erat, gravida aliquet est risus non metus. Mauris ac massa eros. Quisque in tristique nunc. Fusce varius imperdiet est, ut ultrices risus egestas ac. Donec gravida pellentesque tristique. Suspendisse imperdiet viverra eros vitae molestie.
+			p Quisque nulla urna, mattis vel neque quis, lobortis laoreet nibh. Duis dui urna, hendrerit vel tellus ac, viverra vestibulum nisi. Duis cursus nulla hendrerit tellus laoreet, id porta elit placerat.
+
+			div.hr.with-margin: hr
+
+			p: a.icon-link(href = '/projects#unitu-android-app')
+				i.fa.fa-code.text-highlight
+				span Unitu Android App
+
+			p: a.icon-link(href = '/projects#unitu-analytics')
+				i.fa.fa-code.text-highlight
+				span Unitu Analytics
+
+			p: a.icon-link(href = '/projects#unitu-web-api')
+				i.fa.fa-code.text-highlight
+				span Unitu Website & API
+
+			p: a.icon-link(href = '/references#anish-bagga')
+				i.fa.fa-comment-o.text-highlight
+				span Reference from CEO, Anish Bagga
+
+
+	br(clear = 'both')
+
+block scripts
+	script(src = '/_vendor/js/masonry.packaged.min.js')
+	script(src = '/_vendor/js/jquery.imagesloaded.js')
+	script(src = '/_shared/js/floating-grid-layout.js')

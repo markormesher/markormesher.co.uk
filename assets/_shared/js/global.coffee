@@ -13,7 +13,8 @@ $(document).ready(() ->
 	# smooth scrolling to anchors
 	if(window.location.hash)
 		target = $(window.location.hash)
-		if (target.length) then $('html, body').animate({scrollTop: target.offset().top}, 500, 'swing');
+		if (target.length)
+			setTimeout((() -> $('html, body').animate({scrollTop: target.offset().top}, 500, 'swing')), 500);
 
 	$('a[href^=#]:not([href=#])').click(() ->
 		hash = this.href.split('#')[1]
