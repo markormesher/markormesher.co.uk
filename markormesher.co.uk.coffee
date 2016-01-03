@@ -4,7 +4,6 @@
 
 path = require('path')
 express = require('express')
-mongoose = require('mongoose')
 bodyParser = require('body-parser')
 coffeeMiddleware = require('coffee-middleware')
 sassMiddleware = require('node-sass-middleware')
@@ -13,12 +12,6 @@ session = require('express-session')
 flash = require('express-flash')
 rfr = require('rfr')
 secrets = rfr('./helpers/secrets.coffee')
-
-##########################
-#  Database connections  #
-##########################
-
-mongoose.connect('mongodb://localhost/markormesher_co_uk');
 
 ############
 #  Routes  #
