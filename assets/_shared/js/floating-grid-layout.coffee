@@ -10,6 +10,7 @@ $(document).ready(() ->
 	);
 
 	# fading grids
+	###
 	fadeBackIn = null
 	allGridItems = $('.floating-grid-item')
 	allGridItems.hover(
@@ -19,5 +20,6 @@ $(document).ready(() ->
 			$(this).fadeTo(0, 1)
 		() -> fadeBackIn = setTimeout((() -> allGridItems.fadeTo(100, 1)), 1)
 	);
+    ###
 
 );
