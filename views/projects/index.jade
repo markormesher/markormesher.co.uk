@@ -1,20 +1,20 @@
 extends ../_shared/page-layout
 
 mixin project(title, subtitle, id, imageFolder)
-	div.project-item(id = id): div
+	div.floating-grid-item(id = id): div
 		if imageFolder != null
-			img.project-thumbnail(src = imageFolder + '/thumb.png', title = title)
+			img.left-thumbnail(src = imageFolder + '/thumb.png', title = title)
 		p.title= title
 		if subtitle != null
 			p.subtitle!= subtitle.join('<span class="text-very-muted"> // </span>')
 		block
 
 block page-head
-	link(rel = 'stylesheet', href = '/projects/css/projects.css')
+	link(rel = 'stylesheet', href = '/_shared/css/floating-grid-layout.css')
 
 block page-body
 
-	div.project-grid
+	div.floating-grid
 
 		+project(
 		'Unitu Android App',
@@ -110,4 +110,4 @@ block page-body
 block scripts
 	script(src = '/_vendor/js/masonry.packaged.min.js')
 	script(src = '/_vendor/js/jquery.imagesloaded.js')
-	script(src = '/projects/js/layout.js')
+	script(src = '/_shared/js/floating-grid-layout.js')
