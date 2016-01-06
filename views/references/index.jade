@@ -1,6 +1,67 @@
 extends ../_shared/page-layout
 
-block page-body
-	p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac pretium eros, et eleifend velit. Pellentesque tincidunt laoreet nulla, nec dignissim nulla luctus finibus. Ut neque nisi, condimentum a leo a, molestie egestas odio. Suspendisse non mauris lacus. Aliquam viverra lectus non dui ultricies commodo. Sed pretium est sed urna rutrum pharetra. Praesent ut sem efficitur, gravida erat vel, imperdiet magna. Ut ac dolor risus.
+mixin reference(name, role, id, imageName)
+	div.floating-grid-item(id = id): div.inner
+		if imageName != null
+			div.left-thumbnail: img.avatar(src = '/references/images/' + imageName, title = title)
+		h3!= name
+		if role != null
+			p.subtitle!= role
+		block
 
-	p Pellentesque efficitur metus quis libero bibendum imperdiet. Praesent vehicula ante tellus, ut vehicula risus pharetra a. Aenean fermentum consectetur quam sed sagittis. Vivamus accumsan mattis mi, in hendrerit magna placerat non. Integer sed facilisis lacus. Nam malesuada ligula in tellus volutpat, vitae viverra arcu faucibus. Nam nec nisl auctor odio tincidunt volutpat quis commodo massa. Donec porta bibendum nisl a luctus. Sed eu lacinia neque, in pulvinar nisi. Nullam bibendum massa id sollicitudin eleifend.
+block page-head
+	link(rel = 'stylesheet', href = '/_shared/css/floating-grid-layout.css')
+	link(rel = 'stylesheet', href = '/references/css/references.css')
+
+block page-body
+
+	div.floating-grid
+
+		+reference(
+		'Anish Bagga',
+		'CEO @ Unitu',
+		'anish-bagga',
+		'anish-bagga.png')
+
+			p Mark has been an #[strong exceptional addition] to the Unitu team. He possesses both technical and character skills that not only get tasks done extremely efficiently but also help push the company forward.
+			p He embodies the company philosophy - #[em Impossible is nothing] - and brings traits that inspire and motivate other team members.
+			p He managed to build the #[a(href = '/projects#unitu-android-app') Unitu Android App] within less than 3 months and go FAR beyond the given specification. He took complete ownership over his work and dedicated himself fully with #[strong absolute care and precision].
+			p In addition to this, he is also #[strong loyal, committed and ambitious]. As a co-founder of Unitu, I am both proud and thrilled to be working along side him, knowing that with Mark on our team we can achieve anything. I am available to provide an extensive recommendation for Mark, so please don't hesitate to contact me.
+
+
+		+reference(
+		'Andrew Coles',
+		'Lecturer in Computer Science at King&#39; College London',
+		'andrew-coles',
+		'andrew-coles.png')
+
+			p Mark is #[strong a very able student] - I taught him on two of his first-year programming modules, and was #[strong surprised and impressed] with the quality of the work he produced.
+			p His academic abilities are backed up by #[strong solid practical skills]: he has a keen eye for detail, producing code that is well-designed and well-tested. He is actively involved in working with other students here at King's, both through the KCL Tech Society, and through assisting in our hands-on first-year advanced programming topics course.
+			p I have no hestitation in recommending Mark for suitable jobs, internships and so on - please get in touch if you would like a formal reference.
+
+
+		+reference(
+		'Fares Alaboud',
+		'President of KCL Tech & Colleague @ Unitu',
+		'fares-alaboud',
+		'fares-alaboud.png')
+
+			p I've had the pleasure of working with Mark on several occasions in different environments and on a handful of projects. Whether we've worked together in the same company, collaboratively in hackathons or on a university side-project, I have to say that #[strong there's no one else I'd rather work with].
+			p Mark is punctual and supportive, and when it comes to his work, you'll always find it #[strong perfect]. Mark has pays excellent attention to detail, and puts all of his effort in making anything he builds the best it could be.
+			p He's one of the few people I've met that have #[strong a true passion] for what they do, and I think that's the reason why he's simply unique at it.
+
+
+		+reference(
+		'Joshua Simpson',
+		'Vice President of KCL Tech',
+		'joshua-simpson',
+		'joshua-simpson.png')
+
+			p I'm very happy to have been able to work with Mark over the course of the past year in several capacities, but mostly as part of KCL's Tech Society - Mark has been #[strong an invaluable member] of the committee, showing time and time again his passion for what he does, his eye for detail and his ability to produce work above and beyond expectations.
+			p His character, work ethos and technical ability make him #[strong a fantastic addition] to any truly deserving team.
+
+
+block scripts
+	script(src = '/_vendor/js/masonry.packaged.min.js')
+	script(src = '/_vendor/js/jquery.imagesloaded.js')
+	script(src = '/_shared/js/floating-grid-layout.js')
