@@ -1,5 +1,3 @@
-include ../_mixins/plugins
-
 doctype html
 html
 	head
@@ -9,10 +7,9 @@ html
 			title #{_.pageTitle} // Mark Ormesher
 		link(rel = 'stylesheet', href = '//fonts.googleapis.com/css?family=Lato:300,400,700,900')
 		link(rel = 'stylesheet', href = '/_shared/css/reset.css')
-		link(rel = 'stylesheet', href = '/_vendor/css/bootstrap.min.css')
-		link(rel = 'stylesheet', href = '/_vendor/css/bootstrap-theme.min.css')
-		link(rel = 'stylesheet', href = '/_vendor/css/font-awesome.min.css')
-		link(rel = 'stylesheet', href = '/_vendor/css/toastr.min.css')
+		link(rel = 'stylesheet', href = '/_vendor/bootstrap/bootstrap.min.css')
+		link(rel = 'stylesheet', href = '/_vendor/bootstrap/bootstrap-theme.min.css')
+		link(rel = 'stylesheet', href = '/_vendor/font-awesome/font-awesome.min.css')
 		link(rel = 'stylesheet', href = '/_shared/css/globals.css')
 		link(rel = 'shortcut icon ', type = 'image/x-icon', href = 'data:image/x-icon;,')
 		block head
@@ -20,8 +17,7 @@ html
 	body
 		block body
 
-		script(src = '/_vendor/js/jquery-1.11.3.min.js')
-		script(src = '/_vendor/js/bootstrap.min.js')
+		script(src = '/_vendor/jquery/jquery-1.11.3.min.js')
+		script(src = '/_vendor/bootstrap/bootstrap.min.js')
 		script(src = '/_shared/js/global.js')
-		+plugin_toastr(_)
 		block scripts
