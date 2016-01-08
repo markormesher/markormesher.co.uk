@@ -11,8 +11,8 @@ div.left-thumbnail {
 		font-size: 1em;
 		vertical-align: middle;
 		padding: 5px 5px 0;
-		background-color: transparentize(#ffffff, 0.2);
-		color: $mutedColour;
+		background-color: transparentize(#ffffff, 0.08);
+		color: $highlightColour;
 
 		span {
 			display: none;

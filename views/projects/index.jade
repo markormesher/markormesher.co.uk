@@ -13,7 +13,7 @@ mixin project(title, subtitle, id, imageFolder, gallery)
 				if gallery.length > 0
 					span.gallery
 						i.fa.fa-photo
-						| &nbsp;
+						| &nbsp;&nbsp;&nbsp;
 						span: a.gallery-link(href = 'javascript:;', data-key = id) Gallery (#{gallery.length})
 
 		//- main content
@@ -107,14 +107,20 @@ block page-body
 		['Java', 'Spark Framework', 'Bootstrap', 'Project Management'],
 		'nuclibook',
 		'/projects/images/nuclibook', [
-			['test-1.png', 'Test 1'],
-			['test-2.png', 'Test 2'],
-			['test-3.png', 'Test 3']
+			['dash.png', 'Nuclibook dashboard'],
+			['day-summary.png', 'Printable day summary for their notice board'],
+			['calendar.png', 'Calendar, with customisable views'],
+			['booking-details.png', 'Complex booking model'],
+			['patients.png', 'Resource lists, complete with sorting, searching, lazy loading and TV-show references'],
+			['therapies.png', 'Complex therapy model'],
+			['roles-1.png', 'Granular access control (1/2)'],
+			['roles-2.png', 'Granular access control (2/2)'],
+			['logs.png', 'Full accountability logging']
 		])
 
 			p #[em Nuclibook] is comprehensive booking system for #[strong nuclear medicine diagnostic studies and therapies]; it meets the requirements of #[strong NHS hospitals] in general, and the #[strong Chelsea and Westminster Hospital] in particular. The system manages staff availability, stock orders, patient bookings, equipment and asset tracking, accountability logs, and more.
 
-			p Built by a team of eight developers, I served as #[strong Project Leader] and was one the main code contributors.
+			p Built by a team of eight developers, I served as the #[strong project leader] and was one the main code contributors. The gallery shows some key features, but the full scale of the project can be seen in the #[strong 95-page manual] on GitHub.
 
 			div.hr.with-margin: hr
 
