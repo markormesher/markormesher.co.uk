@@ -13,8 +13,9 @@ mixin project(title, subtitle, id, imageFolder, gallery)
 				if gallery.length > 0
 					span.gallery
 						i.fa.fa-photo
-						| &nbsp;&nbsp;&nbsp;
-						span: a.gallery-link(href = 'javascript:;', data-key = id) Gallery (#{gallery.length})
+						span
+							| &nbsp;&nbsp;&nbsp;
+							a.gallery-link(href = 'javascript:;', data-key = id) Gallery (#{gallery.length})
 
 		//- main content
 		h3= title
@@ -148,7 +149,11 @@ block page-body
 		'Android Development Lectures',
 		['Android', 'Teaching'],
 		'android-lectures',
-		'/projects/images/android-lectures', [])
+		'/projects/images/android-lectures', [
+			['1.jpg', null],
+			['2.jpg', null],
+			['3.jpg', null]
+		])
 
 			p Running for 8 weeks, I wrote and delivered this course to #[strong teach Android development] to KCL students with no prior knowledge of mobile development, as part of the #[strong Build X] lecture series ran by the KCL Tech Society. The course was a great success: many participants were able to build a fully-functioning (albeit basic) to-do list app during the course.
 
