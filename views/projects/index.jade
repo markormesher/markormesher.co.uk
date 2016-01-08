@@ -13,7 +13,8 @@ mixin project(title, subtitle, id, imageFolder, gallery)
 				if gallery.length > 0
 					span.gallery
 						i.fa.fa-photo
-						span: a.gallery-link(href = 'javascript:;', data-key = id)  Gallery (#{gallery.length})
+						| &nbsp;
+						span: a.gallery-link(href = 'javascript:;', data-key = id) Gallery (#{gallery.length})
 
 		//- main content
 		h3= title
@@ -22,18 +23,20 @@ mixin project(title, subtitle, id, imageFolder, gallery)
 		block
 
 		//- gallery JS
+		- gallery.push(imageFolder)
 		script(type = 'text/javascript')
-			| galleryImages['#{id}'] = [#{gallery.length > 0 ? '\'' + gallery.join('\',\'') + '\'' : ''}];
+			| window.galleryData['#{id}'] = !{JSON.stringify(gallery)};
 
 block page-head
 	link(rel = 'stylesheet', href = '/_shared/css/floating-grid-layout.css')
 	link(rel = 'stylesheet', href = '/projects/css/gallery.css')
+	link(rel = 'stylesheet', href = '/_vendor/fancybox/jquery.fancybox.css')
 
 block page-body
 
 	//- start gallery images array
 	script(type = 'text/javascript')
-		| var galleryImages = {};
+		| window.galleryData = {};
 
 	div.floating-grid
 
@@ -103,7 +106,11 @@ block page-body
 		'Nuclibook',
 		['Java', 'Spark Framework', 'Bootstrap', 'Project Management'],
 		'nuclibook',
-		'/projects/images/nuclibook', ['test-1.png', 'test-2.png', 'test-3.png'])
+		'/projects/images/nuclibook', [
+			['test-1.png', 'Test 1'],
+			['test-2.png', 'Test 2'],
+			['test-3.png', 'Test 3']
+		])
 
 			p #[em Nuclibook] is comprehensive booking system for #[strong nuclear medicine diagnostic studies and therapies]; it meets the requirements of #[strong NHS hospitals] in general, and the #[strong Chelsea and Westminster Hospital] in particular. The system manages staff availability, stock orders, patient bookings, equipment and asset tracking, accountability logs, and more.
 
@@ -206,4 +213,6 @@ block page-body
 block scripts
 	script(src = '/_vendor/js/masonry.packaged.min.js')
 	script(src = '/_vendor/js/jquery.imagesloaded.js')
+	script(src = '/_vendor/fancybox/jquery.fancybox.js')
 	script(src = '/_shared/js/floating-grid-layout.js')
+	script(src = '/projects/js/gallery.js')

@@ -24,7 +24,8 @@ app = express()
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(coffeeMiddleware({
 	src: __dirname + '/assets'
-	compress: true
+	encodeSrc: false
+	bare: true
 }))
 app.use(sassMiddleware({
 	src: __dirname + '/assets/'
