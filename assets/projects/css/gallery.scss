@@ -1,0 +1,25 @@
+@import '../../_shared/css/globals';
+
+div.left-thumbnail {
+	position: relative;
+	overflow: hidden;
+
+	span.gallery {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		font-size: 1em;
+		vertical-align: middle;
+		padding: 5px 5px 0;
+		background-color: transparentize(#ffffff, 0.2);
+		color: $mutedColour;
+
+		span {
+			display: none;
+		}
+	}
+}
+
+div.left-thumbnail:hover span.gallery span {
+	display: inline;
+}

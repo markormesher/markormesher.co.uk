@@ -1,18 +1,39 @@
 extends ../_shared/page-layout
 
-mixin project(title, subtitle, id, imageFolder)
+mixin project(title, subtitle, id, imageFolder, gallery)
+	//- outer div
 	div.floating-grid-item(id = id): div.inner
+
+		//- thumbnail
 		if imageFolder != null
-			img.left-thumbnail(src = imageFolder + '/thumb.png', title = title)
+			div.left-thumbnail
+				img(src = imageFolder + '/thumb.png', title = title)
+
+				//- gallery link
+				if gallery.length > 0
+					span.gallery
+						i.fa.fa-photo
+						span: a.gallery-link(href = 'javascript:;', data-key = id)  Gallery (#{gallery.length})
+
+		//- main content
 		h3= title
 		if subtitle != null
 			p.subtitle!= subtitle.join('<span class="text-very-muted"> // </span>')
 		block
 
+		//- gallery JS
+		script(type = 'text/javascript')
+			| galleryImages['#{id}'] = [#{gallery.length > 0 ? '\'' + gallery.join('\',\'') + '\'' : ''}];
+
 block page-head
 	link(rel = 'stylesheet', href = '/_shared/css/floating-grid-layout.css')
+	link(rel = 'stylesheet', href = '/projects/css/gallery.css')
 
 block page-body
+
+	//- start gallery images array
+	script(type = 'text/javascript')
+		| var galleryImages = {};
 
 	div.floating-grid
 
@@ -20,13 +41,13 @@ block page-body
 		'Unitu Android App',
 		['Android', 'Project Management'],
 		'unitu-android-app',
-		'/projects/images/unitu-android-app')
+		'/projects/images/unitu-android-app', [])
 
 			p The #[em Unitu Android app] mirrors the functionality of the Unitu website, giving users access to the software wherever they are. I am responsible for #[strong planning and executing development] of the app, as well as #[strong testing] and #[strong deployment]. Since its launch it has helped to improve Unitu's student engagement, and has served as an excellent platform for me to develop my Android programming skills.
 
 			div.hr.with-margin: hr
 
-			// todo: unitu android app case study
+			//- todo: unitu android app case study
 			p: a.icon-link(href = '#')
 				i.fa.fa-book.text-highlight
 				span Read the Case Study
@@ -40,13 +61,13 @@ block page-body
 		'Unitu Analytics',
 		['PHP', 'jQuery', 'ElasticSearch', 'Data Presentation'],
 		'unitu-analytics',
-		'/projects/images/unitu-analytics')
+		'/projects/images/unitu-analytics', [])
 
 			p Providing data to both the #[strong team] and #[strong customers], the #[em Unitu analytics suite] has proved to be an effective tool and a powerful selling point. As well as collecting data across the product, it also automates reporting tasks that used to consume a lot of person-hours. I am responsible for the #[strong planning and development] of the suite and I share some of the #[strong testing] duties.
 
 			div.hr.with-margin: hr
 
-			// todo: unitu analytics case study
+			//- todo: unitu analytics case study
 			p: a.icon-link(href = '#')
 				i.fa.fa-book.text-highlight
 				span Read the Case Study
@@ -60,7 +81,7 @@ block page-body
 		'Titanic',
 		['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'CoffeeScript', 'SCSS', 'Jade', 'Bash', 'GitLab'],
 		'titanic',
-		'/projects/images/titanic')
+		'/projects/images/titanic', [])
 
 			p Why try #[strong something new] when you can try #[strong everything new]? #[em Titanic] is a hobby project that I started at a hackathon in 2015 to teach myself some new technologies. It's a web-based tool to #[strong synchronise host-name aliases and Bash shortcuts] between all of my Linux devices and servers.
 
@@ -68,7 +89,7 @@ block page-body
 
 			div.hr.with-margin: hr
 
-			// todo: titanic case study
+			//- todo: titanic case study
 			p: a.icon-link(href = '#')
 				i.fa.fa-book.text-highlight
 				span Read the Case Study
@@ -77,11 +98,12 @@ block page-body
 				i.fa.fa-github.text-highlight
 				span #[em Titanic] on GitHub
 
+
 		+project(
 		'Nuclibook',
 		['Java', 'Spark Framework', 'Bootstrap', 'Project Management'],
 		'nuclibook',
-		'/projects/images/nuclibook')
+		'/projects/images/nuclibook', ['test-1.png', 'test-2.png', 'test-3.png'])
 
 			p #[em Nuclibook] is comprehensive booking system for #[strong nuclear medicine diagnostic studies and therapies]; it meets the requirements of #[strong NHS hospitals] in general, and the #[strong Chelsea and Westminster Hospital] in particular. The system manages staff availability, stock orders, patient bookings, equipment and asset tracking, accountability logs, and more.
 
@@ -98,7 +120,7 @@ block page-body
 		'Unitu Website & API',
 		['C# .NET', 'MVC5'],
 		'unitu-web-api',
-		'/projects/images/unitu-web-api')
+		'/projects/images/unitu-web-api', [])
 
 			p I started working on the #[em Unitu website & API] in mid-2015, learning #[strong C# .NET] and the #[strong MVC5 framework] along the way. It started out as a minor facet of my work at Unitu, but my contributions have increased with time. One such contribution is an entirely #[strong new, bespoke notification system] that manages preferences, stacking, emails and push notifications.
 
@@ -113,7 +135,7 @@ block page-body
 		'Android Development Lectures',
 		['Android', 'Teaching'],
 		'android-lectures',
-		'/projects/images/android-lectures')
+		'/projects/images/android-lectures', [])
 
 			p Running for 8 weeks, I wrote and delivered this course to #[strong teach Android development] to KCL students with no prior knowledge of mobile development, as part of the #[strong Build X] lecture series ran by the KCL Tech Society. The course was a great success: many participants were able to build a fully-functioning (albeit basic) to-do list app during the course.
 
@@ -128,7 +150,7 @@ block page-body
 		'Allianz Petplan "Your Voice"',
 		['Print Design', 'Communications', 'Managing Upwards'],
 		'allianz-petplan-your-voice',
-		'/projects/images/allianz-petplan-your-voice')
+		'/projects/images/allianz-petplan-your-voice', [])
 
 			p #[em Your Voice] was a campaign within the #[strong service department at Allianz Petplan], intended to collect employee opinions and ideas on a range of key topics. My involvement included #[strong branding design], communication planning, deployment, promotion and presentation of results on a weekly basis.
 
@@ -145,7 +167,7 @@ block page-body
 		'Allianz Petplan "Petplan Live!"',
 		['jQuery', 'CoffeeScript'],
 		'allianz-petplan-petplan-live',
-		'/projects/images/allianz-petplan-petplan-live')
+		'/projects/images/allianz-petplan-petplan-live', [])
 
 			p #[em Petplan Live!] was a performance dashboard built for the #[strong Allianz Petplan service department] during my internship there in 2015. It provides an attractive display of important #[strong performance metrics], helping to drive employee engagement and awareness.
 
@@ -153,7 +175,7 @@ block page-body
 
 			div.hr.with-margin: hr
 
-			// todo: allianz petplan live case study
+			//- todo: allianz petplan live case study
 			p: a.icon-link(href = '#')
 				i.fa.fa-book.text-highlight
 				span Read the Case Study
@@ -166,10 +188,11 @@ block page-body
 				i.fa.fa-github.text-highlight
 				span #[em Petplan Live!] on GitHub
 
+
 		+project(
 		'MLHorrors', ['Android', 'GCM', 'Ruby'],
 		'mlhorrors',
-		'/projects/images/mlhorrors')
+		'/projects/images/mlhorrors', [])
 
 			p #[em MLHorrors] is a supplement app for #[strong Werewolf] (a popular hackathon mini-game), built by three friends and I during a #[strong hackathon in 2015]. It augments gameplay with sound effects, graphics, automated randomisation and other features.
 
