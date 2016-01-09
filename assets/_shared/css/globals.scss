@@ -1,35 +1,9 @@
-// colours
+@import '../../_shared/css/defaults';
 
-$textColour: #333333;
-$darkerTextColour: #000000;
-$mutedColour: transparentize($textColour, 0.5);
-$veryMutedColour: transparentize($textColour, 0.7);
-$highlightColour: #ff9900;
-$lineColour: #c0c0c0;
-
-// fonts
-
-$fontFamily: 'Lato';
-
-// other
-
-$boxShadow: 0 0 20px #bbbbbb;
-
-// global styles
-
-h1, h2, h3, h4, h5, h6, p, li, input, label, span {
-	font-family: $fontFamily, sans-serif !important;
-	font-weight: lighter;
-	color: $textColour;
-}
+// global style
 
 body {
 	background-color: #fbfbfb;
-}
-
-em {
-	font-style: italic;
-	color: $darkerTextColour !important;
 }
 
 div.hr {
@@ -47,6 +21,26 @@ div.hr.with-margin {
 	margin-bottom: 12px;
 }
 
+// headers
+
+h1, h2, h3, h4, h5, h6, p, li, input, label, span {
+	font-family: $fontFamily, sans-serif !important;
+	font-weight: lighter;
+	color: $textColour;
+}
+
+// fonts
+
+em {
+	font-style: italic;
+	color: $darkerTextColour !important;
+}
+
+code {
+	color: #a65f00;
+	background-color: transparentize(#c0c0c0, 0.75);
+}
+
 .text-muted {
 	color: $mutedColour !important;
 }
@@ -57,9 +51,4 @@ div.hr.with-margin {
 
 .text-highlight {
 	color: $highlightColour !important;
-}
-
-code {
-	color: #a65f00;
-	background-color: transparentize(#c0c0c0, 0.75);
 }
