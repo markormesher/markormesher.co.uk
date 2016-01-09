@@ -25,8 +25,8 @@ mixin project(title, subtitle, id, imageFolder, gallery)
 
 		//- gallery JS
 		- gallery.push(imageFolder)
-		script(type = 'text/javascript')
-			| window.galleryData['#{id}'] = !{JSON.stringify(gallery)};
+		script(type = 'text/javascript').
+			window.galleryData['#{id}'] = !{JSON.stringify(gallery)};
 
 block page-head
 	link(rel = 'stylesheet', href = '/_shared/css/floating-grid-layout.css')

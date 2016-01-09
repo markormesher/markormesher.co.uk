@@ -1,13 +1,29 @@
 extends ../../_shared/page-layout
 
+block page-head
+	link(rel = 'stylesheet', href = '/projects/css/gallery.css')
+	link(rel = 'stylesheet', href = '/_vendor/fancybox/jquery.fancybox.css')
+
 block page-body
+
+	//- gallery images
+	-
+		galleryImages = [
+			{href: '/projects/images/titanic/thumb-larger.jpg', title: 'Device list (spot the naming convention)'},
+			{href: '/projects/images/titanic/dash.jpg', title: 'The dashboard, shortly after work started'},
+			{href: '/projects/images/titanic/api.jpg', title: 'Titanic API, a work in progress'},
+			{href: '/projects/images/titanic/command-line-mock.jpg', title: 'Mock-up of intended command line tool'}
+		];
+	script(type = 'text/javascript').
+		window.galleryImages = !{JSON.stringify(galleryImages)};
 
 	//- intro
 
-	img.inline-right.bordered(
-	src = '/projects/images/titanic/thumb-larger.jpg'
-	width = '400px'
-	title = 'Titanic: a tool for synchronising host name aliases and Bash shortcuts')
+	a.single-gallery-link(href = 'javascript:;')
+		img.bordered.inline-right(
+		src = '/projects/images/titanic/thumb-larger.jpg'
+		width = '400px'
+		title = 'Titanic: a tool for synchronising host name aliases and Bash shortcuts')
 
 	p.intro #[strong Why learn something new, when you could learn #[em everything] new?] #[em Titanic] is a hobby/learning-project for me: a simple web app and corresponding Linux command line tool designed to keep #[strong host name aliases] and #[strong Bash shortcuts] synchronised across all of my Linux devices and servers.
 
@@ -43,6 +59,12 @@ block page-body
 
 	h2 The Code: Web App
 
+	a.single-gallery-link(href = 'javascript:;')
+		img.bordered.inline-right(
+		src = '/projects/images/titanic/dash.jpg'
+		width = '400px'
+		title = 'The dashboard, shortly after work started')
+
 	p The web side of the project is straightforward: a relatively simple interface to #[strong view and manage the entities and relationships] controlled by the system. That includes devices, the host name aliases that connect them, Bash shortcuts, and their device assignments.
 
 	p Really, the front end is nothing more than a few related models and their CRUD actions. The fun part was the #[em journey] that lead to its construction. I started with a blank Ubuntu VPS, then got down to installing #[strong Node.js], #[strong NPM], #[strong PM2], #[strong Nginx] etc. Once I had everything running smoothly I used another server to install #[strong GitLab] - a bit of set up later, I had a blank repository and I was ready to start building!
@@ -55,11 +77,25 @@ block page-body
 
 	h2 The Code: API
 
+	a.single-gallery-link(href = 'javascript:;')
+		img.bordered.inline-right(
+		src = '/projects/images/titanic/api.jpg'
+		width = '400px'
+		title = 'Titanic API, a work in progress (the software shown here is Postman, which is awesome!)')
+
 	p The API (currently in development) is exactly what you'd expect it to be: a #[strong RESTful HTTP API] that exposes the entities and relationships managed by the web app. It does nothing particularly exciting - it exists solely as a data source for the command line tool.
+
+	br.clearfix
 
 	//- code: command line tool
 
 	h2 The Code: Command Line Tool
+
+	a.single-gallery-link(href = 'javascript:;')
+		img.bordered.inline-right(
+		src = '/projects/images/titanic/command-line-mock.jpg'
+		width = '400px'
+		title = 'Mock-up of intended command line tool')
 
 	p The command line tool has not yet been built, but it is in my pipeline for development over the next few months. The tool, once finished, will be #[strong easy to use and blissfully simple]. Once set up, a simple command of #[code titanic sync] should update the machine with its specific set of host name aliases and Bash shortcuts.
 
@@ -73,3 +109,7 @@ block page-body
 		li I'd like to see what else I can synchronise across my machines. The current feature set offers a lot of benefits to me, but I'm sure there's more I could unify. Settings perhaps? Users, even?
 
 		li I'd also like to launch this as a publicly-accessible service. Right now it manages #[em my] devices and settings, but has no concept of different users managing #[em their] data. Adding this to the tool would take time, but it would mean that other people could use it to keep a family of Linux machines in check!
+
+block scripts
+	script(src = '/_vendor/fancybox/jquery.fancybox.js')
+	script(src = '/projects/js/gallery.js')
