@@ -16,11 +16,14 @@ $(document).ready(() ->
 		if (target.length)
 			setTimeout((() -> $('html, body').animate({scrollTop: target.offset().top}, 500, 'swing')), 500);
 
-	$('a[href^=#]:not([href=#])').click(() ->
+	$('a[href^="#"]:not([href="#"])').click(() ->
 		hash = this.href.split('#')[1]
 		target = $('[id=' + hash + ']')
 		if (target.length) then $('html, body').animate({scrollTop: target.offset().top}, 500, 'swing')
 	)
+
+	# tooltips
+	$('[data-toggle = "tooltip"]').tooltip()
 
 	return
 )

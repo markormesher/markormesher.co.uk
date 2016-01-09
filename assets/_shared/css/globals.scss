@@ -58,3 +58,8 @@ div.hr.with-margin {
 .text-highlight {
 	color: $highlightColour !important;
 }
+
+code {
+	color: #a65f00;
+	background-color: transparentize(#c0c0c0, 0.75);
+}

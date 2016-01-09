@@ -1,0 +1,75 @@
+extends ../../_shared/page-layout
+
+block page-body
+
+	//- intro
+
+	img.inline-right.bordered(
+	src = '/projects/images/titanic/thumb-larger.jpg'
+	width = '400px'
+	title = 'Titanic: a tool for synchronising host name aliases and Bash shortcuts')
+
+	p.intro #[strong Why learn something new, when you could learn #[em everything] new?] #[em Titanic] is a hobby/learning-project for me: a simple web app and corresponding Linux command line tool designed to keep #[strong host name aliases] and #[strong Bash shortcuts] synchronised across all of my Linux devices and servers.
+
+	p.intro The catch? #[strong I decided to build the tool from entirely new-to-me technologies], giving myself a #[a(href = '#deep-end') &quot;jump in at the deep end&quot;] learning opportunity.
+
+	p: a.icon-link(href = 'https://github.com/markormesher/titanic', rel = 'external')
+		i.fa.fa-github.text-highlight
+		span #[em Titanic] on GitHub
+
+	br.clearfix
+
+	//- project summary
+
+	h2 Project Summary
+
+	p There are perhaps a dozen #[strong Linux-powered devices] that I interact with on a regular basis: my laptop, desktop and smartphone, a few RPis, a handful of servers, etc. They often need to talk to each other, so I use #[strong host name aliases] (#[em Chuck] character names, actually) instead of remembering a list of IP addresses. This means maintaining an #[code /etc/hosts] #[i.fa.fa-info-circle.text-very-muted(data-toggle = 'tooltip', title = 'For the non-Linux savvy: this file lets me map "nicknames" to IP addresses, similar to the way domain names work')] file on each machine, and updating all of them every time a new device enters the network -- such a hassle, right?
+
+	p A similar problem can be found with #[strong Bash shortcuts]. I have a collection of shortcuts on my machines, ranging from aliases for common typos (#[code git puhs], anyone?) to one-command reductions of common tasks. Maintaining these across all devices would be impractical, and trying to use a shortcut that doesn't exist on #[em this] device yet is frustrating.
+
+	p #[strong Enter the solution:] #[em Titanic]. An over-engineered solution to a low-key problem, aptly-named because #[strong it syncs everything].
+
+	//- jumping in
+
+	h2#deep-end Jumping in at the Deep End
+
+	p I've always learned best by #[em doing]: I could watch videos or read books on a new language - and I sometimes do - but it will never beat getting my hands dirty and just #[strong playing with a new language], #[strong building things], and #[strong breaking things]. That's what I embraced with #[em Titanic]: I started it at a hackathon, with an objective to use #[strong solely new-to-me technologies].
+
+	p All in all, the project has exposed me to #[strong seven new technologies] so far: Node.js, Express.js, MongoDB &amp; Mongoose, Jade, CoffeeScript, SCSS and #[del GitLab] (although I eventually switched to GitHub). I will soon be adding Bash scripting to that list. I made only a few small concessions: I stuck with Git for version control, I used good ol' Bootstrap, I kept jQuery, and I didn't swap out my IDE.
+
+	p The first few hours followed a #[strong very steep learning curve] (which I'm sure made for great entertainment for the teams nearby!), but after that things smoothed out and I started #[strong picking up new concepts] across the board at a rate I was very happy with.
+
+	//- code: web
+
+	h2 The Code: Web App
+
+	p The web side of the project is straightforward: a relatively simple interface to #[strong view and manage the entities and relationships] controlled by the system. That includes devices, the host name aliases that connect them, Bash shortcuts, and their device assignments.
+
+	p Really, the front end is nothing more than a few related models and their CRUD actions. The fun part was the #[em journey] that lead to its construction. I started with a blank Ubuntu VPS, then got down to installing #[strong Node.js], #[strong NPM], #[strong PM2], #[strong Nginx] etc. Once I had everything running smoothly I used another server to install #[strong GitLab] - a bit of set up later, I had a blank repository and I was ready to start building!
+
+	p Having decided to use #[strong Express.js] as the powerhouse with #[strong Jade] and #[strong SCSS] to build the front-end, I set about knocking it together. I've never really been much of a designer, and it's not the family of skills this project was targeting, so I stuck to #[strong Bootstrap] and #[strong jQuery], both of which I've had a lot of experience with before.
+
+	p Using #[strong MongoDB] and #[strong Mongoose], the models and data-access layer came together quite quickly, and from there it was just a matter of setting up the appropriate views and controllers or orchestrate everything. I continued to use #[strong CoffeeScript] for all front-end scripting, which I was already using to write my back-end #[strong Node.js] code.
+
+	//- code: api
+
+	h2 The Code: API
+
+	p The API (currently in development) is exactly what you'd expect it to be: a #[strong RESTful HTTP API] that exposes the entities and relationships managed by the web app. It does nothing particularly exciting - it exists solely as a data source for the command line tool.
+
+	//- code: command line tool
+
+	h2 The Code: Command Line Tool
+
+	p The command line tool has not yet been built, but it is in my pipeline for development over the next few months. The tool, once finished, will be #[strong easy to use and blissfully simple]. Once set up, a simple command of #[code titanic sync] should update the machine with its specific set of host name aliases and Bash shortcuts.
+
+	//- what next
+
+	h2 What Next?
+
+	p First, I need to finish the basic tool. But after that, I have a few ideas:
+
+	ul
+		li I'd like to see what else I can synchronise across my machines. The current feature set offers a lot of benefits to me, but I'm sure there's more I could unify. Settings perhaps? Users, even?
+
+		li I'd also like to launch this as a publicly-accessible service. Right now it manages #[em my] devices and settings, but has no concept of different users managing #[em their] data. Adding this to the tool would take time, but it would mean that other people could use it to keep a family of Linux machines in check!

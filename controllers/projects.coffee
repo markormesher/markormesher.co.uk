@@ -19,4 +19,13 @@ router.get('/', (req, res) ->
 	});
 )
 
+router.get('/titanic', (req, res) ->
+	res.render('projects/case-studies/titanic', {
+		_: {
+			currentPage: 'projects'
+			pageTitle: 'Case Study: Titanic'
+		}
+	})
+)
+
 module.exports = router
