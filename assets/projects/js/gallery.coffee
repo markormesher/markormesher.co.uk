@@ -11,6 +11,6 @@ $(document).ready(() ->
 	)
 
 	# single-image links
-	$('a.single-gallery-link').click(() -> $.fancybox(window.galleryImages));
+	$('a.single-gallery-link').click(() -> $.fancybox(window.galleryImages, {index: $(this).data('start') || 0}));
 
 )
