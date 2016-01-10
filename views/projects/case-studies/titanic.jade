@@ -11,7 +11,7 @@ block page-body
 		galleryImages = [
 			{href: '/projects/images/titanic/thumb-larger.jpg', title: 'Device list (spot the naming convention)'},
 			{href: '/projects/images/titanic/dash.jpg', title: 'The dashboard, shortly after work started'},
-			{href: '/projects/images/titanic/api.jpg', title: 'Titanic API, a work in progress'},
+			{href: '/projects/images/titanic/api.jpg', title: 'Titanic API'},
 			{href: '/projects/images/titanic/command-line-mock.jpg', title: 'Mock-up of intended command line tool'}
 		];
 	script(type = 'text/javascript').
@@ -81,9 +81,9 @@ block page-body
 		img.bordered.inline-right(
 		src = '/projects/images/titanic/api.jpg'
 		width = '400px'
-		title = 'Titanic API, a work in progress (the software shown here is Postman, which is awesome!)')
+		title = 'Titanic API (the software shown here is Postman, which is awesome!)')
 
-	p The API (currently in development) is exactly what you'd expect it to be: a #[strong RESTful HTTP API] that exposes the entities and relationships managed by the web app. It does nothing particularly exciting - it exists solely as a data source for the command line tool.
+	p The API is exactly what you'd expect it to be: a bog-standard #[strong RESTful HTTP API] that exposes the entities and relationships managed by the web app. It does nothing particularly exciting - it exists solely as a data source for the command line tool.
 
 	br.clearfix
 
@@ -97,7 +97,7 @@ block page-body
 		width = '400px'
 		title = 'Mock-up of intended command line tool')
 
-	p The command line tool has not yet been built, but it is in my pipeline for development over the next few months. The tool, once finished, will be #[strong easy to use and blissfully simple]. Once set up, a simple command of #[code titanic sync] should update the machine with its specific set of host name aliases and Bash shortcuts.
+	p The command line tool is the last piece of the puzzle that needs to be built. It's a skeleton of a program right now, but it is in my pipeline for development over the next few months (unfortunately it takes a backseat to my #[em real] work). The tool, once finished, will be #[strong easy to use and blissfully simple]. Once set up, a simple command of #[code titanic sync] should update the machine with its specific set of host name aliases and Bash shortcuts.
 
 	//- what next
 
