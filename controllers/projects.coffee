@@ -28,4 +28,13 @@ router.get('/titanic', (req, res) ->
 	})
 )
 
+router.get('/petplan-live', (req, res) ->
+	res.render('projects/case-studies/petplan-live', {
+		_: {
+			currentPage: 'projects'
+			pageTitle: 'Case Study: Petplan Live!'
+		}
+	})
+)
+
 module.exports = router
