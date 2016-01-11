@@ -36,9 +36,13 @@ em {
 	color: $darkerTextColour !important;
 }
 
-code {
+code, .code {
 	color: #a65f00;
 	background-color: transparentize(#c0c0c0, 0.75);
+}
+
+pre {
+	color: $darkerTextColour !important;
 }
 
 .text-muted {
