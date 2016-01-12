@@ -127,6 +127,18 @@ div.content {
 		}
 	}
 
+	span.icon-link {
+		border-bottom: none;
+
+		i.fa {
+			color: $mutedColour;
+		}
+
+		span {
+			margin-left: 8px;
+		}
+	}
+
 	h2, h3 {
 		margin: 20px 0 12px;
 	}
