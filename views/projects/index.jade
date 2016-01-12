@@ -135,7 +135,7 @@ block page-body
 
 			p: span.icon-link
 				i.fa.fa-fw.fa-graduation-cap.text-highlight
-				span Academic project // Grade: 93%
+				span Academic project <span class="text-muted">//</span> Grade: 93%
 
 
 		+project(
@@ -151,6 +151,31 @@ block page-body
 			p: a.icon-link(href = '/positions#unitu')
 				i.fa.fa-briefcase.text-highlight
 				span My Position at Unitu
+
+
+		+project(
+		'Allianz Petplan "Petplan Live!"',
+		['jQuery', 'CoffeeScript'],
+		'petplan-live',
+		'/projects/images/allianz-petplan-petplan-live', [])
+
+			p #[em Petplan Live!] was a performance dashboard built for the #[strong Allianz Petplan service department] during my internship there in 2015. It provides an attractive display of important #[strong performance metrics], helping to drive employee engagement and awareness.
+
+			p Displayed on three TV screens in the office, it is one of the #[strong hackiest] solutions I have ever developed - the case study is well worth reading. The project put me under some tight constraints and challenged my creativity, but I was still able to build an #[strong attractive product] that could be managed by all supervisors from any machine.
+
+			div.hr.with-margin: hr
+
+			p: a.icon-link(href = '/projects/petplan-live')
+				i.fa.fa-book.text-highlight
+				span Read the Case Study
+
+			p: a.icon-link(href = '/positions#allianz-petplan')
+				i.fa.fa-briefcase.text-highlight
+				span My Position at Allianz Petplan
+
+			p: a.icon-link(href = 'https://github.com/markormesher/petplan-live', rel = 'external')
+				i.fa.fa-github.text-highlight
+				span #[em Petplan Live!] on GitHub
 
 
 		+project(
@@ -175,7 +200,7 @@ block page-body
 		+project(
 		'Allianz Petplan "Your Voice"',
 		['Print Design', 'Communications', 'Managing Upwards'],
-		'allianz-petplan-your-voice',
+		'petplan-your-voice',
 		'/projects/images/allianz-petplan-your-voice', [])
 
 			p #[em Your Voice] was a campaign within the #[strong service department at Allianz Petplan], intended to collect employee opinions and ideas on a range of key topics. My involvement included #[strong branding design], communication planning, deployment, promotion and presentation of results on a weekly basis.
@@ -187,31 +212,6 @@ block page-body
 			p: a.icon-link(href = '/positions#allianz-petplan')
 				i.fa.fa-briefcase.text-highlight
 				span My Position at Allianz Petplan
-
-
-		+project(
-		'Allianz Petplan "Petplan Live!"',
-		['jQuery', 'CoffeeScript'],
-		'allianz-petplan-petplan-live',
-		'/projects/images/allianz-petplan-petplan-live', [])
-
-			p #[em Petplan Live!] was a performance dashboard built for the #[strong Allianz Petplan service department] during my internship there in 2015. It provides an attractive display of important #[strong performance metrics], helping to drive employee engagement and awareness.
-
-			p Displayed on three TV screens in the office, it is possibly one of the #[em hackiest] (yet enjoyable) solutions I have ever developed. The project was constrained to #[strong HTML/CSS/JS], and no external connections could be created, but I was still able to build an #[strong attractive product] that could be managed by all supervisors from any machine.
-
-			div.hr.with-margin: hr
-
-			p: a.icon-link(href = '/projects/petplan-live')
-				i.fa.fa-book.text-highlight
-				span Read the Case Study
-
-			p: a.icon-link(href = '/positions#allianz-petplan')
-				i.fa.fa-briefcase.text-highlight
-				span My Position at Allianz Petplan
-
-			p: a.icon-link(href = 'https://github.com/markormesher/petplan-live', rel = 'external')
-				i.fa.fa-github.text-highlight
-				span #[em Petplan Live!] on GitHub
 
 
 		+project(

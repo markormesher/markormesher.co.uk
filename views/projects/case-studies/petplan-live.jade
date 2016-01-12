@@ -33,11 +33,23 @@ block page-body
 		i.fa.fa-github.text-highlight
 		span #[em Petplan Live!] on GitHub
 
+	p: a.icon-link(href = '#approach-and-challenges', rel = 'external')
+		i.fa.fa-angle-down.text-muted
+		span Technical Approach and Challenges
+
+	p: a.icon-link(href = '#data-in-comments', rel = 'external')
+		i.fa.fa-angle-down.text-muted
+		span Storing Data in Comments
+
+	p: a.icon-link(href = '#reception', rel = 'external')
+		i.fa.fa-angle-down.text-muted
+		span Reception
+
 	br.clearfix
 
 	//- tech approach and challenges
 
-	h2 Technical Approach &amp; Challenges
+	h2#approach-and-challenges Technical Approach &amp; Challenges
 
 	h3 Plan A
 
@@ -65,7 +77,7 @@ block page-body
 
 	//- storing data in comments
 
-	h2 Storing Data in Comments
+	h2#data-in-comments Storing Data in Comments
 
 	p The aesthetics of the dashboard are nothing particularly exciting: vanilla HTML and CSS, consistency with the corporate branding, and a few jQuery plugins for the dials. Easy. #[strong The fun part was dealing with the data]: how do you watch text files for updates and show live data, without reloading the page, when you can't use AJAX?
 
@@ -79,12 +91,30 @@ block page-body
 		lines, and lines starting with '--'.
 		That allowed me to give instructions right inside the file, like this:
 
-		-- Put the number for the dial below:
+		-- Put the number for the stat below:
 		56
 
 		*/}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1];
 
 	p Neat trick, right? You can see some #[strong example files] using this technique #[a(href = 'https://github.com/markormesher/petplan-live/tree/master/src/data', rel = 'external') in the data folder on GitHub] - note the header and footers, and the instructions to staff.
+
+	//- reception
+
+	h2#reception Reception
+
+	p Once I had the data flow down, everything else feel into place with relative ease. As well as the software I produced a user manual that detailed exactly how the board could be updated, and spent one-on-one time with each team leader, #[strong training] them on how to use the board.
+
+	p Soon enough, the dashboard was #[strong running live on three screens] in the office and getting #[strong really positive reviews] from the team. The team leaders were very impressed with their new-found power to disseminate #[strong real-time information], and Hayley Sangan (the deputy department manager), had this to say about my work:
+
+	blockquote
+		i.fa.fa-quote-left.fa-2x.fa-pull-left.text-highlight
+		| Your most significant contribution was the dashboard, which has enabled us to engage our people in our KPIs with something #[strong considerably more exciting than a graph or a report]. You've also left it so that we can update it easily and other areas of the business have already seen it and want to replicate it!
+		| <br /><br />
+		| I was hugely impressed with your #[strong professionalism, work ethic and ability to engage people] at various different levels ... I only wish you could have stayed longer!
+
+	p: a.icon-link(href = '/references#hayley-sangan', rel = 'external')
+		i.fa.fa-comments-o.text-highlight
+		span Read Hayley's full reference
 
 block scripts
 	script(src = '/_vendor/fancybox/jquery.fancybox.js')
