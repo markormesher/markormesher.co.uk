@@ -9,10 +9,8 @@ block page-body
 	//- gallery images
 	-
 		galleryImages = [
-			{href: '/projects/images/titanic/thumb-larger.jpg', title: 'Device list (spot the naming convention)'},
-			{href: '/projects/images/titanic/dash.jpg', title: 'The dashboard, shortly after work started'},
-			{href: '/projects/images/titanic/api.jpg', title: 'Titanic API'},
-			{href: '/projects/images/titanic/command-line-mock.jpg', title: 'Mock-up of intended command line tool'}
+			{href: '/projects/images/allianz-petplan-petplan-live/dash.jpg', title: 'Sample dashboard data (not shown: a news ticker along the bottom)'},
+			{href: '/projects/images/allianz-petplan-petplan-live/in-use.jpg', title: 'Two of the boards in use (plus bonus poster from \'Your Voice\')'}
 		];
 	script(type = 'text/javascript').
 		window.galleryImages = !{JSON.stringify(galleryImages)};
@@ -21,9 +19,9 @@ block page-body
 
 	a.single-gallery-link(href = 'javascript:;', data-start = 0)
 		img.bordered.inline-right(
-		src = '/projects/images/titanic/thumb-larger.jpg'
+		src = '/projects/images/allianz-petplan-petplan-live/dash.jpg'
 		width = '400px'
-		title = 'Titanic: a tool for synchronising host name aliases and Bash shortcuts')
+		title = 'Sample dashboard data (not shown: a news ticker along the bottom)')
 
 	p.intro During my #[a(href = '/positions#allianz-petplan') internship at Allianz Petplan] I suggested that three unused display screens could be put to better use with a #[strong live performance dashboard]. After producing design mocks, proposals and presentations, my idea was given the go-ahead and #[em Petplan Live!] was born.
 
@@ -44,8 +42,6 @@ block page-body
 	p: a.icon-link(href = '#reception', rel = 'external')
 		i.fa.fa-angle-down.text-muted
 		span Reception
-
-	br.clearfix
 
 	//- tech approach and challenges
 
@@ -102,6 +98,12 @@ block page-body
 
 	h2#reception Reception
 
+	a.single-gallery-link(href = 'javascript:;', data-start = 1)
+		img.bordered.inline-right(
+		src = '/projects/images/allianz-petplan-petplan-live/in-use.jpg'
+		width = '400px'
+		title = 'Two of the boards in use (plus bonus poster from \'Your Voice\')')
+
 	p Once I had the data flow down, everything else feel into place with relative ease. As well as the software I produced a user manual that detailed exactly how the board could be updated, and spent one-on-one time with each team leader, #[strong training] them on how to use the board.
 
 	p Soon enough, the dashboard was #[strong running live on three screens] in the office and getting #[strong really positive reviews] from the team. The team leaders were very impressed with their new-found power to disseminate #[strong real-time information], and Hayley Sangan (the deputy department manager), had this to say about my work:
@@ -113,7 +115,7 @@ block page-body
 		| I was hugely impressed with your #[strong professionalism, work ethic and ability to engage people] at various different levels ... I only wish you could have stayed longer!
 
 	p: a.icon-link(href = '/references#hayley-sangan', rel = 'external')
-		i.fa.fa-comments-o.text-highlight
+		i.fa.fa-angle-right.text-highlight
 		span Read Hayley's full reference
 
 block scripts

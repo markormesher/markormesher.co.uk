@@ -33,11 +33,29 @@ block page-body
 		i.fa.fa-github.text-highlight
 		span #[em Titanic] on GitHub
 
-	br.clearfix
+	p: a.icon-link(href = '#summary', rel = 'external')
+		i.fa.fa-angle-down.text-muted
+		span Project Summary
+
+	p: a.icon-link(href = '#deep-end', rel = 'external')
+		i.fa.fa-angle-down.text-muted
+		span Jumping in at the Deep End
+
+	p: a.icon-link(href = '#code-web', rel = 'external')
+		i.fa.fa-angle-down.text-muted
+		span The Code: Web App
+
+	p: a.icon-link(href = '#code-api', rel = 'external')
+		i.fa.fa-angle-down.text-muted
+		span The Code: API
+
+	p: a.icon-link(href = '#code-bash', rel = 'external')
+		i.fa.fa-angle-down.text-muted
+		span The Code: Command Line Tool
 
 	//- project summary
 
-	h2 Project Summary
+	h2#summary Project Summary
 
 	p There are perhaps a dozen #[strong Linux-powered devices] that I interact with on a regular basis: my laptop, desktop and smartphone, a few RPis, a handful of servers, etc. They often need to talk to each other, so I use #[strong host name aliases] (#[em Chuck] character names, actually) instead of remembering a list of IP addresses. This means maintaining an #[code /etc/hosts] #[i.fa.fa-info-circle.text-very-muted(data-toggle = 'tooltip', title = 'For the non-Linux savvy: this file lets me map "nicknames" to IP addresses, similar to the way domain names work')] file on each machine, and updating all of them every time a new device enters the network -- such a hassle, right?
 
@@ -57,7 +75,7 @@ block page-body
 
 	//- code: web
 
-	h2 The Code: Web App
+	h2#code-web The Code: Web App
 
 	a.single-gallery-link(href = 'javascript:;', data-start = 1)
 		img.bordered.inline-right(
@@ -75,7 +93,7 @@ block page-body
 
 	//- code: api
 
-	h2 The Code: API
+	h2#code-api The Code: API
 
 	a.single-gallery-link(href = 'javascript:;', data-start = 2)
 		img.bordered.inline-right(
@@ -89,7 +107,7 @@ block page-body
 
 	//- code: command line tool
 
-	h2 The Code: Command Line Tool
+	h2#code-bash The Code: Command Line Tool
 
 	a.single-gallery-link(href = 'javascript:;', data-start = 3)
 		img.bordered.inline-right(
