@@ -36,8 +36,28 @@
 	}
 }
 
+// fit in with Bootstrap sizing
 @media (max-width: 991px) {
 	.floating-grid-item {
 		width: 100%;
+	}
+}
+
+// layout changes for small screens
+@media (max-width: $smallScreen) {
+	.floating-grid-item {
+		.inner {
+			margin: 10px 0;
+			padding: 6px;
+
+			div.left-thumbnail, img.left-thumbnail {
+				display: block;
+				float: none;
+				padding: 0;
+				margin: 0 auto 12px;
+				border-right: none;
+				text-align: center;
+			}
+		}
 	}
 }

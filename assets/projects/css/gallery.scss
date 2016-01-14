@@ -22,3 +22,10 @@ div.left-thumbnail {
 div.left-thumbnail:hover span.gallery span {
 	display: inline;
 }
+
+// layout changes for small screens
+@media (max-width: $smallScreen) {
+	span.gallery, span.gallery span {
+		display: inline !important;
+	}
+}
