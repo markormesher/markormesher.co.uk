@@ -25,5 +25,32 @@ $(document).ready(() ->
 	# tooltips
 	$('[data-toggle = "tooltip"]').tooltip()
 
+	# expanding menu
+	nav = $('ul.navigation')
+	if (nav.find('li').eq(1).css('display') == 'block')
+		nav.find('li.expand').each(() ->
+			# get items
+			t = $(this)
+			msg = t.find('span')
+
+			# show this link and hide others
+			t.show()
+			links = nav.find('li').not(t).hide()
+			hidden = true
+
+			# click
+			t.click(() ->
+				if hidden
+					links.show()
+					msg.html(msg.html().replace('Show', 'Hide'))
+				else
+					links.hide()
+					msg.html(msg.html().replace('Hide', 'Show'))
+
+				# swap flag
+				hidden = !hidden
+			)
+		)
+
 	return
 )

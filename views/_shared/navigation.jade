@@ -1,6 +1,10 @@
 - cP = (_ && _.currentPage) || '';
 
 ul.navigation
+	li.expand
+		a(href = 'javascript:;')
+			span Show Navigation
+
 	li(class = cP == 'info' ? 'active' : '')
 		a(href = '/info')
 			i.fa.fa-lightbulb-o

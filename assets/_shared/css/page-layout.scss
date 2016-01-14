@@ -20,6 +20,12 @@ div.header {
 		bottom: 0;
 		font-size: 1.6em;
 
+		span {
+			display: inline;
+			position: relative;
+			font-size: 1em;
+		}
+
 		em {
 			font-style: normal;
 			color: $mutedColour;
@@ -48,6 +54,7 @@ ul.navigation {
 		padding: 0;
 		margin: 0 20px;
 		font-size: 1.5em;
+		list-style-type: none;
 
 		a {
 			color: inherit;
@@ -69,9 +76,45 @@ ul.navigation {
 	li.active a i {
 		color: $highlightColour;
 	}
+
+	li.expand {
+		display: none;
+
+		a span {
+			color: $mutedColour;
+			border-bottom: none !important;
+		}
+	}
 }
 
 div.content {
 	margin: 0;
 	padding: 10px 0 0;
+}
+
+// layout changes for small screens
+@media (max-width: $smallScreen) {
+	div.header {
+		h1 {
+			display: block;
+			margin-bottom: 0;
+		}
+
+		span {
+			position: relative;
+			display: block;
+			margin-top: 0;
+
+			span {
+				display: none;
+			}
+		}
+	}
+
+	ul.navigation {
+		li {
+			display: block;
+			margin: 0;
+		}
+	}
 }

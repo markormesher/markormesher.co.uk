@@ -72,6 +72,7 @@ ul.navigation {
 		padding: 0;
 		margin: 0 20px;
 		font-size: 2.2em;
+		list-style-type: none;
 
 		a {
 			display: block;
@@ -92,6 +93,15 @@ ul.navigation {
 
 		a:hover span {
 			border-bottom-color: $highlightColour;
+		}
+	}
+
+	li.expand {
+		display: none;
+
+		a span {
+			color: $veryMutedColour;
+			border-bottom: none !important;
 		}
 	}
 }
