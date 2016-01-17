@@ -51,3 +51,16 @@ p.subtitle {
 		border-bottom: none;
 	}
 }
+
+div.inline-header {
+	h1, h2, h3 {
+		display: inline-block;
+		width: auto;
+	}
+
+	p {
+		display: inline-block;
+		width: auto;
+		margin-left: 15px;
+	}
+}
