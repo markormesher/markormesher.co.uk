@@ -41,16 +41,10 @@ h3.first {
 	margin-top: 12px;
 }
 
-div.inline-header {
-	h1, h2, h3 {
-		display: inline-block;
-		width: auto;
-	}
-
-	p {
-		display: inline-block;
-		width: auto;
+h3.collapsible {
+	span:last-child {
 		margin-left: 15px;
+		font-size: 65%;
 	}
 }
 
@@ -68,4 +62,18 @@ li {
 i.info-dot {
 	color: $veryMutedColour;
 	margin-left: 15px;
+}
+
+table.grade-list {
+	tr, td, th {
+		border-color: $lineColour !important;
+	}
+
+	td, th {
+		font-size: 0.9em;
+	}
+
+	th {
+		font-weight: normal;
+	}
 }

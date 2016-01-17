@@ -24,15 +24,73 @@ block body
 
 		h2 Education
 
-		h3 2013 - 2017 !{divide} King's College London University
+		h3.first 2013 - 2017 !{divide} King's College London University
 		ul
 				li BSc Computer Science with a Year in Industry
-				li Current average: 88.9% (as at 28 th April 2015)
+				li
+					| Current average: #[strong 88.9%]
+					| &nbsp;&nbsp;&nbsp;
+					a.text-smaller.toggle-section(href = 'javascript:;', data-target = 'table#kcl-grades') Show individual modules
+					table#kcl-grades.grade-list.table.table-striped.table-condensed
+						thead
+							tr
+								th(colspan = 2) First Year
+								th(colspan = 2) Second Year
+						tbody
+							tr
+								td Computer Systems I
+								td 90%
+								td Computer Science Logic
+								td 100%
+							tr
+								td Data Structures
+								td 89%
+								td Database Theory &amp; Applications
+								td 90%
+							tr
+								td Elementary Logic &amp; Applications
+								td 88%
+								td Foundations of Computing II
+								td 89%
+							tr
+								td Foundations of Computing I
+								td 97%
+								td Operating Systems and Concurrency
+								td 93%
+							tr
+								td Introduction to Artificial Intelligence
+								td 95%
+								td Object-Oriented Specification &amp; Design
+								td 89%
+							tr
+								td Practical Experiences of Programming
+								td 100%
+								td Programming Language Design Paradigms
+								td 75%
+							tr
+								td Programming Applications
+								td 87%
+								td Software Engineering Group Project I
+								td 86%
+							tr
+								td Programming in Practise
+								td 92%
+								td Software Engineering Group Project II
+								td 80%
 
-		h3 2010 - 2012 !{divide} West Coventry Sixth Form
-		ul
-				li A-Levels: Media Studies (A*), Mathematics (A), ICT (B), Economics (B)
-				li AS-Level: Critical Thinking (A), Additional Mathematics (A)
+							tr
+								td
+								td
+								td Software Engineering Group Project III
+								td 93%
+
+
+		h3.collapsible
+			| 2010 - 2012 !{divide} West Coventry Sixth Form
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#sixth-form') Show details
+		ul#sixth-form
+				li A-Levels: Media Studies #[strong A*]; Mathematics #[strong A]; Information Technology #[strong B]; Economics #[strong B]
+				li AS-Level: Critical Thinking #[strong A]; Additional Mathematics #[strong A]
 
 		//- awards and memberships
 
@@ -67,68 +125,87 @@ block body
 
 		h2 Work History
 
-		div.inline-header
-			h3.first Jun 2014 - pr. !{divide} Software Engineer !{divide} Unitu
-			p.text-smaller: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-unitu li') Show details
+		h3.first.collapsible
+			| Jun 2014 - pr. !{divide} Software Engineer !{divide} Unitu
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-unitu') Show details
 		ul#work-unitu
 			li Responsible for the production, development and testing of the Unitu Android app, currently deployed for use by around 2500 students in several UK universities. The app is a comprehensive reproduction of most features offered on the web platform, built entirely from scratch following an agile methodology.
 			li Technical lead for the development of an all-inclusive analytics suite, specialised for the Unitu environment. This incorporates the API for all platforms to submit data (mobile and web), the storage and processing of that data, and two front-end systems to turn the data into business intelligence (one for Unitu staff, one for universities enrolled with Unitu).
 
-		div.inline-header
-			h3 Sep 2014 - Jun 2015 !{divide} Teaching Assistant !{divide} King's College London
-			p.text-smaller: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-kcl li') Show details
+		h3.collapsible
+			| Sep 2014 - Jun 2015 !{divide} Teaching Assistant !{divide} King's College London
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-kcl') Show details
 		ul#work-kcl
 			li Provided support in lectures for the Advanced Practical Topics course – an optional module taken by some first- and second-year students. The module is structured to give insights on a wider range of technical and programming topics that are not covered in the standard course, including Unix, Python, version control and mobile development.
 
-		div.inline-header
-			h3 Feb 2014 - Dec 2015 !{divide} Lecturer &amp; Committee Member !{divide} KCL Tech Society
-			p.text-smaller: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-kcl-tech li') Show details
+		h3.collapsible
+			| Feb 2014 - Dec 2015 !{divide} Lecturer &amp; Committee Member !{divide} KCL Tech Society
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-kcl-tech') Show details
 		ul#work-kcl-tech
 			li Wrote and delivered Android development lectures as part of the #[em Build X] course ran by the society, and acted as an assistant for other lessons on beginner programming and website development.
 			li Assisted with the organisation and execution of society events, from hackathons with 250+ attendees to socials and beginner programming classes.
 
-		div.inline-header
-			h3 July 2015 - Aug 2015 !{divide} Service Intern !{divide} Allianz Insurance
-			p.text-smaller: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-allianz li') Show details
+		h3.collapsible
+			| July 2015 - Aug 2015 !{divide} Service Intern !{divide} Allianz Insurance
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-allianz') Show details
 		ul#work-allianz
 			li Stationed with Petplan, one of Allainz's brands, I joined their service department and headed up two projects, as well as assisting with six other. My work centred around performance improvement and involved project management, managing upwards, technical development, research and analysis.
 
-		div.inline-header
-			h3 Dec 2008 - Aug 2014 !{divide} Self-Employed
-			p.text-smaller: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-self li') Show details
+		h3.collapsible
+			| Dec 2008 - Aug 2014 !{divide} Self-Employed
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-self') Show details
 		ul#work-self
 			li Provided full-stack website design and development, including ecommerce solutions and CMS implementations. This work was mostly carried out on LAMP-style servers, both rented from third parties and set up privately.
 			li Managed all aspects of the business, including sales, consultancy, production, support and accounting.
 			li Maintained a client base of individuals and business of various sizes, in the UK and overseas.
 
-		div.inline-header
-			h3 July 2014 - Aug 2014 !{divide} Project Management Intern !{divide} Excelian
-			p.text-smaller: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-excelian li') Show details
+		h3.collapsible
+			| July 2014 - Aug 2014 !{divide} Project Management Intern !{divide} Excelian
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-excelian') Show details
 		ul#work-excelian
 			li Worked within the project management office: tested in-house software, assisted with generating reports, created process documentation and built a digital resource sharing tool with MS SharePoint.
 			li Assisted the in-house IT department with several tasks, including setting up and testing a semi-automated computer image deployment system (using, amongst other tools, the Fog Project server software).
 
-		div.inline-header
-			h3 Aug 2012 - Aug 2013 !{divide} Secondary School Teacher !{divide} Project Trust
-			p.text-smaller: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-project-trust li') Show details
+		h3.collapsible
+			| Aug 2012 - Aug 2013 !{divide} Secondary School Teacher !{divide} Project Trust
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-project-trust') Show details
 		ul#work-project-trust
 			li Taught mathematics, reading and PE for at Sand Creek Secondary School in Guyana, South America.
 			li Taught extra-curricular courses for students, parents and village officials, including ICT and first aid sessions.
 			li Provided peer support and mentoring as the Grade 8 form tutor.
 
-		div.inline-header
-			h3 Nov 2009 - Jun 2012 !{divide} Technician !{divide} Gigante Computers
-			p.text-smaller: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-gigante1 li') Show details
-		ul#work-gigante1
+		h3.collapsible
+			| Nov 2009 - Jun 2012 !{divide} Technician &amp; Sales Assistant !{divide} Gigante Computers
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-gigante') Show details
+		ul#work-gigante
 			li Serviced all brands of PCs and laptops, including fault diagnostics, virus removal, installing and configuring software and operating systems, and repairing hardware and software faults (including replacing laptop screens and heat-gun re-flowing motherboards and graphics cards).
 			li Designed and built bespoke PCs to match specifications and budgets, from servers to high-end gaming rigs.
-
-		div.inline-header
-			h3 Nov 2009 - Jun 2012 !{divide} Sales Assistant !{divide} Gigante Computers
-			p.text-smaller: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-gigante2 li') Show details
-		ul#work-gigante2
 			li Served customers and resolved issues on a sales floor offering a wide range of products and services, working with customers possessing a wide range of technical abilities.
-			li Managed stock, deliveries and returns via a serialised stock tracking and PoS system.
+
+		//- skills
+
+		h2 Skills
+
+		ul
+			li
+				| #[strong Programming] is both a job and a passion, and I've been gaining #[strong experience since 2005]. The list of technologies I've worked with includes Java, Android, Node.js, C#/.NET, PHP, MySQL, (X)HTML, Jade, (S)CSS, JavaScript/CoffeeScript, jQuery and Python. I'm current in the process of learning React and AngularJS to extend the list.
+				br
+				a.icon-link(href = '/info#languages')
+					i.fa.fa-angle-right.text-highlight
+					span Full language list and more details
+
+			li #[strong Linux servers and clients], which I have been using for much of my programming career. My experience includes setting them up from scratch, installing most of the technologies listed above, and managing them on a day-to-day basis. I also have some limited experience in Bash scripting.
+
+			li #[strong Modern software development topics], including #[strong version control] and the #[strong Agile working methodology]. I have taught both of these topics in a lecture format and to colleagues, and I make great use of both in my current position as Software Engineer at Unitu.
+
+			li
+				| #[strong Teaching] has long been a passion and skill of time, ranging from 12 months as a full-time secondary school teacher to ad-hoc lab sessions to teach proper Git branching methodologies.
+				br
+				a.icon-link(href = '/positions#project-trust')
+					i.fa.fa-angle-right.text-highlight
+					span My position as a secondary school teacher
+
+			li #[strong Computer hardware] and #[strong general electronics] skills have proved to be valuable many times in my life, particularly whilst working for nearly three years as a computer and laptop repair technician and when working on numerous hobby projects (including a small, Python-powered self-steering robot).
 
 
 block scripts

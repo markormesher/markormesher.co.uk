@@ -8,7 +8,7 @@ body {
 
 // fonts
 
-h1, h2, h3, h4, h5, h6, p, li, input, label, span, blockquote {
+h1, h2, h3, h4, h5, h6, p, li, input, label, span, blockquote, table {
 	font-family: $fontFamily, sans-serif !important;
 	font-weight: lighter;
 	color: $textColour;
@@ -28,10 +28,14 @@ h3 {
 	font-size: 1.8em;
 }
 
-p, li, blockquote {
+p, li, blockquote, table {
 	margin: 0 0 12px;
 	font-size: 1.3em;
 	line-height: 150%;
+}
+
+li li, li table {
+	font-size: 1em;
 }
 
 li {
@@ -73,7 +77,7 @@ pre {
 }
 
 .text-smaller {
-	font-size: 90%;
+	font-size: 80%;
 }
 
 .text-muted {
