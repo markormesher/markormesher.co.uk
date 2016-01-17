@@ -1,4 +1,4 @@
-@import '../../_shared/css/defaults';
+@import 'defaults';
 
 // global style
 
@@ -8,7 +8,7 @@ body {
 
 // fonts
 
-h1, h2, h3, h4, h5, h6, p, li, input, label, span, blockquote {
+h1, h2, h3, h4, h5, h6, p, li, input, label, span, blockquote, table {
 	font-family: $fontFamily, sans-serif !important;
 	font-weight: lighter;
 	color: $textColour;
@@ -28,17 +28,21 @@ h3 {
 	font-size: 1.8em;
 }
 
-p, li, blockquote {
+p, li, blockquote, table {
 	margin: 0 0 12px;
 	font-size: 1.3em;
 	line-height: 150%;
+}
+
+li li, li table {
+	font-size: 1em;
 }
 
 li {
 	margin-left: 1.3em;
 }
 
-a {
+a:link, a:active, a:visited {
 	color: inherit;
 	text-decoration: none;
 	border-bottom: 1px solid $lineColour;
@@ -72,6 +76,10 @@ pre {
 	font-size: 150%;
 }
 
+.text-smaller {
+	font-size: 80%;
+}
+
 .text-muted {
 	color: $mutedColour !important;
 }
@@ -103,6 +111,11 @@ div.hr.with-margin {
 
 div.hr.end {
 	margin-bottom: 100px;
+}
+
+div.hr.full {
+	width: 100%;
+	margin: 0;
 }
 
 a.icon-link {
