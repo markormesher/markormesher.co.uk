@@ -1,12 +1,15 @@
 extends ../_shared/page-layout
 
+block page-head
+	link(rel = 'stylesheet', href = '/info/css/info.css')
+
 block page-body
 
 	//- intro
 
 	img.inline-right.bordered(
 	src = '/info/images/awards-ceremony-photo.png'
-	width = '350px'
+	width = '300px'
 	title = 'Software developer and student in London')
 
 	p.text-larger
@@ -19,14 +22,29 @@ block page-body
 
 	h2#software-development Software Development
 
-	img.inline-right.bordered(
-	src = '/info/images/hackathon-photo.png'
-	width = '350px'
-	title = 'Hack the Planet, Palo Alto, CA // Photo Credit: Major League Hacking powered by Dell | Intel')
+	//img.inline-right.bordered(
+	//src = '/info/images/hackathon-photo.png'
+	//width = '300px'
+	//title = 'Hack the Planet, Palo Alto, CA // Photo Credit: Major League Hacking powered by Dell | Intel')
 
 	p.text-larger I launched my first website at the age of 12, and I haven't put the keyboard down since. Writing #[strong quality code] is not only a job for me, but also #[strong a hobby and a passion]. I'm a regular hackathon attendee, I maintain a few personal projects, and I take every chance I get to #[strong play with new languages] and learn more about the ones I already know.
 
-	h3#languages Languages &amp; Frameworks
+	h3#languages Languages, Frameworks &amp; Other Technologies
+
+	p These are all of the languages, frameworks and various other technologies that I have experience with right now:
+
+	div.language-cloud
+		ul
+			li(data-target = 'node-js') Node.js
+			li(data-target = 'android') Android
+			li(data-target = 'java') Java
+			li(data-target = 'php') PHP
+			li(data-target = 'c-sharp-dot-net') C# .NET
+			li(data-target = 'mysql-mongodb') MySQL & MongoDB
+			//br/
+			li(data-target = 'javascript-jquery') JavaScript & jQuery
+			li(data-target = 'html-jade-ejs') HTML/Jade/EJS
+			li(data-target = 'scss') (S)CSS
 
 	mixin languageSectionHeader(title)
 		i.text-highlight.fa.fa-fw.fa-angle-double-right
@@ -35,38 +53,50 @@ block page-body
 		span.text-muted //
 		| &nbsp;
 
-	p.language-expand(style = 'display: none;')
-		a.icon-link(href = 'javascript:;')
-			i.fa.fa-angle-double-right.text-highlight
-			span Show List
-
-	p.language
+	p.language(data-key = 'node-js')
 		+languageSectionHeader('Node.js')
 		| I started using #[em Node.js] (+ #[em Express.js], #[em MongoDB], #[em Mongoose], etc.) in early-2015, and I am thoroughly enjoying it. I've built a few #[a(href = '/projects') sites and tools] using it - including this one - and I intend to keep exploring it and using it as one of my primary languages. I also started learning #[em React] and #[em AngularJS] in early-2016.
 
-	p.language
+	p.language(data-key = 'android')
 		+languageSectionHeader('Android')
 		| Starting at a hackathon in early-2014, my passion for #[em Android] development grew quickly, fuelled by a developer #[a(href = '/positions#unitu') position at Unitu]. Since starting I have developed a number of apps, volunteered as an #[em Android mentor] at hackathons, and delivered an 8-part #[a(href = '/projects#android-lectures') Android lecture series] at King's College London.
 
-	p.language
+	p.language(data-key = 'java')
+		+languageSectionHeader('Java')
+		| Whilst #[a(href = '#studies') studying] #[em Computer Science], #[em Java] became one of my primary languages for development and I developed a strong proficiency with it. It is still one that I use regularly, mainly for my work with #[em Android].
+
+	//- TODO: php
+	p.language(data-key = 'php')
+		+languageSectionHeader('PHP')
+		| The #[em Linux/Apache/MySQL/PHP] stack was my adventure into &quot;real&quot; programming and the first back-end stack I learned. I built a lot of websites with these softwares and developed very strong skills with them; I still use them occasionally if they're the right tools for the job.
+
+	p.language(data-key = 'c-sharp-dot-net')
 		+languageSectionHeader('C# .NET')
 		| I started using #[em C# .NET] and the #[em MVC5] framework to work on the #[a(href = '/projects#unitu-web-api') Unitu website and API] in mid-2015. Although it's not my primary language, I have learned quickly and continue to use it almost daily.
 
-	p.language
-		+languageSectionHeader('Java 7 & 8')
-		| Whilst #[a(href = '#studies') studying] #[em Computer Science], #[em Java] became one of my primary languages for development and I developed a strong proficiency with it. It is still one that I use regularly, mainly for my work with #[em Android].
-
-	p.language
-		+languageSectionHeader('LAMP')
-		| The #[em Linux/Apache/MySQL/PHP] stack was my adventure into &quot;real&quot; programming and the first back-end stack I learned. I built a lot of websites with these softwares and developed very strong skills with them; I still use them occasionally if they're the right tools for the job.
-
-	p.language
-		+languageSectionHeader('JavaScript/CoffeeScript & jQuery')
+	//- TODO: MySQL and MongoDB
+	p.language(data-key = 'mysql-mongodb')
+		+languageSectionHeader('MySQL & MongoDB')
 		| I have been using #[em JavaScript] to drive the client-side of my web projects since I began in 2005, and I've been using #[em jQuery + jQuery UI] to support that work since 2008. In 2014 I began playing with #[em CoffeeScript], mostly out of curiosity and interest; I still use it when I have projects that will involve a lot of front-end #[em JS].
 
-	p.language
-		+languageSectionHeader('HTML/Jade & (S)CSS')
+	p.language(data-key = 'javascript-jquery')
+		+languageSectionHeader('JavaScript & jQuery')
+		| I have been using #[em JavaScript] to drive the client-side of my web projects since I began in 2005, and I've been using #[em jQuery + jQuery UI] to support that work since 2008. In 2014 I began playing with #[em CoffeeScript], mostly out of curiosity and interest; I still use it when I have projects that will involve a lot of front-end #[em JS].
+
+	//- TODO: HTML
+	p.language(data-key = 'html-jade-ejs')
+		+languageSectionHeader('HTML/Jade/EJS')
 		| My first foray into coding was a very basic website, &quot;powered&quot; by vanilla #[em HTML] and  #[em CSS]. I quickly moved on to more interesting areas of web development, but I still use #[em HTML] and #[em CSS] on a near-daily basis for the web components in my projects. Since 2015 I have been using #[em Jade] and #[em SCSS] to augment the front-end sections of any Node.js #[a(href='/projects') projects] I work on.
+
+	//- TODO: (S)CSS
+	p.language(data-key = 'scss')
+		+languageSectionHeader('(S)CSS')
+		| My first foray into coding was a very basic website, &quot;powered&quot; by vanilla #[em HTML] and  #[em CSS]. I quickly moved on to more interesting areas of web development, but I still use #[em HTML] and #[em CSS] on a near-daily basis for the web components in my projects. Since 2015 I have been using #[em Jade] and #[em SCSS] to augment the front-end sections of any Node.js #[a(href='/projects') projects] I work on.
+
+	p.language-show-all(style = 'display: none;')
+		a.icon-link(href = 'javascript:;')
+			i.fa.fa-angle-double-right.text-highlight
+			span Show All
 
 	//- studies
 
@@ -74,7 +104,7 @@ block page-body
 
 	img.inline-right.bordered(
 	src = '/info/images/teaching-photo.jpg'
-	width = '350px'
+	width = '300px'
 	title = "Teaching Android Development at King's College London")
 
 	p.text-larger I'm currently studying #[strong BSc Computer Science] at #[a(href = '/positions#kcl') #[strong King&#39;s College London]]; I'm in my third year, doing an #[a(href='/positions#unitu') industry placement at Unitu], and I will complete my degree in 2017. I'm well on-track for a #[strong first class degree], with a weighted average of #[strong 89%] across 27 assessments in my first two years.
