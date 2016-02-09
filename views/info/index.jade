@@ -30,7 +30,7 @@ block page-body
 	- var years = Math.round((new Date() - new Date(2005, 10, 6)) / (1000 * 60 * 60 * 24 * 365));
 	p In #[strong #{ years } years] of programming, I've worked and played with a wide range of #[strong languages, frameworks and various other technologies]. The main ones I've worked with, and the ones I've enjoyed the most, are listed below:
 
-	div.language-cloud
+	div.language-list
 		ul
 			li(data-target = 'node-js')
 				i.fa.fa-star-o.text-highlight
@@ -48,7 +48,7 @@ block page-body
 			li(data-target = 'html-jade-ejs') HTML, Jade &amp; EJS
 			li(data-target = 'scss') (S)CSS
 
-	p.text-muted.language-slideshow-status.text-center
+	p.text-muted.slideshow-status.text-center
 
 	mixin languageSectionHeader(title)
 		i.text-highlight.fa.fa-fw.fa-angle-double-right
@@ -57,43 +57,43 @@ block page-body
 		span.text-muted //
 		| &nbsp;
 
-	p.language(data-key = 'node-js')
+	p.language-slide(data-key = 'node-js')
 		+languageSectionHeader('Node.js')
-		| I started using #[em Node.js] (+ #[em Express.js], #[em MongoDB], #[em Mongoose], etc.) in early-2015, and I am thoroughly enjoying it. I've built a few #[a(href = '/projects') sites and tools] using it - including this one - and I intend to keep exploring it and using it as one of my primary languages. I also started learning #[em React] and #[em AngularJS] in early-2016.
+		| I started using #[em Node.js] (+ #[em Express.js]) in early-2015, and I am thoroughly enjoying it. I've built a few #[a(href = '/projects') sites and tools] using it - including this one - and I intend to keep exploring it and using it as one of my primary languages. I also started learning #[em React] and #[em AngularJS] in early-2016.
 
-	p.language(data-key = 'android')
+	p.language-slide(data-key = 'android')
 		+languageSectionHeader('Android')
-		| Starting at a hackathon in early-2014, my passion for #[em Android] development grew quickly, fuelled by a developer #[a(href = '/positions#unitu') position at Unitu]. Since starting I have developed a number of apps, volunteered as an #[em Android mentor] at hackathons, and delivered an 8-part #[a(href = '/projects#android-lectures') Android lecture series] at King's College London.
+		| Starting at a hackathon in early-2014, my passion for #[em Android] development grew quickly, fuelled by a developer #[a(href = '/positions#unitu') position at Unitu]. Since starting with Android I have developed a number of apps, volunteered as an #[em Android mentor] at hackathons, and delivered an 8-part #[a(href = '/projects#android-lectures') Android lecture series] at King's College London.
 
-	p.language(data-key = 'java')
+	p.language-slide(data-key = 'java')
 		+languageSectionHeader('Java')
-		| Whilst #[a(href = '#studies') studying] #[em Computer Science], #[em Java] became one of my primary languages for development and I developed a strong proficiency with it. It is still one that I use regularly, mainly for my work with #[em Android].
+		| Whilst #[a(href = '#studies') studying] Computer Science, #[em Java] became one of my primary languages for development and I developed a strong proficiency with it. It is still one that I use regularly, mainly for my work with #[em Android].
 
-	p.language(data-key = 'php')
+	p.language-slide(data-key = 'php')
 		+languageSectionHeader('PHP')
-		| The #[em LAMP stack] was my first adventure into &quot;real&quot; programming and the first back-end stack I learned. I built a lot of websites with PHP and developed very strong skills with each level of the LAMP stack; I still it them occasionally if it's the right tool for the job.
+		| The #[em LAMP stack] was my first adventure into &quot;real&quot; programming and the first back-end stack I learned. I built a lot of websites with PHP and developed very strong skills with each level of the LAMP stack; I still it occasionally if it's the right tool for the job.
 
-	p.language(data-key = 'c-sharp-dot-net')
+	p.language-slide(data-key = 'c-sharp-dot-net')
 		+languageSectionHeader('C# .NET')
 		| I started using #[em C# .NET] and the #[em MVC5] framework to work on the #[a(href = '/projects#unitu-web-api') Unitu website and API] in mid-2015. Although it's not my primary language, I have learned quickly and continue to use it almost daily.
 
-	p.language(data-key = 'mysql-mongodb')
+	p.language-slide(data-key = 'mysql-mongodb')
 		+languageSectionHeader('MySQL & MongoDB')
-		| Whilst working with the #[em LAMP] stack I gained a good understanding of #[em MySQL] and incorporated it into many of my projects. In 2014 I began experimenting with #[strong NoSQL] databases, and since then I have used #[em MongoDB] in a number of my projects.
+		| Whilst working with the #[em LAMP] stack I gained a good understanding of #[em MySQL] and incorporated it into many of my projects. In 2014 I began experimenting with #[em NoSQL] databases, and since then I have used #[em MongoDB] in a number of my projects.
 
-	p.language(data-key = 'javascript-jquery')
+	p.language-slide(data-key = 'javascript-jquery')
 		+languageSectionHeader('JavaScript & jQuery')
 		| I have been using #[em JavaScript] to drive the client-side of my web projects since I began in 2005, and I've been using #[em jQuery + jQuery UI] to support that work since 2008. In 2014 I began playing with #[em CoffeeScript], mostly out of curiosity and interest; I still use it when I have projects that will involve a lot of front-end #[em JS].
 
-	p.language(data-key = 'html-jade-ejs')
+	p.language-slide(data-key = 'html-jade-ejs')
 		+languageSectionHeader('HTML/Jade/EJS')
 		| My first foray into coding was a very basic website, &quot;powered&quot; by vanilla #[em HTML] and  #[em CSS]. I quickly moved on to more interesting areas of web development, but #[em HTML] remains a vitally important skill when it comes to understanding and building the front-end components of my projects. Since 2015 I have used both #[em Jade] and #[em EJS] improve the work I do with #[em HTML].
 
-	p.language(data-key = 'scss')
+	p.language-slide(data-key = 'scss')
 		+languageSectionHeader('(S)CSS')
 		| Whilst I am mostly a back-end developer, I have used #[em CSS] since the very beginning of my programming career, and I continue to use it on a regular basis. I have a good grasp of it and I enjoy using it to create attractive and cleanly-constructed projects. Since 2015 I have been using #[em SCSS] to improve my workflow and the structure of my code.
 
-	p.language-show-all(style = 'display: none;')
+	p.show-all-languages(style = 'display: none;')
 		a.icon-link(href = 'javascript:;')
 			i.fa.fa-angle-double-right.text-highlight
 			span Show All

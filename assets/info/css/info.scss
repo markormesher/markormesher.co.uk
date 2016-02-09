@@ -1,6 +1,6 @@
 @import '../../_shared/css/defaults';
 
-div.language-cloud {
+div.language-list {
 	display: none;
 	text-align: center;
 
@@ -26,4 +26,10 @@ div.language-cloud {
 			border-bottom-color: $highlightColour;
 		}
 	}
+}
+
+.slideshow-status {
+	cursor: pointer;
+	font-size: 95%;
+	font-style: italic;
 }
