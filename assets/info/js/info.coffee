@@ -2,6 +2,7 @@ $(document).ready(() ->
 
 	# slideshow
 	slideshowEnabled = true
+	slideshowTimeout = null
 	slideshowPosition = -1;
 
 	# get views
@@ -9,6 +10,7 @@ $(document).ready(() ->
 	languageLinks = $('ul li', languageLinksBox)
 	languageSections = $('p.language')
 	languageShowAll = $('.language-show-all')
+	languageSlideshowStatus = $('.language-slideshow-status')
 
 	# hide all language sections and show shuffling links
 	languageSections.hide()
@@ -17,7 +19,7 @@ $(document).ready(() ->
 	# "show all" link click
 	languageShowAll.show().find('a').click(() ->
 		# stop slideshow
-		slideshowEnabled = false
+		slideshowToggle(false)
 
 		languageSections.show()
 		languageLinks.addClass('active')
@@ -33,7 +35,7 @@ $(document).ready(() ->
 	# show a given language
 	showLanguage = (key, link) ->
 		# stop slideshow
-		if link then slideshowEnabled = false
+		if link then slideshowToggle(false)
 
 		# update link classes
 		languageLinks.removeClass('active')
@@ -44,11 +46,22 @@ $(document).ready(() ->
 		languageSections.hide()
 		languageSections.filter('[data-key = "' + key + '"]').show()
 
+	# slideshow toggle
+	slideshowToggle = (enabled) ->
+		if (enabled == undefined) then enabled = !slideshowEnabled
+		slideshowEnabled = enabled
+		languageSlideshowStatus.html(if enabled then '' else 'Slideshow paused // click to resume')
+		if (enabled)
+			slideshowNext()
+		else
+			clearTimeout(slideshowTimeout)
+	languageSlideshowStatus.click(() -> slideshowToggle())
+
 	# slideshow
 	slideshowNext = () ->
 		if (!slideshowEnabled) then return
 		slideshowPosition = ++slideshowPosition % languageLinks.length
 		showLanguage($(languageLinks[slideshowPosition]).data('target'))
-		setTimeout((() -> slideshowNext()), 3000)
+		slideshowTimeout = setTimeout((() -> slideshowNext()), 3000)
 	slideshowNext()
 )
