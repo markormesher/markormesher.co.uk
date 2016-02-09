@@ -56,7 +56,7 @@ $(document).ready(() ->
 		slideshowEnabled = enabled
 
 		# set message
-		statusMsg.html(if enabled then '' else 'Slideshow paused - click to resume')
+		if enabled then statusMsg.hide() else statusMsg.show()
 
 		# restart, or kill
 		if enabled then slideshowNext() else clearTimeout(slideshowTimeout)
