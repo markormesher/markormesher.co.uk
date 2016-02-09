@@ -59,6 +59,10 @@ li {
 	margin-left: 1.3em;
 }
 
+li.no-dot {
+	list-style-type: none;
+}
+
 i.info-dot {
 	color: $veryMutedColour;
 	margin-left: 15px;
