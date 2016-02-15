@@ -11,9 +11,11 @@ block body
 
 		//- header
 
+		- var years = Math.round((new Date() - new Date(2005, 10, 6)) / (1000 * 60 * 60 * 24 * 365));
+
 		h1 Mark Ormesher
 		p.subtitle
-			| Student &amp; Software Developer
+			| Software Developer with #{years} Years of Experience
 			| &nbsp;&nbsp;&nbsp;
 			a(href = '/', title = 'My portfolio site'): i.fa.fa-fw.fa-globe.text-muted
 			| &nbsp;&nbsp;&nbsp;
