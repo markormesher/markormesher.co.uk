@@ -1,0 +1,112 @@
+extends ../../_shared/page-layout
+
+block page-head
+	link(rel = 'stylesheet', href = '/projects/css/gallery.css')
+	link(rel = 'stylesheet', href = '/_vendor/fancybox/jquery.fancybox.css')
+
+block page-body
+
+	//- gallery images
+	-
+		galleryImages = [
+			{href: '/projects/images/titanic/thumb-larger.jpg', title: 'Device list (spot the naming convention)'},
+			{href: '/projects/images/titanic/dash.jpg', title: 'The dashboard, shortly after work started'},
+			{href: '/projects/images/titanic/api.jpg', title: 'Titanic API'},
+			{href: '/projects/images/titanic/command-line-mock.jpg', title: 'Mock-up of intended command line tool'}
+		];
+	script(type = 'text/javascript').
+		window.galleryImages = !{JSON.stringify(galleryImages)};
+
+	//- intro
+
+	a.single-gallery-link(href = 'javascript:;', data-start = 0)
+		img.bordered.inline-right(
+		src = '/projects/images/titanic/thumb-larger.jpg'
+		width = '400px'
+		title = 'Titanic: a tool for synchronising host name aliases and Bash shortcuts')
+
+	p.text-larger When I joined #[a(href = '/positions#unitu') Unitu] in 2014, my role was #[strong Lead Android Developer], and my task was to #[strong design a brand new app] for the business, #[strong build] and #[strong test] it, and get it to market. The app was developed from scratch to provide the main features of the Unitu platform, and it is currently (as of March 2016) being expanded to offer even more.
+
+	p: a.icon-link(href = '#unitu')
+		i.fa.fa-angle-down.text-muted
+		span Intro to Unitu
+
+	p: a.icon-link(href = '#development')
+		i.fa.fa-angle-down.text-muted
+		span Development
+
+	p: a.icon-link(href = '#future')
+		i.fa.fa-angle-down.text-muted
+		span What's Next?
+
+	p: a.icon-link(href = '#reception')
+		i.fa.fa-angle-down.text-muted
+		span Reception
+
+	//- intro to Unitu
+
+	h2#unitu Intro to Unitu
+
+	p The #[strong Unitu] platform is a collaborative feedback system for colleges and universities, built to improve the #[em broken feedback loop] that can be found in many universities. At the time of writing (February 2016) it is being used by #[strong thousands of students] in the UK and evolving daily.
+
+	p There are two main features of the Unitu platform to be replicated on mobile: the #[strong course hub] and the #[strong feedback board]. The #[strong course hub] is a student-private area for discussion, collaboration and socialising; the #[strong feedback board] is the powerhouse of the platform, providing a feedback resolution and tracking system, somewhat inspired by the Kanban layout.
+
+	p More information on Unitu and the Unitu platform can be found on the #[a(href = 'https://www.youtube.com/watch?v=55pybqYuWdU', rel='external') Unitu YouTube channel].
+
+	//- development
+
+	h2#development Development
+
+	p Built as a #[strong native app] to maximise performance and quality, Unitu's Android app was built over the summer of 2014, refined and iterated throughout the following academic year, and then #[strong rebuilt from scratch] into its second major version during the summer and autumn of 2015. This has left us with a very stable, very popular product.
+
+	p The project is closed source, so I cannot fully showcase the development that went into my #[strong first large-scale app], but I can explain a few of the more interesting aspects below. These aspects and more are current being rolled into an #[strong open source library] that I intend to release in the future (endorsed by Unitu, of course), so watch this space!
+
+	h3 Data Access and Caching Layer
+
+	p Like many tools, the Unitu app #[strong lives and dies by the data] it provides to its users. Without the right data, available at the right time, the app is useless. That's why I put considerable effort into planning and building the data access and caching layer of the app.
+
+	p This layer of the app is #[strong entirely self-contained], which means that day-to-day work on the app doesn't involve touching any code for caching, databases, APIs, etc. A collection of well-defined #[strong request/callback managers] handle all data interaction, seamlessly providing data from the cache, the API or both, depending on the request. With support for #[strong lambda functions], the callback code is clean and very readable.
+
+	p The cache is split into two parts: an in-memory cache that is relatively small but extremely quick, and an on-disk cache implemented through SQLite, which is much larger but somewhat slower. Both of these complement the Unitu API, making sure #[strong the right data is available at the right time]. There is even support for data to be returned immediately from the cache, followed by a more up-to-date copy of the data from the API a few seconds later, all in one request. Expired data is automagically cleaned out or updated in the background, depending on its purpose.
+
+	h3 Analytics
+
+	p While students are using the app, it silently #[strong collects data] about their interactions and feeds it back to our aggregation system that combines it with data from the website and our iOS app. This data includes everything from how they move between views and how efficiently they navigate from A to B, to how quickly the app responds to their requests and details of any errors (which are thankfully few and far between!).
+
+	p We use this data to #[strong improve the app] and continually develop it by identifying the most used areas, any confusing navigation patterns, bottlenecks in data flow, etc. Updates and improvements are regularly piloted by a small community of students and reps before being released en masse.
+
+	//- what's next
+
+	h2#future What's Next?
+
+	a.single-gallery-link(href = 'javascript:;', data-start = 1)
+		img.bordered.inline-right(
+		src = '/projects/images/titanic/dash.jpg'
+		width = '400px'
+		title = 'The dashboard, shortly after work started')
+
+	p Right now (as of March 2016) I am working on bringing the feedback board system into the Android app. It is #[strong doubtlessly the most technically complex] area of the site, so I expect this to be a challenge I will relish. From the very beginning of this new feature, I have had a small community of Unitu's most active students and student representative receiving regular builds of the app; their feedback is a big part of my development process, helping me to make sure I am #[strong building exactly what they need].
+
+	p As mentioned earlier, I am also working on building an #[strong open source library] to release generic versions of some of the app's more exciting or useful technical features. Unfortunately this is a very low-priority project for me right now, so it may be some time before it sees the light of day!
+
+	//- reception
+
+	h2#reception Reception
+
+	blockquote
+		i.fa.fa-quote-left.fa-2x.fa-pull-left.text-highlight
+		| Mark has been an #[strong exceptional addition] to the Unitu team. He possesses both technical and character skills that not only get tasks done extremely efficiently but also help push the company forward. He embodies the company philosophy - #[em Impossible is nothing] - and brings traits that inspire and motivate other team members.
+		br
+		br
+		| He managed to build the #[strong Unitu Android App] within less than 3 months and go FAR beyond the given specification. He took complete ownership over his work and dedicated himself fully with #[strong absolute care and precision].
+		br
+		br
+		| In addition to this, he is also #[strong loyal, committed and ambitious]. As a co-founder of Unitu, I am both proud and thrilled to be working along side him, knowing that with Mark on our team we can achieve anything.
+
+	p: a.icon-link(href = '/references#anish-bagga')
+		i.fa.fa-angle-right.text-highlight
+		span Read Anish's full reference
+
+block scripts
+	script(src = '/_vendor/fancybox/jquery.fancybox.js')
+	script(src = '/projects/js/gallery.js')
