@@ -9,10 +9,7 @@ block page-body
 	//- gallery images
 	-
 		galleryImages = [
-			{href: '/projects/images/titanic/thumb-larger.jpg', title: 'Device list (spot the naming convention)'},
-			{href: '/projects/images/titanic/dash.jpg', title: 'The dashboard, shortly after work started'},
-			{href: '/projects/images/titanic/api.jpg', title: 'Titanic API'},
-			{href: '/projects/images/titanic/command-line-mock.jpg', title: 'Mock-up of intended command line tool'}
+			{href: '/projects/images/unitu-android-app/thumb-larger.png', title: 'The Unitu Android App'}
 		];
 	script(type = 'text/javascript').
 		window.galleryImages = !{JSON.stringify(galleryImages)};
@@ -20,10 +17,10 @@ block page-body
 	//- intro
 
 	a.single-gallery-link(href = 'javascript:;', data-start = 0)
-		img.bordered.inline-right(
-		src = '/projects/images/titanic/thumb-larger.jpg'
+		img.inline-right(
+		src = '/projects/images/unitu-android-app/thumb-larger.png'
 		width = '400px'
-		title = 'Titanic: a tool for synchronising host name aliases and Bash shortcuts')
+		title = 'The Unitu Android App')
 
 	p.text-larger When I joined #[a(href = '/positions#unitu') Unitu] in 2014, my role was #[strong Lead Android Developer], and my task was to #[strong design a brand new app] for the business, #[strong build] and #[strong test] it, and get it to market. The app was developed from scratch to provide the main features of the Unitu platform, and it is currently (as of March 2016) being expanded to offer even more.
 
@@ -79,11 +76,7 @@ block page-body
 
 	h2#future What's Next?
 
-	a.single-gallery-link(href = 'javascript:;', data-start = 1)
-		img.bordered.inline-right(
-		src = '/projects/images/titanic/dash.jpg'
-		width = '400px'
-		title = 'The dashboard, shortly after work started')
+	//- TODO: add an in-progress image of the feedback board
 
 	p Right now (as of March 2016) I am working on bringing the feedback board system into the Android app. It is #[strong doubtlessly the most technically complex] area of the site, so I expect this to be a challenge I will relish. From the very beginning of this new feature, I have had a small community of Unitu's most active students and student representative receiving regular builds of the app; their feedback is a big part of my development process, helping me to make sure I am #[strong building exactly what they need].
 
