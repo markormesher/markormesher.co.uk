@@ -37,4 +37,13 @@ router.get('/petplan-live', (req, res) ->
 	})
 )
 
+router.get('/unitu-android-app', (req, res) ->
+	res.render('projects/case-studies/unitu-android-app', {
+		_: {
+			currentPage: 'projects'
+			pageTitle: 'Case Study: Unitu Android App'
+		}
+	})
+)
+
 module.exports = router
