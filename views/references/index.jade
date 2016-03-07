@@ -1,13 +1,17 @@
 extends ../_shared/page-layout
 
 mixin reference(name, role, id, imageName)
-	div.floating-grid-item(id = id): div.inner
+	div.floating-grid-item.reference(id = id): div.inner
 		if imageName != null
 			div.left-thumbnail: img.avatar(src = '/references/images/' + imageName, title = title)
 		h3!= name
 		if role != null
 			p.subtitle!= role.join('<br />')
 		block
+		P.read-more.text-center.hide
+			a.icon-link(href = 'javascript:;')
+				i.fa.fa-angle-down.text-highlight
+				span Read more
 
 block page-head
 	link(rel = 'stylesheet', href = '/_shared/css/floating-grid-layout.css')
@@ -51,6 +55,17 @@ block page-body
 
 
 		+reference(
+		'Jide Okunoren',
+		['Software Engineer @ Jisc'],
+		'jide-okunoren',
+		'jide-okunoren.png')
+
+			p I collaborated with Mark on building Jisc's Data Hub platform. He was instrumental in specifying the project's requirements, user stories &amp; deliverables. I was very impressed by his #[strong enthusiasm, commitment &amp; passion], as well as his communication, project management &amp; technical skills.
+			p It always helps when a collaborator has an understanding of the underlying technology, but it’s a bonus when they have #[strong expert knowledge] &amp; actively participate in the development process. Working with the MEAN stack, Mark developed web services for testing the Data Hub platform from a stakeholder's perspective. This was #[strong an asset to the project], as it improved the final deliverables beyond the original specification.
+			p Overall, I really enjoyed working with Mark & would recommend him as a #[strong great developer, team player & a great asset] to any team.
+
+
+		+reference(
 		'Fares Alaboud',
 		['President @ KCL Tech', 'Colleague @ Unitu'],
 		'fares-alaboud',
@@ -72,6 +87,16 @@ block page-body
 
 
 		+reference(
+		'David West',
+		['Workshop Manager @ Gigante Computers'],
+		'david-west',
+		'david-west.png')
+
+			p Mark was one of my technicians from my time as Technical Manager at Gigante Computers. Mark was a very #[strong reliable and hard working] employee. Whatever task I assigned to him he would have completed before his given deadline and to a high quality standard. His #[strong communication was perfect] for the vast range of customers we dealt with.
+			p He would also train new technicians to the business as I could rely on him training them to the high standard we set ourselves. I would happily work with Mark again and #[strong highly recommend him] to anyone thinking of employing him in the future.
+
+
+		+reference(
 		'Tara Drummond-Finnis',
 		['Learning and Development Manager @ Excelian', 'Learning and Development Advisor @ Allianz Insurance'],
 		'tara-drummond-finnis',
@@ -80,16 +105,6 @@ block page-body
 			p I was fortunate to meet Mark at a King's Uni Careers Event. I was struck by his #[strong excellent attitude and skill set] within a few moments of our first conversation. Consequently it was my pleasure to facilitate a summer Internship at Excelian.
 			p He became part of the team very quickly, acted on his own initiative, #[strong provided new ideas for old challenges], and was considered a welcome addition to the Company.
 			p I can only say that the next Company that is fortunate to benefit from his #[strong talent and experience], will be making a smart move when they hire him!
-
-
-		+reference(
-		'David West',
-		['Workshop Manager @ Gigante Computers'],
-		'david-west',
-		'david-west.png')
-
-			p Mark was one of my technicians from my time as Technical Manager at Gigante Computers. Mark was a very #[strong reliable and hard working] employee. Whatever task I assigned to him he would have completed before his given deadline and to a high quality standard. His #[strong communication was perfect] for the vast range of customers we dealt with.
-			p He would also train new technicians to the business as I could rely on him training them to the high standard we set ourselves. I would happily work with Mark again and #[strong highly recommend him] to anyone thinking of employing him in the future.
 
 
 		+reference(
@@ -116,3 +131,4 @@ block scripts
 	script(src = '/_vendor/masonry/masonry.packaged.min.js')
 	script(src = '/_vendor/masonry/jquery.imagesloaded.js')
 	script(src = '/_shared/js/floating-grid-layout.js')
+	script(src = '/references/js/references.js')
