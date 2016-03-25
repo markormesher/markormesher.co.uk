@@ -175,3 +175,9 @@ img.bordered {
 		margin: 0 auto 12px;
 	}
 }
+
+// library fixes
+.fancybox-skin a {
+	border-bottom: none;
+	text-decoration: none;
+}
