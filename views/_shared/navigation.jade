@@ -6,26 +6,41 @@ ul.navigation
 			span Show Navigation
 
 	li(class = cP == 'info' ? 'active' : '')
-		a(href = '/info')
+		a(href = '/info',
+		data-toggle = 'tooltip',
+		data-html = 'true',
+		title = 'Facts you should know about me')
 			i.fa.fa-lightbulb-o
 			span Info &amp; Skills
 
 	li(class = cP == 'projects' ? 'active' : '')
-		a(href = '/projects')
+		a(href = '/projects',
+		data-toggle = 'tooltip',
+		data-html = 'true',
+		title = 'Code I&#39;ve written<br />& things I&#39;ve built')
 			i.fa.fa-code
 			span Projects
 
 	li(class = cP == 'positions' ? 'active' : '')
-		a(href = '/positions')
+		a(href = '/positions',
+		data-toggle = 'tooltip',
+		data-html = 'true',
+		title = 'Companies I&#39;ve worked for')
 			i.fa.fa-briefcase
 			span Positions
 
 	li(class = cP == 'references' ? 'active' : '')
-		a(href = '/references')
+		a(href = '/references',
+		data-toggle = 'tooltip',
+		data-html = 'true',
+		title = 'What people say about me')
 			i.fa.fa-comment-o
 			span References
 
 	li(class = cP == 'contact' ? 'active' : '')
-		a(href = '/contact')
+		a(href = '/contact',
+		data-toggle = 'tooltip',
+		data-html = 'true',
+		title = 'Ways you can talk to me')
 			i.fa.fa-envelope-o
 			span Contact
