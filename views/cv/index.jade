@@ -17,9 +17,15 @@ block body
 		p.subtitle
 			| Software Developer with #{years} Years of Experience
 			| &nbsp;&nbsp;&nbsp;
-			a(href = '/', title = 'My portfolio site'): i.fa.fa-fw.fa-globe.text-muted
+			a(href = '/',
+			data-toggle = 'tooltip',
+			data-placement = 'bottom',
+			title = 'My portfolio site'): i.fa.fa-fw.fa-globe.text-muted
 			| &nbsp;&nbsp;&nbsp;
-			a(href = '/contact', title = 'Contact me'): i.fa.fa-fw.fa-envelope-o.text-muted
+			a(href = '/contact',
+			data-toggle = 'tooltip',
+			data-placement = 'bottom',
+			title = 'Contact me'): i.fa.fa-fw.fa-envelope-o.text-muted
 
 		//- education
 
@@ -123,7 +129,7 @@ block body
 				| 2016 !{divide} KCL Student Union Gold Grown
 				i.fa.fa-info-circle.info-dot(
 				data-toggle = 'tooltip',
-				title = 'Awarded by the King\'s College London Student Union to award contributions to the student community, based on nominations from other students')
+				title = 'Awarded by the King\'s College London Student Union to recognise contributions to the student community, based on nominations from other students')
 
 			li
 				| 2014 !{divide} British Computing Society Prize for Best Student
@@ -152,6 +158,31 @@ block body
 			li 2014 - pr. !{divide} Member of the British Computing Society
 			li 2007 - 2012 !{divide} Member of UK Young Gifted and Talented
 			li 2005 - 2012 !{divide} Member of the National Academy for Gifted and Talented Youth
+
+		//- skills
+
+		h2 Skills
+
+		ul
+			li #[strong Programming] which has been both a job and a passion #[strong since 2005]. The list of technologies I've worked with includes Node.js, Android, Java, PHP, C#/.NET, Python, MySQL, MongoDB, JavaScript, jQuery, (X)HTML, Jade and (S)CSS. I'm currently in the process of learning React and AngularJS to extend the list.
+			li.no-dot
+				a.icon-link(href = '/info#software-development')
+					i.fa.fa-angle-right.text-highlight
+					span Full language list and more details
+
+			li #[strong Linux servers and clients], which I have been using for much of my programming career. My experience includes setting them up from scratch, installing most of the technologies listed above, and managing them on a day-to-day basis. I also have some limited experience in Bash scripting.
+
+			li #[strong Modern software development topics], including #[strong version control] and the #[strong Agile working methodology]. I have taught both of these topics in a lecture format and to colleagues, and I make great use of both in my current position as Software Engineer at Unitu.
+
+			li #[strong Teaching], which has long been a passion and skill of time. My experiences range from 12 months as a full-time secondary school teacher to short, ad-hoc lab sessions to teach proper Git branching methodologies.
+			li.no-dot
+				a.icon-link(href = '/positions#project-trust')
+					i.fa.fa-angle-right.text-highlight
+					span My position as a secondary school teacher
+
+			li #[strong Computer hardware] and #[strong general electronics] skills have proved to be valuable many times, particularly whilst working for nearly three years as a computer and laptop repair technician and when working on numerous hobby projects (including a small, Python-powered self-steering robot).
+
+			li #[strong Fire breathing and fire eating] is perhaps an uncommon skill for software developers, but it has proved to be an excellent party trick and a very interesting hobby to pursue.
 
 		//- work history
 
@@ -254,31 +285,6 @@ block body
 			li Designed and built bespoke PCs to match specifications and budgets, from servers to high-end gaming rigs.
 			li Served customers and resolved issues on a sales floor offering a wide range of products and services, working with customers possessing a wide range of technical abilities.
 
-		//- skills
-
-		h2 Skills
-
-		ul
-			li #[strong Programming] which has been both a job and a passion #[strong since 2005]. The list of technologies I've worked with includes Node.js, Android, Java, PHP, C#/.NET, Python, MySQL, MongoDB, JavaScript, jQuery, (X)HTML, Jade, EJS and (S)CSS. I'm currently in the process of learning React and AngularJS to extend the list.
-			li.no-dot
-				a.icon-link(href = '/info#software-development')
-					i.fa.fa-angle-right.text-highlight
-					span Full language list and more details
-
-			li #[strong Linux servers and clients], which I have been using for much of my programming career. My experience includes setting them up from scratch, installing most of the technologies listed above, and managing them on a day-to-day basis. I also have some limited experience in Bash scripting.
-
-			li #[strong Modern software development topics], including #[strong version control] and the #[strong Agile working methodology]. I have taught both of these topics in a lecture format and to colleagues, and I make great use of both in my current position as Software Engineer at Unitu.
-
-			li #[strong Teaching], which has long been a passion and skill of time. My experiences range from 12 months as a full-time secondary school teacher to short, ad-hoc lab sessions to teach proper Git branching methodologies.
-			li.no-dot
-				a.icon-link(href = '/positions#project-trust')
-					i.fa.fa-angle-right.text-highlight
-					span My position as a secondary school teacher
-
-			li #[strong Computer hardware] and #[strong general electronics] skills have proved to be valuable many times, particularly whilst working for nearly three years as a computer and laptop repair technician and when working on numerous hobby projects (including a small, Python-powered self-steering robot).
-
-			li #[strong Fire breathing and fire eating] is perhaps an uncommon skill for software developers, but it has proved to be an excellent party trick and a very interesting hobby to pursue.
-
 		//- volunteering and charity work
 
 		h2 Volunteering &amp; Charity Work
@@ -289,7 +295,7 @@ block body
 				| Served with the charity #[strong Project Trust], one of very few officially accredited gap year organisations in the UK.
 				i.fa.fa-info-circle.info-dot(
 				data-toggle = 'tooltip',
-				title = 'Accreditation started after I embarked on my year abroad, but current and future volunteers will receive a UCAS-recognised qualification for their service')
+				title = 'Current and future volunteers receive a UCAS-recognised qualification for their service overseas')
 			li Taught youths aged 13 – 16 in Sand Creek, a remote Wapishana-tribal village in the hinterlands of Guyana.
 			li
 				| Managed several school development projects and started an eventually-successful initiative to bring Internet access to the village.
@@ -297,6 +303,10 @@ block body
 				data-toggle = 'tooltip',
 				title = 'The seeds I sowed for this initiative did not come to fruition until after I was back in the UK, but it was still amazing to have been a part of the change')
 			li Raised over &pound;5,100 to fund the gap year (insurance, training, transport, etc.).
+			li.no-dot
+				a.icon-link(href = '/positions#project-trust')
+					i.fa.fa-angle-right.text-highlight
+					span My work as a secondary school teacher
 
 		h3 Individual Projects
 		ul
@@ -309,9 +319,7 @@ block body
 
 		h2 References &amp; Contacting Me
 
-		ul
-			li I have a number of references and recommendations #[a(href = '/references') available on my main website], and additional referee contact details can be provided on request.
-			li I can be contacted via #[a(href = '/contact') any of the methods listed on my main website].
+		p I have a number of references and recommendations #[a(href = '/references') available on my main website], and additional referee contact details can be provided on request. I can be contacted via #[a(href = '/contact') any of the methods listed on my main website].
 
 block scripts
 	script(src = '/cv/js/cv.js')
