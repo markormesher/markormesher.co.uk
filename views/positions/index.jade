@@ -1,13 +1,17 @@
 extends ../_shared/page-layout
 
 mixin position(title, subtitle, id, imageName)
-	div.floating-grid-item(id = id): div.inner
+	div.floating-grid-item(id = id).read-more: div.inner
 		if imageName != null
 			img.left-thumbnail(src = '/positions/images/' + imageName, title = title)
 		h3!= title.replace('@', '<span class="text-muted">@</span>')
 		if subtitle != null
 			p.subtitle!= subtitle
 		block
+		p.read-more.text-center.hide
+			a.icon-link(href = 'javascript:;')
+				i.fa.fa-angle-down.text-highlight
+				span Read more
 
 block page-head
 	link(rel = 'stylesheet', href = '/_shared/css/floating-grid-layout.css')
@@ -22,11 +26,11 @@ block page-body
 		'unitu',
 		'unitu-logo.png')
 
-			p After meeting them at a hackathon, Unitu has been my primary development position since June 2014. I started as a part-time #[strong Android developer] and have gradually taken on more responsibilities.
+			p After meeting them at a hackathon, Unitu was my primary development position #[strong over two years]. I started as a part-time #[strong Android developer] and gradually took on more and more responsibilities.
 
-			p Initially, I was tasked to develop a #[a(href = '/projects#unitu-android-app') #[strong brand new Android app]] for the platform. The app has been made available to #[strong thousands of UK university students] and remains one of my main roles, but I am also the technical lead on a #[a(href = '/projects#unitu-analytics') #[strong bespoke analytics system]].
+			p Initially, I was tasked to develop a #[a(href = '/projects#unitu-android-app') #[strong brand new Android app]] for the platform. The app was made available to #[strong thousands of UK university students] and remained one of my main roles, but I also took technical lead on a #[a(href = '/projects#unitu-analytics') #[strong bespoke analytics system]].
 
-			p Since moving to a full-time role in September 2015, I have also started to contribute to the #[a(href = '/projects#unitu-web-api') #[strong website and API]], and throughout 2016 I will be working on developing #[strong closer technical integrations] with university systems.
+			p When I moved to a full-time role in September 2015, I also started contributing to the #[a(href = '/projects#unitu-web-api') #[strong website and API]], and throughout 2016 I worked on developing #[strong closer technical integrations] with university systems.
 
 			div.hr.with-margin: hr
 
@@ -171,4 +175,5 @@ block page-body
 block scripts
 	script(src = '/_vendor/masonry/masonry.packaged.min.js')
 	script(src = '/_vendor/masonry/jquery.imagesloaded.js')
+	script(src = '/_shared/js/read-more.js')
 	script(src = '/_shared/js/floating-grid-layout.js')

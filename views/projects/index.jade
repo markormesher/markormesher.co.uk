@@ -2,7 +2,7 @@ extends ../_shared/page-layout
 
 mixin project(title, subtitle, id, imageFolder, gallery)
 	//- outer div
-	div.floating-grid-item(id = id): div.inner
+	div.floating-grid-item(id = id).read-more: div.inner
 
 		//- thumbnail
 		if imageFolder != null
@@ -22,6 +22,12 @@ mixin project(title, subtitle, id, imageFolder, gallery)
 		if subtitle != null
 			p.subtitle!= subtitle.join('<span class="text-very-muted"> // </span>')
 		block
+
+		//- "read more" link
+		p.read-more.text-center.hide
+			a.icon-link(href = 'javascript:;')
+				i.fa.fa-angle-down.text-highlight
+				span Read more
 
 		//- gallery JS
 		- gallery.push(imageFolder)
@@ -256,4 +262,5 @@ block scripts
 	script(src = '/_vendor/masonry/jquery.imagesloaded.js')
 	script(src = '/_vendor/fancybox/jquery.fancybox.js')
 	script(src = '/_shared/js/floating-grid-layout.js')
+	script(src = '/_shared/js/read-more.js')
 	script(src = '/projects/js/gallery.js')
