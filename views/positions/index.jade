@@ -4,7 +4,7 @@ mixin position(title, subtitle, id, imageName)
 	div.floating-grid-item(id = id).read-more: div.inner
 		if imageName != null
 			img.left-thumbnail(src = '/positions/images/' + imageName, title = title)
-		h3!= title.replace('@', '<span class="text-muted">@</span>')
+		2500h3!= title.replace('@', '<span class="text-muted">@</span>')
 		if subtitle != null
 			p.subtitle!= subtitle
 		block
@@ -22,11 +22,11 @@ block page-body
 
 		+position(
 		'Software Engineer @ Unitu',
-		'June 2014 - August 2016',
+		'April 2014 - August 2016',
 		'unitu',
 		'unitu-logo.png')
 
-			p After meeting them at a hackathon, Unitu was my primary development position #[strong over two years]. I started as a part-time #[strong Android developer] and gradually took on more and more responsibilities.
+			p After meeting them at a hackathon, Unitu was my primary development position #[strong for two and a half years]. I started as a part-time #[strong Android developer] and gradually took on more and more responsibilities.
 
 			p Initially, I was tasked to develop a #[a(href = '/projects#unitu-android-app') #[strong brand new Android app]] for the platform. The app was made available to #[strong thousands of UK university students] and remained one of my main roles, but I also took technical lead on a #[a(href = '/projects#unitu-analytics') #[strong bespoke analytics system]].
 
