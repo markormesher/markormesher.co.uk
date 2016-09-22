@@ -164,7 +164,7 @@ block body
 		h2 Skills
 
 		ul
-			li #[strong Programming] which has been both a job and a passion #[strong since 2005]. The list of technologies I've worked with includes Node.js, Android, Java, PHP, C#/.NET, Python, MySQL, MongoDB, JavaScript, jQuery, (X)HTML, Jade and (S)CSS. I'm currently in the process of learning React and AngularJS to extend the list.
+			li #[strong Programming] which has been both a job and a passion #[strong since 2005]. The list of technologies I've worked with includes Node.js, Android, Java, Kotlin, PHP, C#/.NET, Python, MySQL, MongoDB, JavaScript, jQuery, (X)HTML, Jade and (S)CSS. I'm currently in the process of learning React and AngularJS to extend the list.
 			li.no-dot
 				a.icon-link(href = '/info#software-development')
 					i.fa.fa-angle-right.text-highlight
@@ -187,6 +187,13 @@ block body
 		//- work history
 
 		h2 Work History
+
+		h3.first.collapsible
+			| Sep 2016 (Internship) !{divide} Android Developer !{divide} Yoyo Wallet
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-yoyo') Show details
+		ul#work-yoyo
+			li Contributed to Yoyo Wallet&#39;s #[strong well-established Android app], developing both consumer-facing features and internal tools.
+			li Set up new CI tools to automate some stages of the #[strong Android/iOS QA workflow], introducing time savings and removing monotonous steps from the code review process.
 
 		h3.first.collapsible
 			| Apr 2014 - Aug 2016 !{divide} Software Engineer !{divide} Unitu
