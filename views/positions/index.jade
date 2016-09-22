@@ -4,7 +4,7 @@ mixin position(title, subtitle, id, imageName)
 	div.floating-grid-item(id = id).read-more: div.inner
 		if imageName != null
 			img.left-thumbnail(src = '/positions/images/' + imageName, title = title)
-		2500h3!= title.replace('@', '<span class="text-muted">@</span>')
+		h3!= title.replace('@', '<span class="text-muted">@</span>')
 		if subtitle != null
 			p.subtitle!= subtitle
 		block
@@ -57,6 +57,17 @@ block page-body
 			p: a.icon-link(href = '/references#fares-alaboud')
 				i.fa.fa-comment-o.text-highlight
 				span Reference from colleague, Fares Alaboud
+
+
+		+position(
+		'Android Developer @ Yoyo Wallet',
+		'September 2016 (Internship)',
+		'yoyo',
+		'yoyo-logo.png')
+
+			p I joined Yoyo Wallet for a #[strong brief internship] between the end of my position at Unitu and returning for my final year at King&#39;s College London. During this time I worked on their #[strong well-established Android app], developing both consumer-facing features and internal tools.
+
+			p I also set up new CI tools to automate some stages of the #[strong Android/iOS QA workflow], introducing time savings and removing monotonous steps from the code review process.
 
 
 		+position(
