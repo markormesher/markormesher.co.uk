@@ -4,7 +4,7 @@ mixin position(title, subtitle, id, imageName)
 	div.floating-grid-item(id = id).read-more: div.inner
 		if imageName != null
 			img.left-thumbnail(src = '/positions/images/' + imageName, title = title)
-		h3!= title.replace('@', '<span class="text-muted">@</span>')
+		h3!= title.replace('@', '<br /><span class="text-muted">@</span>')
 		if subtitle != null
 			p.subtitle!= subtitle
 		block
@@ -21,7 +21,7 @@ block page-body
 	div.floating-grid
 
 		+position(
-		'Software Engineer @ Unitu',
+		'Android Lead &amp; Software Engineer @ Unitu',
 		'April 2014 - August 2016',
 		'unitu',
 		'unitu-logo.png')
@@ -71,30 +71,20 @@ block page-body
 
 
 		+position(
-		'Teaching Assistant & Student @ King&#39;s College London',
-		'September 2014 - July 2015',
-		'kcl',
-		'kcl-logo.png')
+		'Android Lecturer & Treasurer @ KCL Tech Society',
+		'February 2014 - present',
+		'kcl-tech',
+		'kcl-tech-logo.png')
 
-			p At KCL, I was a teaching assistant for the #[strong Advanced Practical Topics] course. The module gave students insights on a range of technical and programming topics that are not usually covered, including Unix, Python, version control and mobile development.
+			p As well as managing the society's finances, I #[strong wrote and delivered Android development lectures] as part of the #[em Build X] course ran by the group, and acted as an assistant for other lessons on beginner programming and website development.
 
-			p I also delivered #[a(href = '/projects#android-lectures') #[strong Android development lectures]] as part of the #[em Build X] course ran by the KCL Tech Society, and assisted with other lessons on beginner programming and website development.
-
-			p Finally, as a student, I have achieved a grade of #[strong 89%] so far, putting me on track for a first class degree.
+			p I also assisted with the planning, organisation and execution of society events, from hackathons with 250+ attendees to socials and beginner programming classes.
 
 			div.hr.with-margin: hr
 
 			p: a.icon-link(href = '/projects#android-lectures')
 				i.fa.fa-code.text-highlight
 				span Project: KCL Tech Android Lectures
-
-			p: a.icon-link(href = '/references#peter-mcburney')
-				i.fa.fa-comment-o.text-highlight
-				span Reference from head of department, Peter McBurney
-
-			p: a.icon-link(href = '/references#andrew-coles')
-				i.fa.fa-comment-o.text-highlight
-				span Reference from professor, Dr Andrew Coles
 
 			p: a.icon-link(href = '/references#fares-alaboud')
 				i.fa.fa-comment-o.text-highlight
@@ -103,6 +93,27 @@ block page-body
 			p: a.icon-link(href = '/references#joshua-simpson')
 				i.fa.fa-comment-o.text-highlight
 				span Reference from society Vice President, Joshua Simpson
+
+
+		+position(
+		'Teaching Assistant & Student @ King&#39;s College London',
+		'September 2014 - present',
+		'kcl',
+		'kcl-logo.png')
+
+			p At KCL, I was a teaching assistant for the #[strong Advanced Practical Topics] and #[strong Practical Experiences of Programming] courses. The modules gave students insights on a range of technical and programming topics, including C++, Scala, Unix, Python, version control and mobile development.
+
+			p Finally, as a student, I have achieved a grade of #[strong 89%] so far, putting me on track for a first class degree.
+
+			div.hr.with-margin: hr
+
+			p: a.icon-link(href = '/references#peter-mcburney')
+				i.fa.fa-comment-o.text-highlight
+				span Reference from head of department, Peter McBurney
+
+			p: a.icon-link(href = '/references#andrew-coles')
+				i.fa.fa-comment-o.text-highlight
+				span Reference from professor, Dr Andrew Coles
 
 		+position(
 		'Summer Intern @ Allianz Petplan',
