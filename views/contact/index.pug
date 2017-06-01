@@ -5,7 +5,7 @@ block page-body
 	div.row
 		div.col-md-6
 
-			p.text-larger #[strong Want to get in touch? Awesome - I&#39;d love to hear from you!] Feel free to get in touch on any of these channels, and I'll get back to you as soon as I can.
+			p.text-larger #[strong Want to get in touch?] Feel free to send me an email and I'll get back to you as soon as I can.
 
 		div.col-md-6
 
@@ -15,20 +15,15 @@ block page-body
 				| #[strong Email] me on #[a(href = 'mailto:me@markormesher.co.uk') me@markormesher.co.uk]
 
 			p
-				i.fa.fa-fw.fa-phone.text-highlight
+				i.fa.fa-fw.fa-lock.text-highlight
 				| &nbsp;
-				| #[strong Call] me on +44(0) 7775 932063
-				| &nbsp;&nbsp;
-				i.fa.fa-info-circle.text-very-muted(
-				data-toggle = 'tooltip',
-				data-placement = 'right',
-				title = 'I work normal UK hours; calls from unknown numbers may not be answered over the weekend or in the evening!')
+				| PGP Key Info:
+
+			pre.
+				Key:         0xD728C145
+				Fingerprint: 764D 648C 677C D2A0 51A2 D863 DE30 8192 D728 C145
 
 			p
-				i.fa.fa-fw.fa-twitter.text-highlight
+				i.fa.fa-fw.fa-download.text-highlight
 				| &nbsp;
-				| #[strong Tweet or DM] me on #[a(href = 'https://twitter.com/m_s_ormo', rel = 'external') @m_s_ormo]
-			p
-				i.fa.fa-fw.fa-linkedin.text-highlight
-				| &nbsp;
-				| #[strong Send me an InMail] on #[a(href = 'https://uk.linkedin.com/in/markormesher', rel = 'external') LinkedIn]
+				| #[a(href = '/contact/mark-ormesher.asc') Public key block]
