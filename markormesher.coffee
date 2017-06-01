@@ -1,27 +1,12 @@
-##################
-#  Dependencies  #
-##################
-
 path = require('path')
 express = require('express')
-bodyParser = require('body-parser')
 coffeeMiddleware = require('coffee-middleware')
 sassMiddleware = require('node-sass-middleware')
-cookieParser = require('cookie-parser')
-session = require('express-session')
-flash = require('express-flash')
 rfr = require('rfr')
-secrets = rfr('./helpers/secrets.coffee')
 
-############
-#  Routes  #
-############
-
-# start app
 app = express()
 
-# middleware
-app.use(bodyParser.urlencoded({ extended: false }));
+# coffeeware and scss
 app.use(coffeeMiddleware({
 	src: __dirname + '/assets'
 	encodeSrc: false
@@ -32,52 +17,33 @@ app.use(sassMiddleware({
 	dest: __dirname + '/public'
 	outputStyle: 'compressed'
 }))
-app.use(cookieParser('markormesher.co.uk'))
-app.use(session({
-	secret: secrets.COOKIE_SECRET
-	resave: false
-	saveUninitialized: true
-}))
-app.use(flash())
 
-# pull routes from routes folder
-routes = {
-	'': rfr('./controllers/core')
-	'cv': rfr('./controllers/cv')
-	'contact': rfr('./controllers/contact')
-	'info': rfr('./controllers/info')
-	'positions': rfr('./controllers/positions')
-	'projects': rfr('./controllers/projects')
-	'references': rfr('./controllers/references')
-};
-
-for stem, file of routes
-	app.use('/' + stem, file)
+# routes
+app.use('/', rfr('./controllers/core'))
+app.use('/cv', rfr('./controllers/cv'))
+app.use('/contact', rfr('./controllers/contact'))
+app.use('/info', rfr('./controllers/info'))
+app.use('/positions', rfr('./controllers/positions'))
+app.use('/projects', rfr('./controllers/projects'))
+app.use('/references', rfr('./controllers/references'))
 
 # stop favicon requests
 app.use('/favicon.ico', (req, res) -> res.end())
 
-###########
-#  Views  #
-###########
-
+# views
 app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'jade')
+app.set('view engine', 'pug')
 app.use(express.static(path.join(__dirname, 'public')))
 
-####################
-#  Error handlers  #
-####################
-
-# catch 404 and forward to error handler
+# catch-all route for 404s
 app.use((req, res, next) ->
-	err = new Error('Not Found')
+	err = new Error('Not Found: ' + req.url)
 	err.status = 404
 	next(err)
 )
 
 # general error handler
-app.use((error, req, res, next) ->
+app.use((error, req, res) ->
 	res.status(error.status || 500)
 	res.render('core/error', {
 		_: {
@@ -89,8 +55,4 @@ app.use((error, req, res, next) ->
 	})
 )
 
-############
-#  Start!  #
-############
-
-app.listen(3001)
+app.listen(3001, () -> console.log('Listening on port 3001'))
