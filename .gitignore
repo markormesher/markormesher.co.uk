@@ -2,9 +2,9 @@
 
 # Ignore CSS (commit the SCSS instead)
 *.css
-!public/_vendor/*
-!public/_vendor/*/*
-!public/_vendor/*/*/*
+!public/vendor/*
+!public/vendor/*/*
+!public/vendor/*/*/*
 
 # Ignore secrets file
 helpers/secrets.coffee
