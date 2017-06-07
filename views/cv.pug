@@ -5,7 +5,7 @@ block head
 	link(rel = 'stylesheet', href = '/css/cv.css')
 
 block body
-	- var divide = '&nbsp;<span class="text-muted">//</span>&nbsp;'
+	- var divide = ' &nbsp;<span class="text-muted">//</span>&nbsp; '
 
 	div.container
 
@@ -16,22 +16,16 @@ block body
 		h1 Mark Ormesher
 		p.subtitle
 			| Software Developer with #{years} Years of Experience
-			| &nbsp;&nbsp;&nbsp;
-			a(href = '/',
-			data-toggle = 'tooltip',
-			data-placement = 'bottom',
-			title = 'My portfolio site'): i.fa.fa-fw.fa-globe.text-muted
-			| &nbsp;&nbsp;&nbsp;
-			a(href = '/contact',
-			data-toggle = 'tooltip',
-			data-placement = 'bottom',
-			title = 'Contact me'): i.fa.fa-fw.fa-envelope-o.text-muted
+		p.subtitle
+			a(href = '/') Personal Site & Portfolio
+			| !{divide}
+			a(href = '/contact') Contact Me
 
 		//- education
 
 		h2 Education
 
-		h3.first 2013 - 2017 !{divide} King's College London University (Final Year)
+		h3.first 2013 - 2017 !{divide} King's College London University
 		ul
 			li BSc Computer Science with a Year in Industry
 			li
@@ -41,13 +35,10 @@ block body
 			| 2015 - 2016 !{divide} Online Courses
 			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#online-courses') Show details
 		ul#online-courses
-			li Mar 2016 - Apr 2016 !{divide} Coursera: &quot;Algorithm Toolbox&quot; !{divide} Grade: 100% !{divide} #[a(href = 'https://www.coursera.org/account/accomplishments/verify/GRCW6VCNTBXU', rel = 'external') Certificate]
-
-			li May 2016 - Jun 2016 !{divide} Coursera: &quot;Data Structures&quot; !{divide} Grade: 100% !{divide} #[a(href = 'https://www.coursera.org/account/accomplishments/verify/ZFYD54ARY2VJ', rel = 'external') Certificate]
-
-			li Jul 2016 - Aug 2016 !{divide} Coursera: &quot;Algorithms on Graphs&quot; !{divide} Grade: 100% !{divide} #[a(href = 'https://www.coursera.org/account/accomplishments/verify/MXQ9LMLRCRK7', rel = 'external') Certificate]
-
-			li Aug 2016 - Sep 2016 !{divide} Coursera: &quot;Algorithms on Strings&quot; !{divide} Grade: 100% !{divide} #[a(href = 'https://www.coursera.org/account/accomplishments/verify/VYLHNQ735ZL2', rel = 'external') Certificate]
+			li Mar 2016 - Apr 2016 !{divide} Coursera: &quot;Algorithm Toolbox&quot; !{divide} Grade: 100% !{divide} #[a(href = 'https://www.coursera.org/account/accomplishments/verify/GRCW6VCNTBXU') Certificate]
+			li May 2016 - Jun 2016 !{divide} Coursera: &quot;Data Structures&quot; !{divide} Grade: 100% !{divide} #[a(href = 'https://www.coursera.org/account/accomplishments/verify/ZFYD54ARY2VJ') Certificate]
+			li Jul 2016 - Aug 2016 !{divide} Coursera: &quot;Algorithms on Graphs&quot; !{divide} Grade: 100% !{divide} #[a(href = 'https://www.coursera.org/account/accomplishments/verify/MXQ9LMLRCRK7') Certificate]
+			li Aug 2016 - Sep 2016 !{divide} Coursera: &quot;Algorithms on Strings&quot; !{divide} Grade: 100% !{divide} #[a(href = 'https://www.coursera.org/account/accomplishments/verify/VYLHNQ735ZL2') Certificate]
 
 			li
 				| Jan 2016 - Feb 2016 !{divide} Udemy: &quot;Learn &amp; Understand Node.js&quot; !{divide} #[a(href = 'https://www.udemy.com/certificate/UC-5OFD3FR6/', rel = 'external') Certificate] !{divide} #[a(href = 'http://github.com/markormesher/learning-node-js', rel = 'external') Code]
