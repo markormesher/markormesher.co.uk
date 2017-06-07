@@ -2,15 +2,15 @@ extends ../../_shared/page-layout
 
 block page-head
 	link(rel = 'stylesheet', href = '/css/gallery.css')
-	link(rel = 'stylesheet', href = '/_vendor/fancybox/jquery.fancybox.css')
+	link(rel = 'stylesheet', href = '/vendor/fancybox/jquery.fancybox.css')
 
 block page-body
 
 	//- gallery images
 	-
 		galleryImages = [
-			{href: '/projects/images/allianz-petplan-petplan-live/dash.jpg', title: 'Sample dashboard data (not shown: a news ticker along the bottom)'},
-			{href: '/projects/images/allianz-petplan-petplan-live/in-use.jpg', title: 'Two of the boards in use (plus bonus poster from \'Your Voice\')'}
+			{href: '/images/projects/allianz-petplan-petplan-live/dash.jpg', title: 'Sample dashboard data (not shown: a news ticker along the bottom)'},
+			{href: '/images/projects/allianz-petplan-petplan-live/in-use.jpg', title: 'Two of the boards in use (plus bonus poster from \'Your Voice\')'}
 		];
 	script(type = 'text/javascript').
 		window.galleryImages = !{JSON.stringify(galleryImages)};
@@ -19,7 +19,7 @@ block page-body
 
 	a.single-gallery-link(href = 'javascript:;', data-start = 0)
 		img.bordered.inline-right(
-		src = '/projects/images/allianz-petplan-petplan-live/dash.jpg'
+		src = '/images/projects/allianz-petplan-petplan-live/dash.jpg'
 		width = '400px'
 		title = 'Sample dashboard data (not shown: a news ticker along the bottom)')
 
@@ -100,7 +100,7 @@ block page-body
 
 	a.single-gallery-link(href = 'javascript:;', data-start = 1)
 		img.bordered.inline-right(
-		src = '/projects/images/allianz-petplan-petplan-live/in-use.jpg'
+		src = '/images/projects/allianz-petplan-petplan-live/in-use.jpg'
 		width = '400px'
 		title = 'Two of the boards in use (plus bonus poster from \'Your Voice\')')
 
@@ -120,5 +120,5 @@ block page-body
 		span Read Hayley's full reference
 
 block scripts
-	script(src = '/_vendor/fancybox/jquery.fancybox.js')
+	script(src = '/vendor/fancybox/jquery.fancybox.js')
 	script(src = '/js/gallery.js')

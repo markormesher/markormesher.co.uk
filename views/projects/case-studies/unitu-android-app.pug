@@ -2,14 +2,14 @@ extends ../../_shared/page-layout
 
 block page-head
 	link(rel = 'stylesheet', href = '/css/gallery.css')
-	link(rel = 'stylesheet', href = '/_vendor/fancybox/jquery.fancybox.css')
+	link(rel = 'stylesheet', href = '/vendor/fancybox/jquery.fancybox.css')
 
 block page-body
 
 	//- gallery images
 	-
 		galleryImages = [
-			{href: '/projects/images/unitu-android-app/thumb-larger.png', title: 'The Unitu Android App'}
+			{href: '/images/projects/unitu-android-app/thumb-larger.png', title: 'The Unitu Android App'}
 		];
 	script(type = 'text/javascript').
 		window.galleryImages = !{JSON.stringify(galleryImages)};
@@ -18,7 +18,7 @@ block page-body
 
 	a.single-gallery-link(href = 'javascript:;', data-start = 0)
 		img.inline-right(
-		src = '/projects/images/unitu-android-app/thumb-larger.png'
+		src = '/images/projects/unitu-android-app/thumb-larger.png'
 		width = '400px'
 		title = 'The Unitu Android App')
 
@@ -101,5 +101,5 @@ block page-body
 		span Read Anish's full reference
 
 block scripts
-	script(src = '/_vendor/fancybox/jquery.fancybox.js')
+	script(src = '/vendor/fancybox/jquery.fancybox.js')
 	script(src = '/js/gallery.js')

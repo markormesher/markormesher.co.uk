@@ -3,7 +3,7 @@ extends ../_shared/page-layout
 mixin position(title, subtitle, id, imageName)
 	div.floating-grid-item(id = id).read-more: div.inner
 		if imageName != null
-			img.left-thumbnail(src = '/positions/images/' + imageName, title = title)
+			img.left-thumbnail(src = '/images/positions/' + imageName, title = title)
 		h3!= title.replace('@', '<br /><span class="text-muted">@</span>')
 		if subtitle != null
 			p.subtitle!= subtitle
@@ -195,7 +195,7 @@ block page-body
 	br.clearfix
 
 block scripts
-	script(src = '/_vendor/masonry/masonry.packaged.min.js')
-	script(src = '/_vendor/masonry/jquery.imagesloaded.js')
+	script(src = '/vendor/masonry/masonry.packaged.min.js')
+	script(src = '/vendor/masonry/jquery.imagesloaded.js')
 	script(src = '/js/shared/read-more.js')
 	script(src = '/js/shared/floating-grid-layout.js')

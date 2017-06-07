@@ -3,7 +3,7 @@ extends ../_shared/page-layout
 mixin reference(name, role, id, imageName)
 	div.floating-grid-item.reference(id = id).read-more: div.inner
 		if imageName != null
-			div.left-thumbnail: img.avatar(src = '/references/images/' + imageName, title = title)
+			div.left-thumbnail: img.avatar(src = '/images/references/' + imageName, title = title)
 		h3!= name
 		if role != null
 			p.subtitle!= role.join('<br />')
@@ -140,7 +140,7 @@ block page-body
 
 
 block scripts
-	script(src = '/_vendor/masonry/masonry.packaged.min.js')
-	script(src = '/_vendor/masonry/jquery.imagesloaded.js')
+	script(src = '/vendor/masonry/masonry.packaged.min.js')
+	script(src = '/vendor/masonry/jquery.imagesloaded.js')
 	script(src = '/js/shared/floating-grid-layout.js')
 	script(src = '/js/shared/read-more.js')

@@ -37,7 +37,7 @@ mixin project(title, subtitle, id, imageFolder, gallery)
 block page-head
 	link(rel = 'stylesheet', href = '/css/shared/floating-grid-layout.css')
 	link(rel = 'stylesheet', href = '/css/gallery.css')
-	link(rel = 'stylesheet', href = '/_vendor/fancybox/jquery.fancybox.css')
+	link(rel = 'stylesheet', href = '/vendor/fancybox/jquery.fancybox.css')
 
 block page-body
 
@@ -51,7 +51,7 @@ block page-body
 		'Unitu Android App',
 		['Android', 'Project Management'],
 		'unitu-android-app',
-		'/projects/images/unitu-android-app', [])
+		'/images/projects/unitu-android-app', [])
 
 			p The #[em Unitu Android app] mirrors the functionality of the Unitu website, giving users access to the software wherever they are. I am responsible for #[strong planning and executing development] of the app, as well as #[strong testing] and #[strong deployment]. Since its launch it has helped to improve Unitu's student engagement, and has served as an excellent platform for me to develop my Android programming skills.
 
@@ -70,7 +70,7 @@ block page-body
 		'Unitu Analytics',
 		['PHP', 'jQuery', 'ElasticSearch', 'Data Presentation'],
 		'unitu-analytics',
-		'/projects/images/unitu-analytics', [])
+		'/images/projects/unitu-analytics', [])
 
 			p Providing data to both the #[strong team] and #[strong customers], the #[em Unitu analytics suite] has proved to be an effective tool and a powerful selling point. As well as collecting data across the product, it also automates reporting tasks that used to consume a lot of person-hours. I am responsible for the #[strong planning and development] of the suite and I share some of the #[strong testing] duties.
 
@@ -85,7 +85,7 @@ block page-body
 		'Titanic',
 		['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'CoffeeScript', 'SCSS', 'Jade', 'Bash', 'GitLab'],
 		'titanic',
-		'/projects/images/titanic', [
+		'/images/projects/titanic', [
 			['thumb-larger.jpg', 'Device list (spot the naming convention)'],
 			['dash.jpg', 'The dashboard, shortly after work started'],
 			['api.jpg', 'Titanic API'],
@@ -111,7 +111,7 @@ block page-body
 		'Floating Action Button with Speed-Dial Menu (for Android)',
 		['Android'],
 		'android-fab',
-		'/projects/images/android-fab', [
+		'/images/projects/android-fab', [
 			['demo.gif', 'The FAB and speed-dial menu in action'],
 			['screen-1.png', 'The FAB, with the speed-dial menu closed...'],
 			['screen-2.png', '...and open!']
@@ -140,7 +140,7 @@ block page-body
 		'Nuclibook',
 		['Java', 'Spark Framework', 'Bootstrap', 'Project Management'],
 		'nuclibook',
-		'/projects/images/nuclibook', [
+		'/images/projects/nuclibook', [
 			['dash.png', 'Nuclibook dashboard'],
 			['day-summary.png', 'Printable day summary for their notice board'],
 			['calendar.png', 'Calendar, with customisable views'],
@@ -171,7 +171,7 @@ block page-body
 		'Unitu Website & API',
 		['C# .NET', 'MVC5'],
 		'unitu-web-api',
-		'/projects/images/unitu-web-api', [])
+		'/images/projects/unitu-web-api', [])
 
 			p I started working on the #[em Unitu website & API] in mid-2015, learning #[strong C# .NET] and the #[strong MVC5 framework] along the way. It started out as a minor facet of my work at Unitu, but my contributions have increased with time. One such contribution is an entirely #[strong new, bespoke notification system] that manages preferences, stacking, emails and push notifications.
 
@@ -186,7 +186,7 @@ block page-body
 		'Allianz Petplan "Petplan Live!"',
 		['jQuery', 'CoffeeScript'],
 		'petplan-live',
-		'/projects/images/allianz-petplan-petplan-live', [])
+		'/images/projects/allianz-petplan-petplan-live', [])
 
 			p #[em Petplan Live!] was a performance dashboard built for the #[strong Allianz Petplan service department] during my internship there in 2015. It provides an attractive display of important #[strong performance metrics], helping to drive employee engagement and awareness.
 
@@ -211,7 +211,7 @@ block page-body
 		'Android Development Lectures',
 		['Android', 'Teaching'],
 		'android-lectures',
-		'/projects/images/android-lectures', [
+		'/images/projects/android-lectures', [
 			['1.jpg', null],
 			['2.jpg', null],
 			['3.jpg', null]
@@ -230,7 +230,7 @@ block page-body
 		'Allianz Petplan "Your Voice"',
 		['Print Design', 'Communications', 'Managing Upwards'],
 		'petplan-your-voice',
-		'/projects/images/allianz-petplan-your-voice', [])
+		'/images/projects/allianz-petplan-your-voice', [])
 
 			p #[em Your Voice] was a campaign within the #[strong service department at Allianz Petplan], intended to collect employee opinions and ideas on a range of key topics. My involvement included #[strong branding design], communication planning, deployment, promotion and presentation of results on a weekly basis.
 
@@ -246,7 +246,7 @@ block page-body
 		+project(
 		'MLHorrors', ['Android', 'GCM', 'Ruby'],
 		'mlhorrors',
-		'/projects/images/mlhorrors', [])
+		'/images/projects/mlhorrors', [])
 
 			p #[em MLHorrors] is a supplement app for #[strong Werewolf] (a popular hackathon mini-game), built by three friends and I during a #[strong hackathon in 2015]. It augments gameplay with sound effects, graphics, automated randomisation and other features.
 
@@ -258,9 +258,9 @@ block page-body
 	br.clearfix
 
 block scripts
-	script(src = '/_vendor/masonry/masonry.packaged.min.js')
-	script(src = '/_vendor/masonry/jquery.imagesloaded.js')
-	script(src = '/_vendor/fancybox/jquery.fancybox.js')
+	script(src = '/vendor/masonry/masonry.packaged.min.js')
+	script(src = '/vendor/masonry/jquery.imagesloaded.js')
+	script(src = '/vendor/fancybox/jquery.fancybox.js')
 	script(src = '/js/shared/floating-grid-layout.js')
 	script(src = '/js/shared/read-more.js')
 	script(src = '/js/gallery.js')
