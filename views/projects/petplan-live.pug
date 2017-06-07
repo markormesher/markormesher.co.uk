@@ -1,0 +1,124 @@
+extends ../shared/page-layout
+
+block page-head
+	link(rel = 'stylesheet', href = '/css/gallery.css')
+	link(rel = 'stylesheet', href = '/vendor/fancybox/jquery.fancybox.css')
+
+block page-body
+
+	//- gallery images
+	-
+		galleryImages = [
+			{href: '/images/projects/allianz-petplan-petplan-live/dash.jpg', title: 'Sample dashboard data (not shown: a news ticker along the bottom)'},
+			{href: '/images/projects/allianz-petplan-petplan-live/in-use.jpg', title: 'Two of the boards in use (plus bonus poster from \'Your Voice\')'}
+		];
+	script(type = 'text/javascript').
+		window.galleryImages = !{JSON.stringify(galleryImages)};
+
+	//- intro
+
+	a.single-gallery-link(href = 'javascript:;', data-start = 0)
+		img.bordered.inline-right(
+		src = '/images/projects/allianz-petplan-petplan-live/dash.jpg'
+		width = '400px'
+		title = 'Sample dashboard data (not shown: a news ticker along the bottom)')
+
+	p.text-larger During my #[a(href = '/positions#allianz-petplan') internship at Allianz Petplan] I suggested that three unused display screens could be put to better use with a #[strong live performance dashboard]. After producing design mocks, proposals and presentations, my idea was given the go-ahead and #[em Petplan Live!] was born.
+
+	p.text-larger The project turned out to be more challenging than expected, forcing me to make use of some very #[strong hacky solutions] -- did you know you can #[strong store data in JavaScript comments?]
+
+	p: a.icon-link(href = 'https://github.com/markormesher/petplan-live', rel = 'external')
+		i.fa.fa-github.text-highlight
+		span #[em Petplan Live!] on GitHub
+
+	p: a.icon-link(href = '#approach-and-challenges')
+		i.fa.fa-angle-down.text-muted
+		span Technical Approach and Challenges
+
+	p: a.icon-link(href = '#data-in-comments')
+		i.fa.fa-angle-down.text-muted
+		span Storing Data in Comments
+
+	p: a.icon-link(href = '#reception')
+		i.fa.fa-angle-down.text-muted
+		span Reception
+
+	//- tech approach and challenges
+
+	h2#approach-and-challenges Technical Approach &amp; Challenges
+
+	h3 Plan A
+
+	p My first plan was to use a #[strong Ruby] backend together with the #[strong Dashing.io] framework for the dashboard. Unfortunately this turned out to be a dead-end for me: getting a green-light for installing any new software would be a rough and uncertain road, most likely taking me past the end of my internship.
+
+	p
+		i.fa.fa-fw.fa-angle-right.text-muted
+		| #[strong No problem; I can think of another way...]
+
+	h3 Plan B
+
+	p Each of the three screens was to have a low-spec PC to drive it, so why not nominate one as a master to host the dashboard and the set up the others as slaves to read and display it? This #[strong master/slave arrangement] would require nothing more than simple #[strong JavaScript and AJAX], so there would be nothing extra to install. #[strong Sorted, right? Nope.] Getting approval to set up the network between the machines was going to take too long.
+
+	p
+		i.fa.fa-fw.fa-angle-right.text-muted
+		| #[strong Okay, back to the drawing board...]
+
+	h3 Plan C
+
+	p After a few more non-starter ideas, I finally arrived at a solution: the entire application (including data) could be stored in a #[strong protected folder on the networked drive], the data itself could be stored in #[strong JavaScript-readable text files], and to get around the #[strong AJAX/local files issue] #[i.fa.fa-info-circle.text-very-muted(data-toggle = 'tooltip', title = 'Reading local files with AJAX is tricky, to say the least; a quick search on Stack Overflow will find many posts concerning this issue')] a combination of #[strong inline frames and cross-window messaging] could provide continually updating data without reloading the page.
+
+	p
+		i.fa.fa-fw.fa-angle-right.text-muted
+		| #[strong That&#39;ll work, and it&#39;s so hacky it&#39;s beautiful.]
+
+	//- storing data in comments
+
+	h2#data-in-comments Storing Data in Comments
+
+	p The aesthetics of the dashboard are nothing particularly exciting: vanilla HTML and CSS, consistency with the corporate branding, and a few jQuery plugins for the dials. Easy. #[strong The fun part was dealing with the data]: how do you watch text files for updates and show live data, without reloading the page, when you can't use AJAX?
+
+	p #[strong The answer: you get hacky.] After trawling the web, I found that #[strong you can store data in JavaScript comments], allowing for a file that looks almost like plain text and not at all like code (if you ignore the first and last lines). The comment goes inside an anonymous function, then the #[code toString()] of that function goes through some regex to strip out the content you wanted. It's surprisingly easy:
+
+	pre.
+		var textFromComment = (function () {/*
+
+		All of this comment text will be stored in the variable above.
+		For the dashboard, I added some extra code to remove blank
+		lines, and lines starting with '--'.
+		That allowed me to give instructions right inside the file, like this:
+
+		-- Put the number for the stat below:
+		56
+
+		*/}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1];
+
+	p Neat trick, right? You can see some #[strong example files] using this technique #[a(href = 'https://github.com/markormesher/petplan-live/tree/master/src/data', rel = 'external') in the data folder on GitHub] - note the header and footers, and the instructions to staff.
+
+	//- reception
+
+	h2#reception Reception
+
+	a.single-gallery-link(href = 'javascript:;', data-start = 1)
+		img.bordered.inline-right(
+		src = '/images/projects/allianz-petplan-petplan-live/in-use.jpg'
+		width = '400px'
+		title = 'Two of the boards in use (plus bonus poster from \'Your Voice\')')
+
+	p Once I had the data flow down, everything else fell into place with relative ease. As well as the software I produced a user manual that detailed exactly how the board could be updated, and spent one-on-one time with each team leader, #[strong training] them on how to use the board.
+
+	p Soon enough, the dashboard was #[strong running live on three screens] in the office and getting #[strong really positive reviews] from the team. The team leaders were very impressed with their new-found power to disseminate #[strong real-time information], and Hayley Sangan (the deputy department manager), had this to say about my work:
+
+	blockquote
+		i.fa.fa-quote-left.fa-2x.fa-pull-left.text-highlight
+		| Your most significant contribution was the dashboard, which has enabled us to engage our people in our KPIs with something #[strong considerably more exciting than a graph or a report]. You've also left it so that we can update it easily and other areas of the business have already seen it and want to replicate it!
+		br/
+		br/
+		| I was hugely impressed with your #[strong professionalism, work ethic and ability to engage people] at various different levels ... I only wish you could have stayed longer!
+
+	p: a.icon-link(href = '/references#hayley-sangan')
+		i.fa.fa-angle-right.text-highlight
+		span Read Hayley's full reference
+
+block scripts
+	script(src = '/vendor/fancybox/jquery.fancybox.js')
+	script(src = '/js/gallery.js')

@@ -1,0 +1,327 @@
+extends shared/root-layout
+
+block head
+
+	link(rel = 'stylesheet', href = '/css/cv.css')
+
+block body
+	- var divide = ' &nbsp;<span class="text-muted">//</span>&nbsp; '
+
+	div.container
+
+		//- header
+
+		- var years = Math.round((new Date() - new Date(2005, 10, 6)) / (1000 * 60 * 60 * 24 * 365));
+
+		h1 Mark Ormesher
+		p.subtitle
+			| Software Developer with #{years} Years of Experience
+		p.subtitle
+			a(href = '/') Personal Site & Portfolio
+			| !{divide}
+			a(href = '/contact') Contact Me
+
+		//- education
+
+		h2 Education
+
+		h3.first 2013 - 2017 !{divide} King's College London University
+		ul
+			li BSc Computer Science with a Year in Industry
+			li
+				| #[strong Current average: 91%]
+
+		h3.collapsible
+			| 2015 - 2016 !{divide} Online Courses
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#online-courses') Show details
+		ul#online-courses
+			li Mar 2016 - Apr 2016 !{divide} Coursera: &quot;Algorithm Toolbox&quot; !{divide} Grade: 100% !{divide} #[a(href = 'https://www.coursera.org/account/accomplishments/verify/GRCW6VCNTBXU') Certificate]
+			li May 2016 - Jun 2016 !{divide} Coursera: &quot;Data Structures&quot; !{divide} Grade: 100% !{divide} #[a(href = 'https://www.coursera.org/account/accomplishments/verify/ZFYD54ARY2VJ') Certificate]
+			li Jul 2016 - Aug 2016 !{divide} Coursera: &quot;Algorithms on Graphs&quot; !{divide} Grade: 100% !{divide} #[a(href = 'https://www.coursera.org/account/accomplishments/verify/MXQ9LMLRCRK7') Certificate]
+			li Aug 2016 - Sep 2016 !{divide} Coursera: &quot;Algorithms on Strings&quot; !{divide} Grade: 100% !{divide} #[a(href = 'https://www.coursera.org/account/accomplishments/verify/VYLHNQ735ZL2') Certificate]
+
+			li
+				| Jan 2016 - Feb 2016 !{divide} Udemy: &quot;Learn &amp; Understand Node.js&quot; !{divide} #[a(href = 'https://www.udemy.com/certificate/UC-5OFD3FR6/', rel = 'external') Certificate] !{divide} #[a(href = 'http://github.com/markormesher/learning-node-js', rel = 'external') Code]
+				i.fa.fa-info-circle.info-dot(
+				data-toggle = 'tooltip',
+				title = 'This short course was taken to refresh my knowledge, and to fill any gaps left by learning Node.js "as I went along"')
+
+			li
+				| Jan 2016 - Feb 2016 !{divide} Udemy: &quot;The Ultimate Python Tutorial&quot; !{divide} #[a(href = 'https://www.udemy.com/certificate/UC-WQWLOJVI/', rel = 'external') Certificate] !{divide} #[a(href = 'http://github.com/markormesher/learning-python', rel = 'external') Code]
+				i.fa.fa-info-circle.info-dot(
+				data-toggle = 'tooltip',
+				title = 'This short course was taken to refresh my knowledge, and to fill any gaps left by learning Python "as I went along"')
+
+		h3.collapsible
+			| 2010 - 2012 !{divide} West Coventry Sixth Form
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#sixth-form') Show details
+		ul#sixth-form
+			li A-Levels: Media Studies #[strong A*]; Mathematics #[strong A]; Information Technology #[strong B]; Economics #[strong B]
+			li AS-Level: Critical Thinking #[strong A]; Additional Mathematics #[strong A]
+
+		//- skills
+
+		h2 Skills
+
+		ul
+			li #[strong Android development] - my primary focus since 2014. I've built and contributed to apps for several commercial and academic projects, taught Android development in various settings, and released a mildly popular open-source library. Since mid-2016 I've been using #[strong Kotlin] in the majority of my Android projects.
+
+			li.no-dot
+				a.icon-link(href = '/positions')
+					i.fa.fa-angle-right.text-highlight
+					span My positions as an Android developer
+
+			li.no-dot
+				a.icon-link(href = '/projects#android-lectures')
+					i.fa.fa-angle-right.text-highlight
+					span My Android lectures at King's College london
+
+			li.no-dot
+				a.icon-link(href = 'https://github.com/markormesher/android-fab' rel = 'external')
+					i.fa.fa-angle-right.text-highlight
+					span My open-source project, #[em Android FAB with Speed-Dial Menu]
+
+			li #[strong Programming] - a job and a passion #[strong since 2005]. The list of technologies I've worked with includes Node.js, Android, Java, Kotlin, PHP, C#/.NET, Python, MySQL, MongoDB, JavaScript, jQuery, (X)HTML, Jade and (S)CSS.
+
+			li.no-dot
+				a.icon-link(href = '/info#software-development')
+					i.fa.fa-angle-right.text-highlight
+					span Full language list and more details
+
+			li #[strong Software development processes] - including #[strong version control] and the #[strong Agile working methodology]. I have taught both of these topics in formal and informal settings, and have made great use of both in multiple positions as a software engineer.
+
+			li #[strong General Linux proficiency] - main OS for much of my programming career. My experience includes setting server up from scratch, installing most of the technologies listed above, and managing them on a day-to-day basis. I also have some limited experience in Bash scripting.
+
+			li #[strong Teaching] - a long-standing passion and skill of mine. My experiences range from 12 months as a full-time secondary school teacher to short, ad-hoc lab sessions to teach proper Git branching methodologies.
+
+			li.no-dot
+				a.icon-link(href = '/positions#project-trust')
+					i.fa.fa-angle-right.text-highlight
+					span My position as a secondary school teacher
+
+			li #[strong Computer hardware proficiency] - skills that have proved to be valuable many times, particularly whilst working as a computer and laptop repair technician and when working on numerous hobby projects (including a small, Python-powered self-steering robot).
+
+			li #[strong Fire breathing and fire eating] - an uncommon skill for software developers, but it's an excellent party trick and a very enjoyable hobby.
+
+		//- work history
+
+		h2 Work History
+
+		h3.first.collapsible
+			| Feb 2014 - May 2017 !{divide} Android Lecturer &amp; Treasurer !{divide} KCL Tech Society
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-kcl-tech') Show details
+
+		ul#work-kcl-tech
+			li #[strong Wrote and delivered Android development lectures] as part of the #[em Build X] course ran by the society, and acted as an assistant for other lessons on beginner programming and website development.
+
+			li.no-dot
+				a.icon-link(href = '/projects#android-lectures')
+					i.fa.fa-angle-right.text-highlight
+					span My project, #[em Build X: Android] lectures
+
+			li Assisted with the planning, organisation and execution of society events, from hackathons with 250+ attendees to socials and beginner programming classes.
+
+		h3.collapsible
+			| Sep 2014 - Dec 2016 !{divide} Teaching Assistant !{divide} King's College London
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-kcl') Show details
+
+		ul#work-kcl
+			li Provided support in tutorials for #[em Practical Experience of Programming], a C++/Scala course built upon problem-solving-based learning.
+
+			li Provided support in lectures for #[em Advanced Practical Topics], an optional module taken by some first- and second-year students. The module is structured to give insights on a wider #[strong range of technical and programming topics] that are not covered in the standard course, including Unix, Python, version control and mobile development.
+
+			li.no-dot
+				a.icon-link(href = '/positions#kcl')
+					i.fa.fa-angle-right.text-highlight
+					span My position as a teaching assistant
+
+		h3.collapsible
+			| Sep 2016 - Sep 2016 !{divide} Android Developer (Intern) !{divide} Yoyo Wallet
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-yoyo') Show details
+
+		ul#work-yoyo
+			li Contributed to Yoyo Wallet&#39;s #[strong well-established Android app], developing both consumer-facing features and internal tools.
+
+			li Set up new CI tools to automate some stages of the #[strong Android/iOS QA workflow], introducing time savings and removing monotonous steps from the code review process.
+
+		h3.collapsible
+			| Apr 2014 - Aug 2016 !{divide} Android Lead &amp; Software Engineer !{divide} Unitu
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-unitu') Show details
+
+		ul#work-unitu
+			li Responsible for the #[strong production, development and testing] of the Unitu Android app, deployed for use by thousands students in several UK universities. The app is a comprehensive reproduction of most features offered on the web platform, #[strong built entirely from scratch] following an Agile methodology.
+
+			li.no-dot
+				a.icon-link(href = '/projects#unitu-android-app')
+					i.fa.fa-angle-right.text-highlight
+					span My project, the #[em Unitu Android app]
+
+			li Contributed to various web and back-end components, including a ground-up re-build of the notification system, a content moderation and reporting system, and a client-health dashboard.
+
+			li Technical lead for the development of an #[strong all-inclusive analytics suite], specialised for the Unitu environment. This incorporates the API for all platforms to collect data (mobile and web), the storage and processing of that data, and two front-end systems to #[strong turn the data into business intelligence] (one for Unitu staff, one for universities enrolled with Unitu).
+
+			li.no-dot
+				a.icon-link(href = '/projects#unitu-analytics')
+					i.fa.fa-angle-right.text-highlight
+					span My project, #[em Unitu Analytics]
+
+		h3.collapsible
+			| July 2015 - Aug 2015 !{divide} Service Intern !{divide} Allianz Insurance
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-allianz') Show details
+
+		ul#work-allianz
+			li Stationed with Petplan, one of Allainz's brands, I joined their service department and #[strong headed up two projects], as well as assisting with six other. My work centred around performance improvement and involved project management, managing upwards, technical development, research and analysis.
+
+			li.no-dot
+				a.icon-link(href = '/positions#allianz-petplan')
+					i.fa.fa-angle-right.text-highlight
+					span My position at Allianz
+
+			li.no-dot
+				a.icon-link(href = '/projects#petplan-live')
+					i.fa.fa-angle-right.text-highlight
+					span My project, #[em Petplan Live!]
+
+			li.no-dot
+				a.icon-link(href = '/projects#petplan-your-voice')
+					i.fa.fa-angle-right.text-highlight
+					span My project, #[em Your Voice]
+
+		h3.collapsible
+			| Dec 2008 - Aug 2014 !{divide} Self-Employed
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-self') Show details
+
+		ul#work-self
+			li Provided #[strong full-stack website design and development], including SME ecommerce solutions and CMS implementations. This work was mostly carried out on LAMP-style servers, both rented from third parties and set up privately.
+
+			li Managed all aspects of the business, including sales, consultancy, production, support and accounting.
+
+			li Maintained a client base of #[strong individuals and business of various sizes], in the UK and overseas.
+
+			li.no-dot
+				a.icon-link(href = '/positions#self-employed')
+					i.fa.fa-angle-right.text-highlight
+					span My position as a self-employed developer
+
+		h3.collapsible
+			| July 2014 - Aug 2014 !{divide} Project Management Intern !{divide} Excelian
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-excelian') Show details
+
+		ul#work-excelian
+			li Worked within the project management office: tested in-house software, assisted with generating reports, created process documentation and built a digital resource sharing tool with MS SharePoint.
+
+			li Assisted the in-house IT department with several tasks, including setting up and testing a semi-automated computer image deployment system (using, amongst other tools, the Fog Project server software).
+
+			li.no-dot
+				a.icon-link(href = '/positions#excelian')
+					i.fa.fa-angle-right.text-highlight
+					span My position as a PMO intern
+
+		h3.collapsible
+			| Aug 2012 - Aug 2013 !{divide} Secondary School Teacher !{divide} Project Trust
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-project-trust') Show details
+
+		ul#work-project-trust
+			li Taught mathematics, reading and PE at Sand Creek Secondary School in Guyana, South America.
+
+			li Taught extra-curricular courses for students, parents and village officials, including ICT and first aid sessions.
+
+			li Provided peer support and mentoring as the Grade 8 form tutor.
+
+			li.no-dot
+				a.icon-link(href = '/positions#project-trust')
+					i.fa.fa-angle-right.text-highlight
+					span My position as a secondary school teacher
+
+		h3.collapsible
+			| Nov 2009 - Jun 2012 !{divide} Technician &amp; Sales Assistant !{divide} Gigante Computers
+			span: a.toggle-section(href = 'javascript:;', data-target = 'ul#work-gigante') Show details
+
+		ul#work-gigante
+			li Serviced all brands of PCs and laptops, including fault diagnostics, virus removal, installing and configuring software and operating systems, and repairing hardware and software faults (including replacing laptop screens and heat-gun re-flowing motherboards and graphics cards).
+
+			li Designed and built bespoke PCs to match specifications and budgets, from servers to high-end gaming rigs.
+
+			li Served customers and resolved issues on a sales floor offering a wide range of products and services, working with customers possessing a wide range of technical abilities.
+
+		//- awards and memberships
+
+		h2 Awards &amp; Memberships
+
+		ul
+			li
+				| 2016 !{divide} KCL Student Union Gold Grown
+				i.fa.fa-info-circle.info-dot(
+				data-toggle = 'tooltip',
+				title = 'Awarded by the King\'s College London Student Union to recognise contributions to the student community, based on nominations from other students')
+
+			li
+				| 2014 !{divide} British Computing Society Prize for Best Student
+				i.fa.fa-info-circle.info-dot(
+				data-toggle = 'tooltip',
+				title = 'Awarded to whomever the department nominates as their "best" student from any year')
+
+			li
+				| 2014 !{divide} KCL Department of Informatics Award for Exceptional Contribution
+				i.fa.fa-info-circle.info-dot(
+				data-toggle = 'tooltip',
+				title = 'Awarded to students judged to have made an exceptional contribution to the development of the department and/or their peers')
+
+			li
+				| 2014 !{divide} Sambrooke Exhibition in Natural Sciences (via King’s College London)
+				i.fa.fa-info-circle.info-dot(
+				data-toggle = 'tooltip',
+				title = 'Awarded to the first-year student with the highest marks')
+
+			li
+				| 2014 !{divide} John Wiley and Sons Prize (via King’s College London)
+				i.fa.fa-info-circle.info-dot(
+				data-toggle = 'tooltip',
+				title = 'Awarded to the student with the highest marks in their first or second year of study')
+
+			li 2014 - #[em present] !{divide} Member of the British Computing Society
+			li 2007 - 2012 !{divide} Member of UK Young Gifted and Talented
+			li 2005 - 2012 !{divide} Member of the National Academy for Gifted and Talented Youth
+
+		//- volunteering and charity work
+
+		h2 Volunteering &amp; Charity Work
+
+		h3.first Aug 2012 - Aug 2013 !{divide} Gap Year with Project Trust
+		ul
+			li
+				| Served with the charity #[strong Project Trust], one of very few officially accredited gap year organisations in the UK.
+				i.fa.fa-info-circle.info-dot(
+				data-toggle = 'tooltip',
+				title = 'Current and future volunteers receive a UCAS-recognised qualification for their service overseas')
+
+			li Taught youths aged 13 – 16 in Sand Creek, a remote Wapishana-tribal village in the hinterlands of Guyana.
+
+			li
+				| Managed several school development projects and started an eventually-successful initiative to bring Internet access to the village.
+				i.fa.fa-info-circle.info-dot(
+				data-toggle = 'tooltip',
+				title = 'The seeds I sowed for this initiative did not come to fruition until after I was back in the UK, but it was still amazing to have been a part of the change')
+
+			li Raised over &pound;5,100 to fund the gap year (insurance, training, transport, etc.).
+
+			li.no-dot
+				a.icon-link(href = '/positions#project-trust')
+					i.fa.fa-angle-right.text-highlight
+					span My work as a secondary school teacher
+
+		h3 Individual Projects
+		ul
+			li Mar 2014 !{divide} Raced in Central London, raising &pound;330 for the British Heart Foundation.
+			li Jul 2012 !{divide} Climbed Snowdon, raising over &pound;400 for the Juvenile Diabetes Research Foundation.
+			li Apr 2011 !{divide} Organised a concert to raise over &pound;500 for the British Red Cross' Japan Tsunami fund.
+			li Oct 2009 !{divide} Participated in a cycling event, raising &pound;400 for the British Heart Foundation.
+
+		//- references and contacting me
+
+		h2 References &amp; Contacting Me
+
+		p I have a number of references and recommendations #[a(href = '/references') available on my main website], and additional referee contact details can be provided on request. I can be contacted via #[a(href = '/contact') any of the methods listed on my main website].
+
+block scripts
+	script(src = '/js/cv.js')

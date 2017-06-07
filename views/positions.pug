@@ -1,0 +1,201 @@
+extends shared/page-layout
+
+mixin position(title, subtitle, id, imageName)
+	div.floating-grid-item(id = id).read-more: div.inner
+		if imageName != null
+			img.left-thumbnail(src = '/images/positions/' + imageName, title = title)
+		h3!= title.replace('@', '<br /><span class="text-muted">@</span>')
+		if subtitle != null
+			p.subtitle!= subtitle
+		block
+		p.read-more.text-center.hide
+			a.icon-link(href = 'javascript:;')
+				i.fa.fa-angle-down.text-highlight
+				span Read more
+
+block page-head
+	link(rel = 'stylesheet', href = '/css/shared/floating-grid-layout.css')
+
+block page-body
+
+	div.floating-grid
+
+		+position(
+		'Android Lead &amp; Software Engineer @ Unitu',
+		'April 2014 - August 2016',
+		'unitu',
+		'unitu-logo.png')
+
+			p After meeting them at a hackathon, Unitu was my primary development position #[strong for two and a half years]. I started as a part-time #[strong Android developer] and gradually took on more and more responsibilities.
+
+			p Initially, I was tasked to develop a #[a(href = '/projects#unitu-android-app') #[strong brand new Android app]] for the platform. The app was made available to #[strong thousands of UK university students] and remained one of my main roles, but I also took technical lead on a #[a(href = '/projects#unitu-analytics') #[strong bespoke analytics system]].
+
+			p When I moved to a full-time role in September 2015, I also started contributing to the #[a(href = '/projects#unitu-web-api') #[strong website and API]], and throughout 2016 I worked on developing #[strong closer technical integrations] with university systems.
+
+			div.hr.with-margin: hr
+
+			p: a.icon-link(href = '/projects#unitu-android-app')
+				i.fa.fa-code.text-highlight
+				span Project: Unitu Android App
+
+			p: a.icon-link(href = '/projects#unitu-analytics')
+				i.fa.fa-code.text-highlight
+				span Project: Unitu Analytics
+
+			p: a.icon-link(href = '/projects#unitu-web-api')
+				i.fa.fa-code.text-highlight
+				span Project: Unitu Website & API
+
+			p: a.icon-link(href = '/references#anish-bagga')
+				i.fa.fa-comment-o.text-highlight
+				span Reference from CEO, Anish Bagga
+
+			p: a.icon-link(href = '/references#ana-jalba')
+				i.fa.fa-comment-o.text-highlight
+				span Reference from colleague, Ana Jalba
+
+			p: a.icon-link(href = '/references#fares-alaboud')
+				i.fa.fa-comment-o.text-highlight
+				span Reference from colleague, Fares Alaboud
+
+
+		+position(
+		'Android Developer @ Yoyo Wallet',
+		'September 2016 (Internship)',
+		'yoyo',
+		'yoyo-logo.png')
+
+			p I joined Yoyo Wallet for a #[strong brief internship] between the end of my position at Unitu and returning for my final year at King&#39;s College London. During this time I worked on their #[strong well-established Android app], developing both consumer-facing features and internal tools.
+
+			p I also set up new CI tools to automate some stages of the #[strong Android/iOS QA workflow], introducing time savings and removing monotonous steps from the code review process.
+
+
+		+position(
+		'Android Lecturer & Treasurer @ KCL Tech Society',
+		'February 2014 - June 2017',
+		'kcl-tech',
+		'kcl-tech-logo.png')
+
+			p As well as managing the society's finances, I #[strong wrote and delivered Android development lectures] as part of the #[em Build X] course ran by the group, and acted as an assistant for other lessons on beginner programming and website development.
+
+			p I also assisted with the planning, organisation and execution of society events, from hackathons with 250+ attendees to socials and beginner programming classes.
+
+			div.hr.with-margin: hr
+
+			p: a.icon-link(href = '/projects#android-lectures')
+				i.fa.fa-code.text-highlight
+				span Project: KCL Tech Android Lectures
+
+			p: a.icon-link(href = '/references#fares-alaboud')
+				i.fa.fa-comment-o.text-highlight
+				span Reference from society President, Fares Alaboud
+
+			p: a.icon-link(href = '/references#joshua-simpson')
+				i.fa.fa-comment-o.text-highlight
+				span Reference from society Vice President, Joshua Simpson
+
+
+		+position(
+		'Teaching Assistant & Student @ King&#39;s College London',
+		'September 2014 - June 2017',
+		'kcl',
+		'kcl-logo.png')
+
+			p At KCL, I was a teaching assistant for the #[strong Advanced Practical Topics] and #[strong Practical Experiences of Programming] courses. The modules gave students insights on a range of technical and programming topics, including C++, Scala, Unix, Python, version control and mobile development.
+
+			p Finally, as a student, I have achieved a grade of #[strong 89%] so far, putting me on track for a first class degree.
+
+			div.hr.with-margin: hr
+
+			p: a.icon-link(href = '/references#peter-mcburney')
+				i.fa.fa-comment-o.text-highlight
+				span Reference from head of department, Peter McBurney
+
+			p: a.icon-link(href = '/references#andrew-coles')
+				i.fa.fa-comment-o.text-highlight
+				span Reference from professor, Dr Andrew Coles
+
+		+position(
+		'Summer Intern @ Allianz Petplan',
+		'June 2015 - August 2015',
+		'allianz-petplan',
+		'allianz-petplan-logo.png')
+
+			p Over the course of a nine-week placement with Petplan (one of Allianz's branded products) I contributed to #[strong eight projects], two of which I was #[strong wholly responsible for] (linked below).
+
+			p Based in the service department, my worked centred around performance improvement. The projects involved independent #[strong project management], instances of managing upwards, technical development, research and analysis.
+
+			div.hr.with-margin: hr
+
+			p: a.icon-link(href = '/projects#allianz-petplan-your-voice')
+				i.fa.fa-code.text-highlight
+				span Project: Allianz Petplan "Your Voice"
+
+			p: a.icon-link(href = '/projects#allianz-petplan-petplan-live')
+				i.fa.fa-code.text-highlight
+				span Project: Allianz Petplan "Petplan Live!"
+
+			p: a.icon-link(href = '/references#hayley-sangan')
+				i.fa.fa-comment-o.text-highlight
+				span Reference from manager, Hayley Sangan
+
+			p: a.icon-link(href = '/references#angeleen-leckie-james')
+				i.fa.fa-comment-o.text-highlight
+				span Reference from manager, Angeleen Leckie-James
+
+
+		+position(
+		'Summer Intern @ Excelian',
+		'July 2014 - August 2014',
+		'excelian',
+		'excelian-logo.png')
+
+			p During a six-week summer placement at Excelian I was shared between the #[strong Project Management Office] and #[strong IT] departments.
+
+			p Whilst with the #[strong PMO] department I worked on collating weekly international project reports, software testing, software documentation and numerous #[strong MS SharePoint] tasks. I invested a little time into automating several aspects of these jobs, leaving me with spare time to work with the #[strong IT] department.
+
+			p With the #[strong IT] department I worked mostly on setting up and customising a #[strong FOG server] to allow their technicians to automate workstation re-imaging, as well as helping to further automate some of their #[strong MS SharePoint] support tickets.
+
+			div.hr.with-margin: hr
+
+			p: a.icon-link(href = '/references#tara-drummond-finnis')
+				i.fa.fa-comment-o.text-highlight
+				span Reference from manager, Tara Drummond-Finnis
+
+
+		+position(
+		'Volunteer Teacher @ Project Trust',
+		'August 2012 - August 2013',
+		'project-trust',
+		'project-trust-logo.png')
+
+			p I volunteered with Project Trust (one of the UK's only #[strong officially accredited] gap year organisations) for a year between post-16 education and university.
+
+			p I was stationed in a #[strong very small, remote village in Guyana, South America], where I worked as a full-time secondary school teacher. Whilst there I #[strong taught mostly maths], a little reading and PE, and gave several classes for adults in the village (including basic ICT skills and first aid).
+
+			p During the year I was lucky enough to visit seven countries, try a great many new experiences, and gain some incredibly #[strong valuable skills] (and some great stories!).
+
+			div.hr.with-margin: hr
+
+			p: a.icon-link(href = 'http://marksprojecttrust.co.uk', rel = 'external')
+				i.fa.fa-globe.text-highlight
+				span My Volunteering Blog
+
+
+		+position(
+		'Self Employed Web Developer',
+		'December 2008 - July 2014',
+		'self-employed')
+
+			p Starting at the age of 15, I provided #[strong full-stack website design and development], from personal sites to #[strong comprehensive custom ecommerce] sites and #[strong CMSs]. Most of the work was carried out on #[strong LAMP servers], first rented from third parties and later set up manually on VPSs.
+
+			p I managed all aspects of the business, including sales, consultancy, production, support and accounting. Over the years I maintained a client base of #[strong individuals and business] of various sizes, in the UK and overseas.
+
+
+	br.clearfix
+
+block scripts
+	script(src = '/vendor/masonry/masonry.packaged.min.js')
+	script(src = '/vendor/masonry/jquery.imagesloaded.js')
+	script(src = '/js/shared/read-more.js')
+	script(src = '/js/shared/floating-grid-layout.js')
