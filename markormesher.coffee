@@ -6,7 +6,7 @@ rfr = require('rfr')
 
 app = express()
 
-# coffeeware and scss
+# coffeescript and scss
 app.use(coffeeMiddleware({
 	src: __dirname + '/assets'
 	encodeSrc: false
@@ -19,13 +19,8 @@ app.use(sassMiddleware({
 }))
 
 # routes
-app.use('/', rfr('./controllers/core'))
-app.use('/cv', rfr('./controllers/cv'))
-app.use('/contact', rfr('./controllers/contact'))
-app.use('/info', rfr('./controllers/info'))
-app.use('/positions', rfr('./controllers/positions'))
-app.use('/projects', rfr('./controllers/projects'))
-app.use('/references', rfr('./controllers/references'))
+app.use('/', rfr('./controllers/main-routes'))
+app.use('/projects', rfr('./controllers/project-routes'))
 
 # stop favicon requests
 app.use('/favicon.ico', (req, res) -> res.end())

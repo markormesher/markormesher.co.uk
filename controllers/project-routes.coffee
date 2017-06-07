@@ -1,7 +1,9 @@
 router = require('express').Router()
 
+# base: /projects
+
 router.get('/', (req, res) ->
-	res.render('projects/index', {
+	res.render('projects', {
 		_: {
 			currentPage: 'projects'
 			pageTitle: 'Projects'
@@ -10,7 +12,7 @@ router.get('/', (req, res) ->
 )
 
 router.get('/titanic', (req, res) ->
-	res.render('projects/case-studies/titanic', {
+	res.render('projects/titanic', {
 		_: {
 			currentPage: 'projects'
 			pageTitle: 'Case Study: Titanic'
@@ -19,7 +21,7 @@ router.get('/titanic', (req, res) ->
 )
 
 router.get('/petplan-live', (req, res) ->
-	res.render('projects/case-studies/petplan-live', {
+	res.render('projects/petplan-live', {
 		_: {
 			currentPage: 'projects'
 			pageTitle: 'Case Study: Petplan Live!'
@@ -28,7 +30,7 @@ router.get('/petplan-live', (req, res) ->
 )
 
 router.get('/unitu-android-app', (req, res) ->
-	res.render('projects/case-studies/unitu-android-app', {
+	res.render('projects/unitu-android-app', {
 		_: {
 			currentPage: 'projects'
 			pageTitle: 'Case Study: Unitu Android App'
