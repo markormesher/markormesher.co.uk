@@ -74,6 +74,6 @@ $(document).ready(() ->
 		showLanguage($(links[slideshowPosition]).data('target'))
 
 		# rinse and repeat
-		slideshowTimeout = setTimeout((() -> slideshowNext()), 3000)
+		slideshowTimeout = setTimeout((() -> slideshowNext()), 8000)
 	slideshowNext()
 )
