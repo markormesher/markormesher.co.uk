@@ -1,6 +1,6 @@
 {
   "name": "markormesher.co.uk",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "private": true,
   "dependencies": {
     "async": "^2.4.1",
