@@ -1,2 +1,2 @@
 require('coffee-script').register();
-require('./markormesher.coffee');
+require('./app.coffee');
