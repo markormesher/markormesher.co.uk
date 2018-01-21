@@ -3,6 +3,3 @@
 !public/vendor/*
 !public/vendor/*/*
 !public/vendor/*/*/*
-
-# Ignore secrets file
-helpers/secrets.coffee
