@@ -1,9 +1,8 @@
 {
   "name": "markormesher.co.uk",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "private": true,
   "dependencies": {
-    "async": "^2.4.1",
     "coffee-middleware": "^0.3.0",
     "coffee-script": "^1.12.6",
     "express": "^4.16.2",
