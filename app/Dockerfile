@@ -3,7 +3,7 @@ FROM node:carbon
 WORKDIR /usr/src/app
 
 # dependencies
-COPY package.json ./
+COPY package.json .npmrc ./
 RUN npm i
 
 # source code
