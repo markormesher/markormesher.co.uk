@@ -1,7 +1,0 @@
-node_modules/
-
-# Ignore CSS (commit the SCSS instead)
-*.css
-!public/vendor/*
-!public/vendor/*/*
-!public/vendor/*/*/*
