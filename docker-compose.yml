@@ -4,8 +4,6 @@ services:
   app:
     build: .
     restart: always
-    ports:
-      - 3001
     networks:
       - traefik
     labels:
