@@ -5,4 +5,17 @@ services:
     build: .
     restart: always
     ports:
-      - "3001:80"
+      - 3001
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik_default
+      - traefik.http.routers.markormesher.rule=Host(`markormesher.co.uk`, `www.markormesher.co.uk`)
+      - traefik.http.routers.markormesher.middlewares=strip-www@file
+      - traefik.http.routers.markormesher.tls.certresolver=letsencrypt
+
+networks:
+  traefik:
+    external:
+      name: traefik_default
