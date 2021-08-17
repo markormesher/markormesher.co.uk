@@ -1,4 +1,4 @@
-FROM node:dubnium
+FROM node:fermium
 WORKDIR /app
 RUN yarn global add http-server
 COPY ./public/ ./public/
