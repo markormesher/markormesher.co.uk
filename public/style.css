@@ -1,6 +1,6 @@
 body {
   background-color: #fbfbfb;
-  font-family: "Lato", sans-serif !important;
+  font-family: "Calibri", sans-serif !important;
   color: #333;
   text-align: center;
   padding: 0;
@@ -48,6 +48,10 @@ h1 {
 p {
   padding: 0;
   margin: 1rem 0 0;
+  font-size: 1rem;
+}
+
+p.subtitle {
   font-size: 1.6rem;
 }
 
@@ -56,7 +60,7 @@ p.media-links a {
   margin: 0 1rem;
 }
 
-a:hover {
+p.media-links a:hover {
   color: #ff9900;
 }
 
