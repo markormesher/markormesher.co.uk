@@ -51,7 +51,8 @@ p {
   font-size: 1rem;
 }
 
-p.subtitle {
+p.subtitle,
+p.media-links {
   font-size: 1.6rem;
 }
 
