@@ -1,7 +1,6 @@
 body {
   background-color: #fbfbfb;
   font-family: "Lato", sans-serif !important;
-  font-weight: lighter;
   color: #333;
   text-align: center;
   padding: 0;
@@ -15,8 +14,9 @@ body {
 .content {
   width: 80%;
   padding: 40px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, .3);
-  border-top: 1px solid rgba(0, 0, 0, .3);
+  margin: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .inner {
@@ -39,26 +39,24 @@ body {
   margin-left: 3rem;
 }
 
-h1, p {
-  margin: 0;
-  padding: 0;
-}
-
 h1 {
+  padding: 0;
+  margin: 0;
   font-size: 4rem;
 }
 
 p {
+  padding: 0;
+  margin: 1rem 0 0;
   font-size: 1.6rem;
-  margin-top: 1rem;
 }
 
 p.media-links a {
-  color: rgba(0, 0, 0, .4);
+  color: rgba(0, 0, 0, 0.4);
   margin: 0 1rem;
 }
 
-p.media-links a:hover {
+a:hover {
   color: #ff9900;
 }
 
