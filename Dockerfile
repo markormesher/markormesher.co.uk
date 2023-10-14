@@ -1,4 +1,4 @@
-FROM node:16.14.2-alpine@sha256:28bed508446db2ee028d08e76fb47b935defa26a84986ca050d2596ea67fd506
+FROM node:16.20.2-alpine@sha256:a1f9d027912b58a7c75be7716c97cfbc6d3099f3a97ed84aa490be9dee20e787
 WORKDIR /app
 RUN yarn global add http-server
 COPY ./public/ ./public/
