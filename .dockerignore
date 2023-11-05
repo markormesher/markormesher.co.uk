@@ -1,4 +1,2 @@
-.git/
-.circleci/
-README.md
-renovate.json
+!public/
+*
