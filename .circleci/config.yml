@@ -1,30 +1,54 @@
 version: 2
 
+defaults: &defaults
+  working_directory: /tmp/app
+
 jobs:
-  build-publish:
-    working_directory: ~/app
+  pre-publish:
+    <<: *defaults
     docker:
-      - image: cimg/node:17.9.1
+      - image: alpine/git
     steps:
       - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true
-          version: 20.10.12
+      - attach_workspace:
+          at: .
       - run:
-          name: Build Docker image
+          name: Set container destination
           command: |
-            docker build . -t ghcr.io/markormesher/markormesher.co.uk:$(git describe)
-            docker image ls
+            touch .destination
+            if git describe --exact-match HEAD > /dev/null 2>&1; then
+              echo "--destination ghcr.io/markormesher/${CIRCLE_PROJECT_REPONAME}:$(git describe --tags)" | tee .destination
+            else
+              echo "--no-push" | tee .destination
+            fi
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  publish:
+    <<: *defaults
+    docker:
+      - image: gcr.io/kaniko-project/executor:v1.17.0-debug
+        entrypoint: ""
+    steps:
+      - attach_workspace:
+          at: .
       - run:
-          name: Maybe publish Docker image
+          name: Build container image
           command: |
-            # publish tagged commits only
-            if ! git describe --exact-match HEAD > /dev/null 2>&1; then echo "Not on tagged commit - nothing to do"; exit 0; fi
-            echo "${GHCR_PUBLISH_TOKEN}" | docker login ghcr.io -u markormesher --password-stdin
-            docker push ghcr.io/markormesher/markormesher.co.uk:$(git describe)
+            AUTH=$(echo -n "markormesher:${GHCR_PUBLISH_TOKEN}" | base64)
+            echo '{"auths":{"ghcr.io":{"auth":"'${AUTH}'"}}}' > /kaniko/.docker/config.json
+            /kaniko/executor \
+              --context dir:///tmp/app \
+              --ignore-path /tmp/app \
+              $(cat .destination)
 
 workflows:
   version: 2
   main:
     jobs:
-      - build-publish
+      - pre-publish
+      - publish:
+          requires:
+            - pre-publish
