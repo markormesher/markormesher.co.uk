@@ -9,6 +9,7 @@ jobs:
     docker:
       - image: alpine/git
     steps:
+      - checkout
       - attach_workspace:
           at: .
       - run:
