@@ -47,7 +47,7 @@ workflows:
   version: 2
   main:
     jobs:
-      - pre-publish:
+      - pre-publish
       - publish:
           requires:
             - pre-publish
