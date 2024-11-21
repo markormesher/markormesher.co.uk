@@ -1,4 +1,4 @@
-FROM busybox:1.37.0@sha256:5b0f33c83a97f5f7d12698df6732098b0cdb860d377f6307b68efe2c6821296f
+FROM busybox:1.37.0@sha256:db142d433cdde11f10ae479dbf92f3b13d693fd1c91053da9979728cceb1dc68
 WORKDIR /app
 COPY ./public/ ./public/
 EXPOSE 3000
