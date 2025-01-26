@@ -1,14 +1,1 @@
-node_modules/
-yarn-*.log*
-
-# IntelliJ
-*.iml
-.idea/
-
-# Linux
-*~
-.Trash-*
-
-# OSX
-.DS_Store
-._*
+.imgrefs
