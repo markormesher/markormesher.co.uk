@@ -1,55 +1,97 @@
-version: 2
+# This file is maintained by Tedium - manual edits will be overwritten!
 
-defaults: &defaults
-  working_directory: /tmp/app
-
+version: "2.1"
 jobs:
-  pre-publish:
-    <<: *defaults
+  checkout:
     docker:
-      - image: alpine/git
+      - image: cimg/base:2024.12
     steps:
-      - checkout
-      - attach_workspace:
-          at: .
-      - run:
-          name: Set container destination
-          command: |
-            touch .destination
-            if git describe --exact-match HEAD > /dev/null 2>&1; then
-              echo "--destination ghcr.io/markormesher/${CIRCLE_PROJECT_REPONAME}:$(git describe --tags)" | tee .destination
-            else
-              echo "--no-push" | tee .destination
-            fi
+      - checkout:
+          path: .
       - persist_to_workspace:
           root: .
           paths:
             - .
-
-  publish:
-    <<: *defaults
+  ci-all:
     docker:
-      - image: gcr.io/kaniko-project/executor:v1.23.1-debug
-        entrypoint: ""
+      - image: cimg/base:2024.12
     steps:
       - attach_workspace:
           at: .
       - run:
-          name: Build container image
-          command: |
-            AUTH=$(echo -n "markormesher:${GHCR_PUBLISH_TOKEN}" | base64)
-            echo '{"auths":{"ghcr.io":{"auth":"'${AUTH}'"}}}' > /kaniko/.docker/config.json
-            /kaniko/executor \
-              --verbosity debug \
-              --context dir:///tmp/app \
-              --ignore-path /tmp/app \
-              $(cat .destination)
-
+          command: echo "Done"
+  fetch-task:
+    docker:
+      - image: ghcr.io/markormesher/task-fetcher:v0.4.1
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          command: cp /task .
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./task
+  imgbuild-imgpush:
+    docker:
+      - image: cimg/base:2024.12
+    steps:
+      - attach_workspace:
+          at: .
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          command: |-
+            echo "${GHCR_PUBLISH_TOKEN}" | docker login ghcr.io -u markormesher --password-stdin
+            ./task imgbuild
+            ./task imgpush
+  imgrefs:
+    docker:
+      - image: docker.io/alpine/git:v2.47.1
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          command: ./task imgrefs
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./.imgrefs
+            - ./**/.imgrefs
 workflows:
   version: 2
   main:
     jobs:
-      - pre-publish
-      - publish:
+      - checkout:
+          requires: []
+          filters:
+            tags:
+              only: /.*/
+      - fetch-task:
           requires:
-            - pre-publish
+            - checkout
+          filters:
+            tags:
+              only: /.*/
+      - imgrefs:
+          requires:
+            - checkout
+            - fetch-task
+          filters:
+            tags:
+              only: /.*/
+      - imgbuild-imgpush:
+          requires:
+            - checkout
+            - fetch-task
+            - imgrefs
+          filters:
+            tags:
+              only: /.*/
+      - ci-all:
+          requires:
+            - imgbuild-imgpush
+            - imgrefs
+          filters:
+            tags:
+              only: /.*/
