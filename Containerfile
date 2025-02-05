@@ -1,4 +1,4 @@
-FROM docker.io/library/httpd:2.4.63@sha256:688ad5bf1b726f1cb7556569eef07230740e7def0fae3b6f1b50900dad178bb8
+FROM docker.io/library/httpd:2.4.63@sha256:7403dba12dd0cd4787ecb367c1eed248e0177f7613767acfc4e6a4906a85da7d
 WORKDIR /app
 
 COPY ./public/ ./public/
