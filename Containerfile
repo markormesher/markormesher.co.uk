@@ -1,7 +1,9 @@
-FROM docker.io/library/httpd:2.4.63@sha256:a5057bba775400702c6c33170762e0faf4051c344f98952fe045df50042ece9a
+FROM docker.io/joseluisq/static-web-server:2.36.0
 WORKDIR /app
 
 COPY ./public/ ./public/
 
-EXPOSE 3000
-CMD ["httpd", "-f", "-v", "-p", "3000", "-h", "/app/public"]
+LABEL image.registry=ghcr.io
+LABEL image.name=markormesher/markormesher.co.uk
+
+CMD ["--host", "0.0.0.0", "--port", "3000", "--root", "/app/public"]
