@@ -1,4 +1,4 @@
-FROM docker.io/joseluisq/static-web-server:2.38.0@sha256:acfb7d76452f9746c5d2f8d791c9b659ac277b2b63fcac3ad97276fcdc969ffc
+FROM docker.io/joseluisq/static-web-server:2.38.1@sha256:54345a59d7dfd54c1d8d5e14322b73eff5daa5ad6d06998e67ff53e149d93981
 WORKDIR /app
 
 COPY ./public/ ./public/
