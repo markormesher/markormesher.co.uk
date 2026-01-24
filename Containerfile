@@ -3,7 +3,13 @@ WORKDIR /app
 
 COPY ./public/ ./public/
 
-LABEL image.registry=ghcr.io
-LABEL image.name=markormesher/markormesher.co.uk
-
 CMD ["--host", "0.0.0.0", "--port", "3000", "--root", "/app/public"]
+
+LABEL image.name=markormesher/markormesher.co.uk
+LABEL image.registry=ghcr.io
+LABEL org.opencontainers.image.description=""
+LABEL org.opencontainers.image.documentation=""
+LABEL org.opencontainers.image.title="markormesher.co.uk"
+LABEL org.opencontainers.image.url="https://github.com/markormesher/markormesher.co.uk"
+LABEL org.opencontainers.image.vendor=""
+LABEL org.opencontainers.image.version=""
