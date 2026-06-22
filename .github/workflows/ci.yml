@@ -23,7 +23,7 @@ jobs:
     permissions:
       packages: write
     steps:
-      - uses: markormesher/ci-resources/setup@483c89c13fab98a3760dddba5898d696b207cd8f # v0.7.0
+      - uses: markormesher/ci-resources/setup@b1445c99ad0e6304583ca92d1d5c75071bec053c # v0.7.1
       - run: buildah login ghcr.io -u "${{ github.actor }}" -p "${{ github.token }}"
       - run: ./task imgrefs
       - run: ./task imgbuild
