@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     if: always()
     needs:
-      - img-build-push
+      - img-root
     container:
       image: docker.io/busybox:1.38.0@sha256:dc2d74b28e4cf8984fa52af1f39bc7c3d9c73760b41a74d629f5d11b1ab28616
     steps:
@@ -18,13 +18,13 @@ jobs:
             exit 1
           fi
           echo "All jobs passed"
-  img-build-push:
+  img-root:
     runs-on: ubuntu-latest
     permissions:
       packages: write
     steps:
       - uses: markormesher/ci-resources/setup@c733feb84c0204cdc0bd46f6f8ca557209bb5c33 # v0.8.0
       - run: buildah login ghcr.io -u "${{ github.actor }}" -p "${{ github.token }}"
-      - run: ./task imgrefs
-      - run: ./task imgbuild
-      - run: ./task imgpush
+      - run: ./task -s imgrefs-root
+      - run: ./task -s imgbuild-root
+      - run: ./task -s imgpush-root
