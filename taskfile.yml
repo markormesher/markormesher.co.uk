@@ -1,5 +1,6 @@
 # This file is maintained by Tedium - manual edits will be overwritten!
 
+---
 version: "3"
 includes:
   local:
@@ -10,7 +11,7 @@ tasks:
     cmds:
       - task: imgbuild-root
   imgbuild-root:
-    dir: '{{.ROOT_DIR}}'
+    dir: "{{.ROOT_DIR}}"
     deps:
       - imgrefs-root
     cmds:
@@ -53,7 +54,7 @@ tasks:
     cmds:
       - task: imgpush-root
   imgpush-root:
-    dir: '{{.ROOT_DIR}}'
+    dir: "{{.ROOT_DIR}}"
     deps:
       - imgrefs-root
     cmds:
@@ -84,7 +85,7 @@ tasks:
     cmds:
       - task: imgrefs-root
   imgrefs-root:
-    dir: '{{.ROOT_DIR}}'
+    dir: "{{.ROOT_DIR}}"
     cmds:
       - cmd: |-
           set -euo pipefail
